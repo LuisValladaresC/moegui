@@ -1,0 +1,518 @@
+{% extends "./partials/layout.html" %}
+
+{% block page_title %} 
+  <title>{{ blog.page__title }}</title>
+{% endblock %}
+
+{% block css_plugins %}
+  <!-- CSS Implementing Plugins -->
+  <!-- bundlecss:vendor [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/vendor/fontawesome/css/all.min.css"> <!-- General --> {# Content.FontAwesome #}
+  <link rel="stylesheet" href="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css"> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+{% endblock %}
+
+{% block content %}
+  {% include "./partials/header.html" %}
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Hero Section --> {# CustomSnippet #}
+    <div class="container space-top-3 space-top-lg-4 space-bottom-1 space-bottom-lg-2">
+      <div class="w-md-80 w-lg-75 text-center mx-md-auto">
+        <h1 class="display-4">{{ blog.hero__title }}</h1>
+        <p class="lead">{{ blog.hero__description }}</p>
+      </div>
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Blog Section -->
+    <div id="listing" class="container space-top-md-2 space-bottom-2">
+      <div class="row mb-5 mb-md-7">
+        <!-- Tags --> {# CustomSnippet #}
+        <div id="tags" class="col-lg-8 order-2 order-lg-1 pt-2 mb-lg-0 text-center text-sm-left">
+          {# Tags inyected by Javascript #}
+        </div>
+        <!-- End Tags -->
+
+        <!-- Search --> {# FormLayouts.Search.Component#1 #}
+        <div class="col-lg-4 order-1 order-lg-2 mb-4 mb-md-6 mb-lg-0">
+          <form id="searchForm" class="input-group input-group-sm input-group-merge input-group-flush">
+            <input type="search" name="search" class="form-control" placeholder="{{ blog.blogs_input_search }}" aria-label="{{ blog.blogs_input_search }}" aria-describedby="searchLabel" required>
+            <div class="input-group-append">
+              <div class="input-group-text" id="searchLabel">
+                <i class="fas fa-search"></i>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!-- End Search -->
+      </div>
+
+      <!-- Search Title -->
+      <div id="searchTitleContainer" class="row mb-3 mb-sm-7 d-none">
+        <div class="col">
+          <h3 id="searchTitle" class="mb-0">
+            {# Search title inyected by Javascript #}
+          </h3>
+        </div>
+        <div class="col-auto d-flex justify-content-end align-items-center">
+          <button id="btnCloseSearch" class="btn btn-link font-weight-bold p-0">{{ blog.blogs_button_close_search }} <i class='fas fa-times fa-sm ml-1'></i></button>
+        </div>
+      </div>
+      <!-- End Search Title -->
+
+      <!-- Main Blog Card --> {# Blog.List.Component#1 #}
+      <div id="blogMain">
+        {# Blog inyected by Javascript #}
+      </div>
+      <!-- End Blog Card -->
+      
+      <!-- Blogs Listing --> {# Blog.Grid.Component#3 #}
+      <div id="blogsCards" class="row mb-3">
+        {# Blogs inyected by Javascript #}
+      </div>
+      <!-- End Blogs Listing -->
+
+      <!-- Pagination --> {# CustomSnippet #}
+      <nav id="pagination">
+        <ul id="paginationContainer" class="pagination justify-content-center mb-0">
+          {# Pagination inyected by Javascript #}
+        </ul>
+      </nav>
+      <!-- End Pagination -->
+    </div>
+    <!-- End Blog Section -->
+
+    <!-- Subscribe Section --> {# FormLayout.Subscribe.Component#5 #}
+    <div class="position-relative text-center">
+      <div class="container space-2 space-bottom-lg-4 position-relative">
+        <!-- Title -->
+        <div class="w-md-60 mx-md-auto mb-5 mb-md-7">
+          <h2 class="h1">{{ blog.subscribe__title }}</h2>
+          <p>{{ blog.subscribe__description }}</p>
+        </div>
+        <!-- End Title -->
+
+        <!-- Subscribe Form -->
+        <div class="w-md-75 w-lg-50 mx-md-auto">
+          <div class="mb-3">
+            <div class="form-row">
+              <div class="col-sm-8 mb-2">
+                <div class="js-form-message">
+                  <label class="sr-only" for="subscriptionFormEmail">{{ blog.subscribe__input_label }}</label>
+                  <div class="input-group input-group-pill">
+                    <input type="email" class="form-control" name="EMAIL" id="subscriptionFormEmail" placeholder="{{ blog.subscribe__input_label }}" aria-label="{{ blog.subscribe__input_label }}" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary btn-pill btn-wide" name="subscribe">{{ blog.subscribe__button }}</button>
+              </div>
+            </div>
+          </div>
+
+          <p class="small">{{ blog.subscribe__additional_info | safe }}</p>
+        </div>
+        <!-- End Subscribe Form -->
+
+        <!-- SVG Illustration -->
+        <div class="d-none d-lg-block position-absolute bottom-0 left-0 max-w-35rem w-100">
+          <img class="img-fluid" src="@@autopath/assets/svg/illustrations/mobile-article.svg">
+        </div>
+        <!-- End SVG Illustration -->
+      </div>
+    </div>
+    <!-- End Subscribe Section -->
+
+    <!-- articles to be tracked (SEO) -->
+    {% for article in blog_article.articles %}
+    <a href="@@autopathwithlang/blog/{{ article.page }}" class="d-none"></a>
+    {% endfor %}
+    <!-- End articles to be tracked (SEO) -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  {% include "./partials/footer.html" %}
+
+  {% include "./partials/go-to.html" %}
+{% endblock %}
+
+{% block js_plugins %}
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script> <!-- Header --> {# HSLibraries.Headers #}
+  <script src="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <script src="@@autopath/node_modules/moment/min/moment.min.js"></script> <!-- Blog Section --> {# momentjs.com #}
+  <script src="@@autopath/assets/js/search.js"></script> <!-- Blog Section --> {# custom-JS #}
+  <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script> <!-- Footer --> {# OtherLibraries.Unfold #}
+  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script> <!-- Go-to --> {# HSLibraries.Go-to #}
+
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+
+  <!-- JS Custom -->
+  <script>
+    /* ------------------------------------------------------------ */
+    /* --------------------- GLOBAL VARIABLES --------------------- */
+    /* ------------------------------------------------------------ */
+
+    const $tagsContainer = document.getElementById("tags");
+    const $blogMainContainer = document.getElementById("blogMain");
+    const $blogsCardsContainer = document.getElementById("blogsCards");
+    const $paginationContainer = document.getElementById("paginationContainer");
+
+    const $searchForm = document.getElementById('searchForm');
+    const $searchTitleContainer = document.getElementById('searchTitleContainer');
+    const $searchTitle = document.getElementById('searchTitle');
+    const $btnCloseSearch = document.getElementById('btnCloseSearch');
+
+    var $blogCards;
+    var $tagsButtons;
+    var $paginationButtons;
+
+    var dataBlogs;
+    var dataTags;
+    var blogsPerPage = 9;
+    var currentPage = 1;
+
+    /* ------------------------------------------------------------ */
+    /* -------------- GLOBAL MANAGEMENT OF DATA LOAD -------------- */
+    /* ------------------------------------------------------------ */
+
+    loadData({
+      blogs: true,
+      tags: true
+    })
+
+    function loadData(data = {}){
+      if(data.blogs){
+        currentPage = 1;
+        let blogMainTemplate = '';
+        let blogsCardsTemplate = '';
+        let paginationTemplate = '';
+
+        if(!data.tag && !data.search){
+          dataBlogs = getBlogs();
+
+          let mostRecentBlog = dataBlogs[0];
+          let remainingBlogs = dataBlogs.filter((element, index) => index !== 0);
+  
+          blogMainTemplate = createTemplateHTML(mostRecentBlog, $blogMainContainer);
+          blogsCardsTemplate = createTemplateHTML(remainingBlogs, $blogsCardsContainer);
+          paginationTemplate = createTemplateHTML(dataBlogs.length, $paginationContainer);
+
+          $blogMainContainer.innerHTML = blogMainTemplate;
+          $blogMainContainer.classList.remove('d-none');
+          $searchTitleContainer.classList.add('d-none');
+        }
+
+        if(data.tag){
+          let blogsByTag = getBlogsByTag(data.tag);
+          
+          blogsCardsTemplate = createTemplateHTML(blogsByTag, $blogsCardsContainer);
+          paginationTemplate = createTemplateHTML(blogsByTag.length, $paginationContainer);
+          
+          $searchTitle.innerHTML = data.tag;
+          $searchTitleContainer.classList.remove('d-none');
+          $blogMainContainer.classList.add('d-none');
+
+          window.location.href = '#listing'
+        }
+
+        if(data.search){
+          let blogsBySearch = filterObjectsBySearch(data.search, dataBlogs, ['title', 'description'])
+
+          blogsCardsTemplate = createTemplateHTML(blogsBySearch, $blogsCardsContainer);
+          paginationTemplate = createTemplateHTML(blogsBySearch.length, $paginationContainer);
+          searchTitleTemplate = createTemplateHTML({search: data.search, blogs: blogsBySearch}, $searchTitle);
+
+          $searchTitle.innerHTML = searchTitleTemplate;
+          $searchTitleContainer.classList.remove('d-none');
+          $blogMainContainer.classList.add('d-none');
+
+          window.location.href = '#listing'
+        }
+
+        $blogsCardsContainer.innerHTML = blogsCardsTemplate;
+        $paginationContainer.innerHTML = paginationTemplate;
+
+        $blogCards = Array.from(document.getElementsByClassName('blog-card'));
+        $paginationButtons = Array.from(document.getElementsByClassName('pagination-button'));
+        $paginationButtons.map($button => $button.addEventListener('click', changePage));
+      }
+
+      if(data.tags){
+        dataTags = getTags();
+        
+        let tagsTemplate = createTemplateHTML(dataTags, $tagsContainer);
+        $tagsContainer.innerHTML = tagsTemplate;
+
+        $tagsButtons = Array.from(document.getElementsByClassName('tag-button'));
+        $tagsButtons.map($button => $button.addEventListener('click', showBlogsByTag));
+      }
+    }
+
+    /* ------------------------------------------------------------ */
+    /* ---------- FUNCTIONS IN CHARGE OF DATA COLLECTION ---------- */
+    /* ------------------------------------------------------------ */
+
+    function getBlogs(){
+      let blogs = {{ blog_article.articles | dump | safe }};
+
+      // Sort the blogs by date (highest to lowest)
+      blogs.sort((a, b) => moment(a.date, 'DDMMYYYY') <= moment(b.date, 'DDMMYYYY') ? 1 : -1)
+
+      return blogs;
+    }
+
+    function getTags(){
+      let tags = [];
+      
+      dataBlogs.map(blog => {
+        blog.tags.map(tag => {
+          if (!tags.some(element => element.toLowerCase() == tag.toLowerCase())) {
+            tags.push(tag);
+          }
+        })
+      });
+
+      return tags.sort();
+    }
+
+    function getBlogsByTag(tag){
+      let blogsByTag = [];
+      
+      dataBlogs.map(blog => {
+        if (blog.tags.includes(tag)) blogsByTag.push(blog)
+      })
+
+      return blogsByTag;
+    }
+
+    /* ------------------------------------------------------------ */
+    /* --------- CREATION OF THE DIFFERENT HTML TEMPLATES --------- */
+    /* ------------------------------------------------------------ */
+  
+    function createTemplateHTML(data, $container) {
+      let templateHTML = "";
+  
+      switch ($container) {
+        // Tags Template
+        case $tagsContainer:
+          templateHTML = '<span class="mr-1 mr-sm-2 ml-sm-1 pb-2 pb-sm-1">{{ blog.blogs_tags_label }}</span>'
+
+          data.map(tag => {
+            templateHTML += `<button class="btn btn-xs btn-soft-secondary btn-pill mr-1 mr-sm-2 mb-1 tag-button" data-tag="${tag}">${tag}</button>`;
+          })
+        break;
+
+        // Search Title Template
+        case $searchTitle:
+          templateHTML = `${data.blogs.length} Results <small class="text-body">for "${data.search}"</small>`
+        break;
+
+        // Main Blog Template
+        case $blogMainContainer:
+          let blog = data;
+          templateHTML = `
+          <article class="card mb-3 mb-sm-8 mb-lg-11">
+            <div class="row no-gutters">
+              <div class="col-lg-8">
+                <div class="position-relative overflow-hidden">
+                  <img class="card-img" src="${blog.image}">
+                  <figure class="d-none d-lg-block">
+                    <svg class="ie-curved-x position-absolute top-0 right-0 bottom-0 mr-n1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 100.1 1920" height="101%">
+                      <path fill="#fff" d="M0,1920c0,0,93.4-934.4,0-1920h100.1v1920H0z"/>
+                    </svg>
+                  </figure>
+                  <figure class="d-lg-none mb-n1">
+                    <svg class="ie-curved-y position-absolute right-0 bottom-0 left-0" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1920 100.1">
+                      <path fill="#fff" d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"/>
+                    </svg>
+                  </figure>
+                </div>
+              </div>
+    
+              <div class="col-lg-4">
+                <div class="card-body d-flex flex-column h-100 p-4 p-lg-5">
+                  <h2><a class="text-inherit" href="./${blog.page.file_name}">${blog.title}</a></h2>
+                  <p>${blog.description}</p>
+                  
+                  <div class="media align-items-center mt-2 mt-sm-auto">
+                    <div class="media-body d-flex justify-content-end text-muted font-size-1 ml-2">
+                      ${moment(blog.date, 'DDMMYYYY').format("MMMM DD")}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>`;
+        break;
+
+        // Blog Card Template
+        case $blogsCardsContainer:
+          data.map((blog, index) => {
+            templateHTML += `
+            <div class="col-sm-6 col-lg-4 mb-3 mb-sm-8 ${index >= blogsPerPage ? 'd-none' : ''} blog-card">
+              <article class="card h-100">
+                <div class="card-img-top position-relative">
+                  <img class="card-img-top" src="${blog.image}">
+                  <figure class="ie-curved-y position-absolute right-0 bottom-0 left-0 mb-n1">
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1920 100.1">
+                      <path fill="#fff" d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"/>
+                    </svg>
+                  </figure>
+                </div>
+
+                <div class="card-body">
+                  <h3><a class="text-inherit" href="./${blog.page.file_name}">${blog.title}</a></h3>
+                  <p>${blog.description}</p>
+                </div>
+
+                <div class="card-footer border-0 pt-0">
+                  <div class="media align-items-center">
+                    <div class="media-body d-flex justify-content-end text-muted font-size-1 ml-2">
+                      ${moment(blog.date, 'DDMMYYYY').format("MMMM DD")}
+                    </div>
+                  </div>
+                </div>
+              </article> 
+            </div>`;
+          })
+        break;
+
+        // Pagination Template
+        case $paginationContainer:
+          let blogsTotalCounter = data;
+
+          if(blogsTotalCounter > 10){
+            templateHTML += `
+            <li class="page-item disabled">
+              <button class="page-link pagination-button" data-page="-1">{{ blog.blogs__pagination_previous }}</button>
+            </li>`;
+
+            let page = 1;
+            for (let i = 1; i < blogsTotalCounter; i += blogsPerPage) {
+              templateHTML += `
+              <li class="page-item ${page==1 ? 'active' : ''}">
+                <button class="page-link pagination-button" data-page="${page}">${page}</button>
+              </li>`;
+              page++;
+            }
+
+            templateHTML += `
+            <li class="page-item">
+              <button class="page-link pagination-button" data-page="+1">{{ blog.blogs__pagination_next }}</button>
+            </li>`;
+          }
+        break;
+      }
+
+      return templateHTML;
+    }
+
+    /* ------------------------------------------------------------ */
+    /* ---------------- "PAGINATION" FUNCTIONALITY ---------------- */
+    /* ------------------------------------------------------------ */
+
+    function changePage(e){
+      let page = e.target.dataset.page
+
+      if(page == '-1') currentPage = currentPage - 1;
+      else if(page == '+1') currentPage = currentPage + 1;
+      else currentPage = Number(page);
+
+      let endItem = currentPage * blogsPerPage;
+      let startItem = endItem - blogsPerPage;
+
+      if(currentPage == 1) $blogMainContainer.classList.remove('d-none');
+      else $blogMainContainer.classList.add('d-none');
+
+      $blogCards.map(($blogCard, index) => {
+        if (index >= startItem && index < endItem) $blogCard.classList.remove('d-none');
+        else $blogCard.classList.add('d-none');
+      })
+
+      $paginationButtons.map($button => {
+        if($button.dataset.page == '-1'){
+          if(currentPage == 1) $button.parentElement.classList.add('disabled')
+          else $button.parentElement.classList.remove('disabled')
+        }
+        else if ($button.dataset.page == '+1'){
+          if(currentPage == $paginationButtons.length - 2) $button.parentElement.classList.add('disabled')
+          else $button.parentElement.classList.remove('disabled')
+        }
+        else {
+          if($button.dataset.page == currentPage) $button.parentElement.classList.add('active')
+          else $button.parentElement.classList.remove('active')
+        }
+      })
+
+      window.location.href = '#listing'
+    }
+
+    /* ------------------------------------------------------------ */
+    /* ---------------- "TAG" BUTTON FUNCTIONALITY ---------------- */
+    /* ------------------------------------------------------------ */
+
+    function showBlogsByTag(e){
+      currentTag = e.target.dataset.tag;
+
+      loadData({
+        blogs: true,
+        tag: currentTag
+      })
+    }
+
+    /* ------------------------------------------------------------ */
+    /* --------------- "SEARCH" INPUT FUNCTIONALITY --------------- */
+    /* ------------------------------------------------------------ */
+
+    $searchForm.addEventListener('submit', showBlogsBySearch);
+    $btnCloseSearch.addEventListener('click', closeSearch);
+
+    function showBlogsBySearch(e){
+      e.preventDefault();
+
+      let currentSearch = new FormData($searchForm).get('search');
+
+      loadData({
+        blogs: true,
+        search: currentSearch
+      })
+    }
+
+    function closeSearch(){
+      $searchForm.reset()
+
+      loadData({
+        blogs: true
+      })
+    }
+  </script>
+
+  {% from "./partials/footer.html" import footerLanguageScript with context %}
+  {{ footerLanguageScript() }}
+{% endblock %}

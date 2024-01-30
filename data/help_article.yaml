@@ -1,0 +1,874 @@
+# -------------------------------------- #
+# ------------ Articles Data ----------- #
+# -------------------------------------- #
+
+# This array defines each of the articles available on the "blog" page and will also be used to create a page for each of them.
+
+# The 'page.file_name' attribute defines the name and path of the page to be created
+# The 'page.head_title' attribute defines the name of the tab in the browser and helps improve SEO
+
+articles:
+  - page:
+      file_name: 'python3-virtual-environment.html'
+      head_title: 'How to Set Up Python3 Virtual Environment on Ubuntu 20.04'
+    title: 'How to Set Up Python3 Virtual Environment on Ubuntu 20.04'
+    description: 'This guide explains how to install and configure a python virtual environment to isolate your python modules and version for different use cases. For example, you may want to have multiple Ansible versions because you are working on different Stacks.'
+    date: '12/6/2021'
+    tags:
+      - 'programming'
+      - 'python'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+      ## Instructions
+      You could apply these instructions also to Ubuntu WSL.
+
+      1. It’s always a good idea to update your local packages 
+      ```bash
+      $ sudo apt update 
+      $ sudo apt upgrade
+      ```
+
+      2. Install pip to manage your python packages
+      ```bash
+      $ sudo apt install python3-pip 
+      ```
+
+      3. Install and Configure `virtualenvwrapper` to manage your Python Virtual Environment
+      ```bash
+      # Install the wrapper (User)
+      $ pip3 install --upgrade virtualenvwrapper
+      # Usually /usr/local/bin/virtualenvwrapper.sh
+      $ find / -name "virtualenvwrapper.sh" 
+      # Create a folder for your Virtual Environments
+      $ WORKON_HOME=~/.virtualenv
+      $ mkdir -p $WORKON_HOME
+      ```
+      
+      4. You may want to add these lines to your `.bashrc` to make it permanent.
+      ```bash
+      $ export WORKON_HOME=~/.virtualenv
+      $ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+      $ source /usr/local/bin/virtualenvwrapper.sh
+      ```
+
+      5. Refresh your console settings and variables executing
+      ```bash
+      $ bash
+      ```
+      
+      6. Some useful commands to test your new Virtual Environment
+      ```bash
+      # Create a new 'test' environment
+      $ mkvirtualenv test
+      # Install any module
+      $ pip3 install elasticsearch
+      # Check your installed modules
+      $ pip3 list
+      # Get out of your Virtual Environment
+      $ deactivate
+      ```  
+
+      Read more about **virtualenvwrapper** in the [official documentation page](https://virtualenvwrapper.readthedocs.io/en/latest/)
+
+  - page:
+      file_name: 'environment-variables-directory.html'
+      head_title: 'How to load and unload environment variables depending on the current directory'
+    title: 'How to load and unload environment variables depending on the current directory'
+    description: 'Before each prompt, direnv checks for the existence of a .envrc file in the current and parent directories. If the file exists (and is authorized), it is loaded into a bash sub-shell and all exported variables are then captured by direnv and then made available to the current shell.'
+    date: '12/6/2021'
+    tags:
+      - 'programming'
+      - 'linux'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+      ## Instructions
+      You could apply these instructions also to Ubuntu WSL.
+
+      1. It’s always a good idea to update your local packages 
+      ```bash
+      $ sudo apt update 
+      $ sudo apt upgrade
+      ```
+
+      2. Install **direnv** app using your package system
+      ```bash
+      $ sudo apt install direnv
+      ```
+
+      3. Add the following line at the end of the `~/.bashrc` file and reload your shell
+      ```bash
+      $ eval $(direnv hook bash)
+      ```
+
+      4. Select a folder where you will place your Environment Variables and configure your .envrc
+      ```bash
+      # Create a new .envrc. This file is bash code that is going to be loaded by direnv.
+      $ echo export FOO=foo > .envrc
+        .envrc is not allowed
+      # The security mechanism did not allow to load the .envrc.
+      # Since we trust it, let's allow its execution.
+      $ direnv allow .
+        direnv: reloading
+        direnv: loading .envrc
+        direnv export: +FOO
+      # Show that the FOO environment variable is loaded.
+      $ echo ${FOO}
+        foo
+      ```
+
+      Now, you can create a `.envrc` file in every folder. Every time you access a folder with a .envrc file, your environment variables will be loaded into your Shell. It only happens if you had allowed first doing `$ direnv allow .`. Once you get out from the folder, your environment variables will be unloaded. 
+
+  - page:
+      file_name: 'ansible-galaxy-role-template.html'
+      head_title: 'How to create an Ansible Galaxy Role from Template'
+    title: 'How to create an Ansible Galaxy Role from Template'
+    description: 'Templates are helpful to save time when you need to start a new project from scratch but with all best practices implemented out-of-the-box. Thus, we have an Ansible Role Template with all needed and tested.'
+    date: '8/6/2021'
+    tags:
+      - 'infrastructure'
+      - 'ansible'
+      - 'python'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+        In order to create a Galaxy Role from our Template, follow the instructions below:
+
+        1. Define some variables 
+        ```bash
+        # NEW_ROLE define your new role name
+        $ NEW_ROLE='asbrl-new_role'
+        # NEW_GIT define the complete GIT path for your role.
+        $ NEW_GIT='git@gitlab.com:giacchetta' # Or git@github.com:giacchetta
+        ```
+
+        2. Clone the template and clean up git-related information
+        ```bash
+        # Clone the template role
+        $ git clone https://github.com/moegui/asbrl-template.git $NEW_ROLE
+        # Access to your new role folder
+        $ cd $NEW_ROLE
+        # Remove all git history and configurations ( from the template )
+        $ rm -rf .git
+        ```
+
+        3. Initialize the new Git repository and configure the remote origin
+        ```bash
+        # Initialize the new Git repository
+        $ git init
+        # Add a new remote ( Git server ) to push into.
+        $ git remote add origin $NEW_GIT/$NEW_ROLE.git
+        ```
+
+        4. Update meta/main.yml
+
+          - Update *galaxy_info* section.
+          - Update *platforms section*, if it is necessary.
+          - Update *galaxy_tags section*, if it is necessary.
+          - Update *dependencies section*, roles can also be dependent on other roles, and when you install a role that has dependencies, those dependencies will automatically satisfied. 
+
+
+        5. Update test/test.yml
+
+          - Rename *asbrl-template* for your role name.
+          - Define all mandatory (no default) vars in the Task.
+
+
+        6. Once the role is working, update README.md
+
+          - Update *Pipeline Status* with the correct repo path.
+          - Update *Role Name*.
+          - Update *Requirement section*: If the role doesn’t have, write “None”.
+          - Update *Role Variable section*: follow the provided example.
+          - Update *Dependencies section*: if it is necessary.
+          - Update *Example Playbook section*, follow the provided example.
+
+
+        7. Before pushing all your changes
+        Please resolve all Lint rules problems and any possible Ansible execution error before pushing your Role code otherwise, the CI will fail.
+
+          - Execute ansible lint to review Ansible Best Practices.
+          ```bash
+          $ ansible-lint .
+          ```
+          - Execute tests/test.yml
+          ```bash
+          $ ansible-playbook -i tests/inventory tests/test.yml --connection=local
+            ```
+
+        8. Add, Commit and Push your changes to the origin
+        ```bash
+        # Add your changes to Stage
+        $ git add .
+        # Commit your staged changes
+        $ git commit -am "Customizing Template"
+        # Push your commit to the Origin
+        $ git push --set-upstream origin master
+        ```
+
+        9. Tagging       
+        We using tags to point to a specific commit and in this way, we prevent brake any Playbook that’s using an old version of the Galaxy Role.
+
+          - Major (X): Interface changing  (vars).
+          - Minor (Y): Added new functionality. Old functionality is not affected.
+          - Patches (Z): Bug fixes.
+
+        Please don't delete Tags, It could break an existing playbook.
+
+  - page:
+      file_name: 'ansible-devel-modules.html'
+      head_title: 'How to use Ansible Devel Modules'
+    title: 'How to use Ansible Devel Modules'
+    description: 'Sometimes, we need to work or test something against unstable modules. We can get those modules directly from the Ansible git repository and test our deployment.'
+    date: '4/6/2021'
+    tags:
+      - 'infrastructure'
+      - 'ansible'
+      - 'python'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+
+        You may want to use a different user/environment or computer to install the development Ansible version.
+
+        In order to use "devel" module, you have to follow next steps:
+
+        1. Clone the Ansible git repository, branch "devel"
+        ```bash
+        $ git clone https://github.com/ansible/ansible.git -b devel
+        ```
+
+        2. Configure the Ansible
+        ```bash
+        $ source ./hacking/env-setup
+        ```
+
+        3. Check Ansible version
+        ```bash
+        $ ansible --version
+        ```
+
+  - page:
+      file_name: 'certificate-private-match.html'
+      head_title: 'How to check if a certificate & private key match'
+    title: 'How to check if a certificate & private key match'
+    description: 'Check if an SSL certificate and private key match in two simple commands. The OpenSSL commands below will require you to replace it with your files name.'
+    date: '4/6/2021'
+    tags:
+      - 'security'
+      - 'certificate'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+
+        In order to check your certificates, you have to follow next steps:
+
+        1. For your SSL certificate
+        ```bash
+        $ openssl x509 -noout -modulus -in  | md5sum
+        ```
+
+        2. For your RSA private key
+        ```bash
+        $ openssl rsa -noout -modulus -in  | md5sum
+        ```
+
+        The output of these commands **should be identical**. If it isn’t, your keys do not match.              
+
+  - page:
+      file_name: 'certificate-remote-chain.html'
+      head_title: 'How to Checking A Remote Certificate Chain With OpenSSL'
+    title: 'How to Checking A Remote Certificate Chain With OpenSSL'
+    description: 'If you deal with SSL/TLS long enough you will run into situations where you need to examine what certificates are being presented by a server to the client. The best way to examine the raw output is via (what else but) OpenSSL.'
+    date: '4/6/2021'
+    tags:
+      - 'security'
+      - 'certificate'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+
+        In order to check your certificates, you have to follow next steps:
+
+        1. First lets do a standard webserver connection (-showcerts dumps the PEM encoded certificates themselves for more extensive parsing if you desire. The output below snips them for readability.):
+        ```bash
+        $ openssl s_client -showcerts -connect www.domain.com:443
+          CONNECTED(00000003)
+          --snip--
+          ---
+          Certificate chain
+          0 s:/C=US/ST=Texas/L=Carrollton/O=Woot Inc/CN=*.woot.com
+            i:/C=US/O=SecureTrust Corporation/CN=SecureTrust CA
+          -----BEGIN CERTIFICATE-----
+          --snip--
+          -----END CERTIFICATE-----
+          1 s:/C=US/O=SecureTrust Corporation/CN=SecureTrust CA
+            i:/C=US/O=Entrust.net/OU=www.entrust.net/CPS incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Secure Server Certification Authority
+          -----BEGIN CERTIFICATE-----
+          --snip--
+          -----END CERTIFICATE-----
+          ---
+          Server certificate
+          subject=/C=US/ST=Texas/L=Carrollton/O=Woot Inc/CN=*.woot.com
+          issuer=/C=US/O=SecureTrust Corporation/CN=SecureTrust CA
+          ---
+          No client certificate CA names sent
+          ---
+          SSL handshake has read 2123 bytes and written 300 bytes
+          ---
+          New, TLSv1/SSLv3, Cipher is RC4-MD5
+          Server public key is 1024 bit
+          --snip--
+        ```
+        There’s a lot of data here so I have truncated several sections to increase readability. Points of interest:
+          - The certificate chain consists of two certificates. At level 0 there is the server certificate with some parsed information. s: is the subject line of the certificate and i: contains information about the issuing CA.
+          - This particular server (www.woot.com) has sent an intermediate certificate as well. Subject and issuer information is provided for each certificate in the presented chain. Chains can be much longer than 2 certificates in length.
+          - The server certificate section is a duplicate of level 0 in the chain. If you’re only looking for the end-entity certificate then you can rapidly find it by looking for this section.
+          - No client certificate CAs were sent. If the server was configured to potentially accept client certs the returned data would include a list of “acceptable client CAs”.
+          - The connection was made via TLSv1/SSLv3 and the chosen cipher was RC4-MD5. Incidentally, this typically means that the server you’re connecting to is IIS.
+
+
+        2. What if you want to connect to something other than a bog-standard webserver on port 443? Well, if you need to use StartTLS that is also available. As of OpenSSL 0.9.8, you can choose from SMTP, pop3, IMAP, and FTP as StartTLS options.
+        ```bash
+        $ openssl s_client -showcerts -starttls imap -connect mail.domain.com:139
+        ```
+        If you need to check using a specific SSL version (perhaps to verify if that method is available) you can do that as well. -ssl2, -ssl3, -tls1, and -dtls1 are all choices here.
+        ```bash
+        $ openssl s_client -showcerts -ssl2 -connect www.domain.com:443
+        ```
+        You can also present a client certificate if you are attempting to debug issues with a connection that requires one.
+        ```bash
+        $ openssl s_client -showcerts -cert cert.cer -key cert.key -connect www.domain.com:443
+        ```
+        And for those who really enjoy playing with SSL handshakes, you can even specify acceptable ciphers.
+        ```bash
+        $ openssl s_client -showcerts -cipher DHE-RSA-AES256-SHA -connect www.domain.com:443
+        ```
+        The cipher used above should work for almost any Apache server but will fail on IIS since it doesn’t support 256-bit AES encryption.
+          - The s_client command we’re using opens an interactive socket and does not automatically return to the shell prompt, so remember you will have to hit control-c or type something and hit return to terminate the process. 
+          - This example shows an attempted SSLv2 only connection. SSLv2 should be disabled on any web server you control. It has a variety of flaws and has been superseded by SSLv3/TLSv1 for over a decade. 
+          - This example expects the certificate and private key in the PEM form. You can provide them in DER if you add -certform DER and -keyform DER (OpenSSL 0.9.8 or newer only) 
+          - A list of available ciphers can be found by typing “OpenSSL ciphers”, but there are also myriad ways to sort by type and strength. See the ciphers man page for more details.   
+
+  - page:
+      file_name: 'generate-ssh-key.html'
+      head_title: 'How to Generate a new SSH Key'
+    title: 'How to Generate a new SSH Key'
+    description: 'ssh-keygen is a tool for creating new authentication key pairs for SSH. Such key pairs are used for automating logins, single sign-on, and for authenticating hosts.'
+    date: '4/6/2021'
+    tags:
+      - 'security'
+      - 'openssl'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+
+        #### 1. SSH Keys and Public Key Authentication
+        The SSH protocol uses public key cryptography for authenticating hosts and users. The authentication keys, called SSH keys, are created using the keygen program.<br><br>
+        SSH introduced public key authentication as a more secure alternative to the older .rhosts authentication. It improved security by avoiding the need to have password stored in files, and eliminated the possibility of a compromised server stealing the user's password.<br><br>
+        However, SSH keys are authentication credentials just like passwords. Thus, they must be managed somewhat analogously to user names and passwords. They should have a proper termination process so that keys are removed when no longer needed.
+
+        #### 2. Creating an SSH Key Pair for User Authentication<br><br>
+        The simplest way to generate a key pair is to run ssh-keygen without arguments. In this case, it will prompt for the file in which to store keys. Here's an example:
+        ```bash
+        Generating public/private rsa key pair.
+        Enter file in which to save the key (/home/user/.ssh/id_rsa): 
+        Enter passphrase (empty for no passphrase): 
+        Enter same passphrase again: 
+        Your identification has been saved in /home/user/.ssh/id_rsa.
+        Your public key has been saved in /home/user/.ssh/id_rsa.pub.
+        The key fingerprint is:
+        SHA256:Up6KjbnEV4Hgfo75YM393QdQsK3Z0aTNBz0DoirrW+c user@computer
+        The key's randomart image is:
+        +---[RSA 2048]----+
+        |    .      ..oo..|
+        |   . . .  . .o.X.|
+        |    . . o.  ..+ B|
+        |   .   o.o  .+ ..|
+        |    ..o.S   o..  |
+        |   . %o=      .  |
+        |    @.B...     . |
+        |   o.=. o. . .  .|
+        |    .oo  E. . .. |
+        +----[SHA256]-----+
+        ```
+        First, the tool asked where to save the file. SSH keys for user authentication are usually stored in the user's .ssh directory under the home directory. However, in enterprise environments, the location is often different. The default key file name depends on the algorithm, in this case id_rsa when using the default RSA algorithm. It could also be, for example, id_dsa or id_ecdsa.<br><br>
+        Then it asks to enter a passphrase. The passphrase is used for encrypting the key, so that it cannot be used even if someone obtains the private key file. The passphrase should be cryptographically strong. Our online random password generator is one possible tool for generating strong passphrases.
+
+        #### 3. Choosing an Algorithm and Key Size
+        SSH supports several public key algorithms for authentication keys. These include:
+          - **rsa** - an old algorithm based on the difficulty of factoring large numbers. A key size of at least 2048 bits is recommended for RSA; 4096 bits is better. RSA is getting old and significant advances are being made in factoring. Choosing a different algorithm may be advisable. It is quite possible the RSA algorithm will become practically breakable in the foreseeable future. All SSH clients support this algorithm.
+          - **dsa** - an old US government Digital Signature Algorithm. It is based on the difficulty of computing discrete logarithms. A key size of 1024 would normally be used with it. DSA in its original form is no longer recommended.
+          - **ecdsa** - a new Digital Signature Algorithm standarized by the US government, using elliptic curves. This is probably a good algorithm for current applications. Only three key sizes are supported: 256, 384, and 521 (sic!) bits. We would recommend always using it with 521 bits, since the keys are still small and probably more secure than the smaller keys (even though they should be safe as well). Most SSH clients now support this algorithm.
+          - **ed25519** - this is a new algorithm added in OpenSSH. Support for it in clients is not yet universal. Thus its use in general purpose applications may not yet be advisable.<br><br>
+        The algorithm is selected using the -t option and key size using the -b option. The following commands illustrate:
+        ```bash
+        $ ssh-keygen -t rsa -b 4096
+        $ ssh-keygen -t dsa
+        $ ssh-keygen -t ecdsa -b 521
+        $ ssh-keygen -t ed25519
+        ```
+
+        #### 4. Specifying the File Name
+        Normally, the tool prompts for the file in which to store the key. However, it can also be specified on the command line using the -f <filename> option.
+        ```bash
+        $ ssh-keygen -f ~/some-ecdsa-key -t ecdsa -b 521
+        ```
+
+        #### 5. Copying the Public Key to the Server
+        To use public key authentication, the public key must be copied to a server and installed in an authorized_keys file. This can be conveniently done using the `ssh-copy-id` tool. Like this:
+        ```bash
+        $ ssh-copy-id -i ~/.ssh/tatu-key-ecdsa user@host
+        ```
+        Once the public key has been configured on the server, the server will allow any connecting user that has the private key to log in. During the login process, the client proves possession of the private key by digitally signing the key exchange.
+
+        #### 6. Adding the Key to SSH Agent
+        `ssh-agent` is a program that can hold a user's private key, so that the private key passphrase only needs to be supplied once. A connection to the agent can also be forwarded when logging into a server, allowing SSH commands on the server to use the agent running on the user's desktop.<br><br>
+        For more information on using and configuring the SSH agent, see the ssh-agent page.
+
+        #### 7. Creating Host Keys
+        The tool is also used for creating host authentication keys. Host keys are stored in the /etc/ssh/ directory.<br><br>
+        Host keys are just ordinary SSH key pairs. Each host can have one host key for each algorithm. The host keys are almost always stored in the following files:
+        ```bash
+        /etc/ssh/ssh_host_dsa_key
+        /etc/ssh/ssh_host_ecdsa_key
+        /etc/ssh/ssh_host_ed25519_key
+        /etc/ssh/ssh_host_rsa_key
+        ```
+        The host keys are usually automatically generated when an SSH server is installed. They can be regenerated at any time. However, if host keys are changed, clients may warn about changed keys. Changed keys are also reported when someone tries to perform a man-in-the-middle attack. Thus it is not advisable to train your users to blindly accept them. Changing the keys is thus either best done using an SSH key management tool that also changes them on clients, or using certificates.
+
+        #### 8. Using X.509 Certificates for Host Authentication
+        OpenSSH does not support X.509 certificates. Tectia SSH does support them. X.509 certificates are widely used in larger organizations for making it easy to change host keys on a period basis while avoiding unnecessary warnings from clients. They also allow using strict host key checking, which means that the clients will outright refuse a connection if the host key has changed.
+
+        #### 9. Using OpenSSH's Proprietary Certificates
+        OpenSSH has its own proprietary certificate format, which can be used for signing host certificates or user certificates. For user authentication, the lack of highly secure certificate authorities combined with the inability to audit who can access a server by inspecting the server makes us recommend against using OpenSSH certificates for user authentication.<br><br>
+        However, OpenSSH certificates can be very useful for server authentication and can achieve similar benefits as the standard X.509 certificates. However, they need their own infrastructure for certificate issuance. See more information on certificate authentication.
+
+        #### 10. Key Management Requires Attention
+        It is easy to create and configure new SSH keys. In the default configuration, OpenSSH allows any user to configure new keys. The keys are permanent access credentials that remain valid even after the user's account has been deleted.<br><br>
+        In organizations with more than a few dozen users, SSH keys easily accumulate on servers and service accounts over the years. We have seen enterprises with several million keys granting access to their production servers. It only takes one leaked, stolen, or misconfigured key to gain access.<br><br>
+        In any larger organization, use of SSH key management solutions is almost necessary. SSH keys should also be moved to root-owned locations with proper provisioning and termination processes. For more information, see how to manage SSH keys. A widely used SSH key management tool for OpenSSH is Universal SSH Key Manager.<br><br>
+        Practically all cybersecurity regulatory frameworks require managing who can access what. SSH keys grant access, and fall under this requirement. This, organizations under compliance mandates are required to implement proper management processes for the keys. NIST IR 7966 is a good starting point.
+
+        #### 11. Make Sure There Is Enough Randomness
+        It is important to ensure there is enough unpredictable entropy in the system when SSH keys are generated. There have been incidents when thousands of devices on the Internet have shared the same host key when they were improperly configured to generate the key without proper randomness.
+          - ##### General Purpose Systems
+          On general purpose computers, randomness for SSH key generation is usually not a problem. It may be something of an issue when initially installing the SSH server and generating host keys, and only people building new Linux distributions or SSH installation packages generally need to worry about it.<br><br>
+          Our recommendation is to collect randomness during the whole installation of the operating system, save that randomness in a random seed file. Then boot the system, collect some more randomness during the boot, mix in the saved randomness from the seed file, and only then generate the host keys. This maximizes the use of the available randomness. And make sure the random seed file is periodically updated, in particular make sure that it is updated after generating the SSH host keys.<br><br>
+          Many modern general-purpose CPUs also have hardware random number generators. This helps a lot with this problem. The best practice is to collect some entropy in other ways, still keep it in a random seed file, and mix in some entropy from the hardware random number generator. This way, even if one of them is compromised somehow, the other source of randomness should keep the keys secure.<br><br>
+          - ##### Embedded Devices and Internet of Things
+          Available entropy can be a real problem on small IoT devices that don't have much other activity on the system. They may just not have the mechanical randomness from disk drive mechanical movement timings, user-caused interrupts, or network traffic. Furthermore, embedded devices often run on low-end processors that may not have a hardware random number generator.<br><br>
+          The availability of entropy is also critically important when such devices generate keys for HTTPS.<br><br>
+          Our recommendation is that such devices should have a hardware random number generator. If the CPU does not have one, it should be built onto the motherboard. The cost is rather small.
+
+  - page:
+      file_name: 'ansible-variables-role-priority.html'
+      head_title: 'How to variables priorities work on Ansible Roles'
+    title: 'How to variables priorities work on Ansible Roles'
+    description: 'Roles let you automatically load related vars_files, tasks, handlers, and other Ansible artifacts based on a known file structure. Once you group your content in roles, you can easily reuse them and share them with other users.'
+    date: '4/6/2021'
+    tags:
+      - 'infrastructure'
+      - 'ansible'
+      - 'python'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+
+        Here we are going to explain how we follow variables prioriries on our Roles.
+
+        #### 1. Variables Priorities and “Moegui” approach
+
+        By default, variables set in the Default folder have a lower priority than variables set in the `vars` folder. But then, where we put our default variable? Although there are a lot of unofficial approaches to that, we have defined the following:<br><br>
+        We place all default variables dependent on the environment or any condition in the `vars` folder. Everything else, all the standard, shared variables we would need, and anything we want the user of our Role to override should go in `defaults/main.yml`.
+
+        ##### Example:
+        `defaults\main.yml`
+        ```bash
+        pip_packages_install:
+          - docker
+        ```
+        `vars\centos.yml`
+        ```bash
+        packages_install:
+          - epel-release
+          - docker-ce
+          - python-pip
+          - python-docker
+        ```
+        `vars\ubuntu.yml`
+        ```bash
+        packages_install:
+        - wget
+        - docker-ce
+        - python-pip
+        - python-docker
+        ```
+        `main\main.yml`
+        ```bash
+        - name: gather os specific variables
+          include_vars: "{{ ansible_distribution }}"
+          
+        - name: Install base packages
+          package:
+            name : "{{ packages_install }}"
+            state : present
+            update_cache : yes
+
+        - name: Install Docker Python
+          pip:
+            name: "{{ pip_packages_install }}"
+            state: present
+        ```
+        In the example above, the `main\main.ym` override the variable packages_install depending on the S.O. version, but the variable pip_packages_install is common (default) for both versions.
+
+  - page:
+      file_name: 'openshift-4-quick-start.html'
+      head_title: 'How to getting started with OpenShift 4'
+    title: 'How to getting started with OpenShift 4'
+    description: 'We are covering here how to getting started with OpenShift 4 on Amazon Web Services.'
+    date: '4/6/2021'
+    tags:
+      - 'orchestation'
+      - 'openshift'
+      - 'aws'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+
+        How to getting started with OpenShift 4 on AWS.
+
+        #### 1. Prerequisites
+
+          - AWS IAM User with Administrator permissions. 
+          - AWS VPC with 
+            - AWS::EC2::VPC 
+            - AWS::EC2::VPCEndpoint (only if we don’t use NAT Gateway for Private Subnets ) 
+            - AWS::EC2::Subnet 
+            - AWS::EC2::InternetGateway 
+            - AWS::EC2::VPCGatewayAttachment 
+            - AWS::EC2::RouteTable 
+            - AWS::EC2::Route 
+            - AWS::EC2::SubnetRouteTableAssociation 
+            - AWS::EC2::NatGateway 
+            - AWS::EC2::EIP 
+          - SSH Key
+            - `$ ssh-keygen -t rsa -b 4096 -N '' -f <path>/<file_name>`
+          - OpenShift Installation Program
+            - `$ curl -L https://github.com/openshift/okd/releases/download/4.6.0-0.okd-2021-01-23-132511 /openshift-install-linux-4.6.0-0.okd-2021-01-23-132511.tar.gz -o openshift-install-linux.tar.gz`
+            - `$ tar xvf openshift-install-linux.tar.gz`
+
+        #### 2. Deploy
+
+        Using this `install-config.yaml`, we need to customize our new cluster.
+
+        ```bash
+        apiVersion: v1
+        baseDomain: example.com
+        metadata:
+          name: xxx
+        compute:
+        - architecture: amd64
+          hyperthreading: Enabled
+          name: worker
+          platform: {}
+          replicas: 2
+        controlPlane:
+          architecture: amd64
+          hyperthreading: Enabled
+          name: master
+          platform: {}
+          replicas: 3
+        networking:
+          clusterNetwork:
+          - cidr: 10.215.0.0/16
+            hostPrefix: 24
+          machineNetwork:
+          - cidr: 172.31.0.0/16
+          networkType: OpenShiftSDN
+          serviceNetwork:
+          - 10.0.215.0/24
+        platform:
+          aws:
+            region: us-east-1
+            subnets: 
+            - subnet-055b659fb7c6eeb33
+            - subnet-0b144438bdc337c65
+            - subnet-034c18415320d1d15
+            - subnet-0a8a70ff486365b42
+            - subnet-0499dae6591e03ea9
+            - subnet-08f4e1f0b1ec77208
+        fips: false
+        publish: External
+        pullSecret: '{"auths":{"fake":{"auth": "bar"}}}'
+        sshKey: 'ssh-rsa AAA..'
+        ```
+
+        Use your new `install-config.yaml` with the OpenShift Installer 
+
+        `$ ./openshift-install create cluster --dir=<installation_directory> --log-level=info`
+
+        You will get something like this…
+
+        ```bash
+        ... 
+
+        INFO Install complete! 
+
+        INFO To access the cluster as the system:admin user when using 'oc',  run 'export KUBECONFIG=/home/myuser/install_dir/auth/kubeconfig' INFO Access the OpenShift web-console here: https://console-openshift console.apps.mycluster.example.com 
+
+        INFO Login to the console with user: "kubeadmin", and password: "xxx" 
+
+        INFO Time elapsed: 36m22s
+        ```
+
+        #### 3. Connect
+
+          - Get OC Client<br>
+          `$ curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz`
+          - Untar OC Client to your $PATH<br>
+          `$ tar xvzf oc.tar.gz`
+          - Export your new KUBECONFIG<br>
+          `$ export KUBECONFIG=<installation_directory>/auth/kubeconfig`
+
+        #### 4. Destroy
+
+        From the deploy folder
+
+        `$ ./openshift-install destroy cluster --dir=<installation_directory> --log-level=info`
+
+  - page:
+      file_name: 'cloudflare-origin-ca.html'
+      head_title: 'How to configure Cloudflare Origin CA'
+    title: 'How to configure Cloudflare Origin CA'
+    description: 'When you use CloudFlare Origin CA for a site-to-site complete encryption, you must need to install these certificates in your own environment.'
+    date: '4/6/2021'
+    tags:
+      - 'security'
+      - 'cloudflare'
+      - 'certificates'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+
+        You should import these PEM certificates into your Trusted Authorities. Depend on the Operating System, 
+
+        - in Windows you should use the Certificates Manager Snap-In and import the certificate under Trusted Root Certifications Authorities. ( User )
+        - In Linux / Mac, you should import it directly in your Browser.
+          - In Chrome, go to Security / Manage Certificates / Authorities, [Import]
+          - In Firefox, go to Privacy & Security, Certificates, View Certificates, Authorities, [Import]
+
+        #### RSA
+        ```bash
+        -----BEGIN CERTIFICATE-----
+        MIIEADCCAuigAwIBAgIID+rOSdTGfGcwDQYJKoZIhvcNAQELBQAwgYsxCzAJBgNV
+        BAYTAlVTMRkwFwYDVQQKExBDbG91ZEZsYXJlLCBJbmMuMTQwMgYDVQQLEytDbG91
+        ZEZsYXJlIE9yaWdpbiBTU0wgQ2VydGlmaWNhdGUgQXV0aG9yaXR5MRYwFAYDVQQH
+        Ew1TYW4gRnJhbmNpc2NvMRMwEQYDVQQIEwpDYWxpZm9ybmlhMB4XDTE5MDgyMzIx
+        MDgwMFoXDTI5MDgxNTE3MDAwMFowgYsxCzAJBgNVBAYTAlVTMRkwFwYDVQQKExBD
+        bG91ZEZsYXJlLCBJbmMuMTQwMgYDVQQLEytDbG91ZEZsYXJlIE9yaWdpbiBTU0wg
+        Q2VydGlmaWNhdGUgQXV0aG9yaXR5MRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMRMw
+        EQYDVQQIEwpDYWxpZm9ybmlhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
+        AQEAwEiVZ/UoQpHmFsHvk5isBxRehukP8DG9JhFev3WZtG76WoTthvLJFRKFCHXm
+        V6Z5/66Z4S09mgsUuFwvJzMnE6Ej6yIsYNCb9r9QORa8BdhrkNn6kdTly3mdnykb
+        OomnwbUfLlExVgNdlP0XoRoeMwbQ4598foiHblO2B/LKuNfJzAMfS7oZe34b+vLB
+        yrP/1bgCSLdc1AxQc1AC0EsQQhgcyTJNgnG4va1c7ogPlwKyhbDyZ4e59N5lbYPJ
+        SmXI/cAe3jXj1FBLJZkwnoDKe0v13xeF+nF32smSH0qB7aJX2tBMW4TWtFPmzs5I
+        lwrFSySWAdwYdgxw180yKU0dvwIDAQABo2YwZDAOBgNVHQ8BAf8EBAMCAQYwEgYD
+        VR0TAQH/BAgwBgEB/wIBAjAdBgNVHQ4EFgQUJOhTV118NECHqeuU27rhFnj8KaQw
+        HwYDVR0jBBgwFoAUJOhTV118NECHqeuU27rhFnj8KaQwDQYJKoZIhvcNAQELBQAD
+        ggEBAHwOf9Ur1l0Ar5vFE6PNrZWrDfQIMyEfdgSKofCdTckbqXNTiXdgbHs+TWoQ
+        wAB0pfJDAHJDXOTCWRyTeXOseeOi5Btj5CnEuw3P0oXqdqevM1/+uWp0CM35zgZ8
+        VD4aITxity0djzE6Qnx3Syzz+ZkoBgTnNum7d9A66/V636x4vTeqbZFBr9erJzgz
+        hhurjcoacvRNhnjtDRM0dPeiCJ50CP3wEYuvUzDHUaowOsnLCjQIkWbR7Ni6KEIk
+        MOz2U0OBSif3FTkhCgZWQKOOLo1P42jHC3ssUZAtVNXrCk3fw9/E15k8NPkBazZ6
+        0iykLhH1trywrKRMVw67F44IE8Y=
+        -----END CERTIFICATE-----
+        ```
+        #### ECC
+        ```bash
+        -----BEGIN CERTIFICATE-----
+        MIICiTCCAi6gAwIBAgIUXZP3MWb8MKwBE1Qbawsp1sfA/Y4wCgYIKoZIzj0EAwIw
+        gY8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T
+        YW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZEZsYXJlLCBJbmMuMTgwNgYDVQQL
+        Ey9DbG91ZEZsYXJlIE9yaWdpbiBTU0wgRUNDIENlcnRpZmljYXRlIEF1dGhvcml0
+        eTAeFw0xOTA4MjMyMTA4MDBaFw0yOTA4MTUxNzAwMDBaMIGPMQswCQYDVQQGEwJV
+        UzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEZ
+        MBcGA1UEChMQQ2xvdWRGbGFyZSwgSW5jLjE4MDYGA1UECxMvQ2xvdWRGbGFyZSBP
+        cmlnaW4gU1NMIEVDQyBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwWTATBgcqhkjOPQIB
+        BggqhkjOPQMBBwNCAASR+sGALuaGshnUbcxKry+0LEXZ4NY6JUAtSeA6g87K3jaA
+        xpIg9G50PokpfWkhbarLfpcZu0UAoYy2su0EhN7wo2YwZDAOBgNVHQ8BAf8EBAMC
+        AQYwEgYDVR0TAQH/BAgwBgEB/wIBAjAdBgNVHQ4EFgQUhTBdOypw1O3VkmcH/es5
+        tBoOOKcwHwYDVR0jBBgwFoAUhTBdOypw1O3VkmcH/es5tBoOOKcwCgYIKoZIzj0E
+        AwIDSQAwRgIhAKilfntP2ILGZjwajktkBtXE1pB4Y/fjAfLkIRUzrI15AiEA5UCL
+        XYZZ9m2c3fKwIenMMojL1eqydsgqj/wK4p5kagQ=
+        -----END CERTIFICATE-----
+        ```
+  - page:
+      file_name: 'install-nodejs-with-nvm.html'
+      head_title: 'How to install NodeJS with NVM on Linux'
+    title: 'How to install NodeJS with NVM on Linux'
+    description: 'Sometimes applications require a specific version of Node.js to work. Nvm allows installing several versions of Node.js to the same system.'
+    date: '28/7/2021'
+    tags:
+      - 'programming'
+      - 'nodejs'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+
+        #### 1. Get NVM from source
+
+        Usually, you should get it from a released version `tag` but it's also ok to get from `master`
+
+        ```bash
+        # If you don't have `curl`, you can replace it with `wget -qO-`
+        $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/nvm.sh | bash
+        ```
+
+        #### 2. Check your configuration
+
+        You will have something like this in your `~/.bashrc`, if not, repeat steap 1.
+
+        ```bash
+        export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+        ```
+
+        #### 3. Reload and Test
+
+        Now, you have to reload your `bash` configuration and test `nvm` command is there.
+
+        ```bash
+        $ source ~/.bashrc
+        # Or
+        $ logout ( and ssh again)
+
+        # Test the command
+        $ nvm ls
+        # Here, you will see all NodeJS version installed in your computer
+        ```
+
+        #### 4. Install your versions
+
+        With NVM working, you can install all version you want.
+
+        ```bash
+        $ nvm install v14.17.0
+        $ nvm install v16.2.0
+        ```
+
+        More information about usage, [here](https://github.com/nvm-sh/nvm#usage) 
+  - page:
+      file_name: 'google-cloud-shell-development-environment.html'
+      head_title: 'How to use Google Cloud Shell as a Development Environment'
+    title: 'How to use Google Cloud Shell as a Development Environment'
+    description: 'Google offer a development environment for free!! Just follow this instruction to know how to start working on it with Visual Studio Code.'
+    date: '30/7/2021'
+    tags:
+      - 'programming'
+      - 'linux'
+    author:
+      name: 'Luciano Giacchetta'
+      avatar: '@@autopath/assets/img/100x100/luciano.jpg'
+    content: |
+        ## Instructions
+
+        #### 1. Get a Google Account
+
+        Sure, to start using this Cloud Shell environment you need a Google Account.
+        You can use your own Gmail account or your Google Workspace/Suite/Future_Names
+
+        You don't need to do anything from the Google Cloud Console, you just need to install the `gcloud` CLI in your local.
+
+        [Installing Google Cloud SDK](https://cloud.google.com/sdk/docs/install)
+
+        Before jump into step 2, be sure that you have `gcloud init` and properly authenticated.
+
+        #### 2. Get the Script
+
+        Google Cloud Shell is an ephemeral virtual instance so you need to place anything on your `$HOME` folder.
+
+        _Ephemeral = "Lasting for a very short time, top 12hrs. Next time, you will get a fresh new instance"_
+
+        We need to get the instance IP address, so this scrip will do it. Start a fresh new instance, create the SSH Keys
+        and modify your `~/.ssh/config` every time you run the script.
+
+        Copy this script in your local and change the permissions with `chmod +x cloudshell.sh`
+
+        ```bash
+        #!/bin/bash
+        SLEEP=30
+        MY_SSH_CONFIG="$HOME/.ssh/config"
+
+        /usr/bin/gcloud cloud-shell ssh --authorize-session --dry-run
+        sleep $SLEEP
+        CLOUDSHELL_HOST=`/usr/bin/gcloud cloud-shell ssh --authorize-session \
+          --command="dig TXT +short o-o.myaddr.l.google.com @ns1.google.com"`
+        sed -i "s/HostName.*/HostName\ $CLOUDSHELL_HOST/g" $MY_SSH_CONFIG
+        ```
+
+        #### 3. Configure your ssh_config
+
+        Before execute the script, we need to change the __ssh_config__ file in your local environment
+
+        ```
+        Host cloudshell
+          HostName "35.185.95.186"
+          User luciano
+          Port 6000
+          DynamicForward 65065
+          ServerAliveInterval 5
+          ServerAliveCountMax 3
+          Compression yes
+          StrictHostKeyChecking no
+          UserKnownHostsFile /dev/null
+          ForwardAgent yes
+          LogLevel ERROR          
+          IdentityFile ~/.ssh/google_compute_engine
+        ```
+
+        #### 4. Connect with SSH
+
+        Now, you can connect using `ssh` directly
+
+        ```bash
+        $ ssh cloudshell
+          Welcome to Cloud Shell! Type "help" to get started.
+          To set your Cloud Platform project in this session use “gcloud config set project [PROJECT_ID]”
+        ```
+
+        Easy, right!! You can also use it with your Visual Studio Code installing just one extension.
+
+        - ms-vscode-remote.remote-ssh
+
+        Once installed, you can select from the *Remote Explorer* tab your Host and connect to a folder inside. 
+
+        More about [Google Cloud Shell](https://cloud.google.com/shell/docs)
+
+        Enjoy!!
+
+
+
+

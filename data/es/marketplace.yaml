@@ -1,0 +1,40 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - AWS Stacks Seleccionados'
+
+# -------------------------------------- #
+# ------------ Hero Section ------------ #
+# -------------------------------------- #
+
+hero__title: 'Stacks Seleccionados'
+hero__description: 'Encuentre su Stack y mejore su flujo de trabajo, directamente dentro de Moegui.'
+hero__input_search: 'Busque su Stack'
+
+# -------------------------------------- #
+# ----------- Sidebar Section ---------- #
+# -------------------------------------- #
+
+sidebar__explore_title: 'Explorar'
+# This section defines the categories that will be used to display the products in the main view.
+# If a category does not have any product assigned, it will not be shown in this menu
+sidebar__explore_categories:
+  - 'Top rated'
+  - 'Featured'
+  - 'Daily tools'
+  - 'New'
+  - 'Channels'
+
+sidebar__categories_title: 'Categorias'
+# The elements that make up the categories menu are collected from the variable 'product_list'
+
+# -------------------------------------- #
+# ---------- Product Section ----------- #
+# -------------------------------------- #
+
+products__button_view_all: 'Ver Todos'
+products__button_view_all__clicked: 'Ver Menos'
+
+products__button_close_search: 'Cerrar'

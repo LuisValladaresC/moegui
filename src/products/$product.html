@@ -1,0 +1,229 @@
+---
+generate:
+  collection: marketplace_product.products
+  variable: product
+  filename: '/products/{{product.page.file_name}}'
+---
+
+{% extends "./partials/layout.html" %}
+
+{% block page_title %} 
+  <title>{{ product.page.head_title }}</title>
+{% endblock %}
+
+{% block css_plugins %}
+  <!-- CSS Implementing Plugins -->
+  <!-- bundlecss:vendor [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/vendor/fontawesome/css/all.min.css"> <!-- General --> {# Content.FontAwesome #}
+  <link rel="stylesheet" href="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css"> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <link rel="stylesheet" href="@@autopath/node_modules/select2/dist/css/select2.min.css"> <!-- Review Section --> {# OtherLibraries.Select2 #}
+{% endblock %}
+
+{% block content %}
+  {% include "./partials/header.html" %}
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Product Description -->
+    <div class="container space-top-3 space-top-lg-4 space-bottom-2 space-bottom-lg-3">
+      <!-- Content -->
+      <div class="row">
+        <!-- Sidebar Section --> {# SidebarExamples.Component#3 #}
+        <div class="col-md-4 col-lg-3 mb-5 mb-md-0">
+          <div class="row mr-lg-2">
+            <div class="col-12 mb-8">
+              <div class="text-center mx-auto mb-4">
+                <img class="img-fluid w-100" src="{{ product.image }}" alt="{{ product.name }}" width="130">
+              </div>
+              <a class="btn btn-sm btn-block btn-primary transition-3d-hover" href="{{ product.marketplace_url }}" target="_blank">{{ marketplace_product.sidebar__action_button }}</a>
+            </div>
+
+            <div class="col col-md-12 mb-md-7">
+              <h3 class="h4">{{ marketplace_product.sidebar__categories_section }}</h3>
+              {% for category in product.categories %}
+                <span class="d-inline-block mr-1 mb-2"><button class="btn btn-xs btn-soft-secondary">{{ category }}</button></span>
+              {% endfor %}
+            </div>
+
+            {% if product.features | length >= 1 %}
+            <div class="col-auto col-md-12 d-md-block">
+              <h3 class="h4">{{ marketplace_product.sidebar__features_section }}</h3>
+              <ul class="list-unstyled font-size-1">
+                {% for feature in product.features %}
+                  <li><a class="text-body" href="{{ feature.url }}" target="_blank"><i class="fas fa-angle-right mr-1"></i> {{ feature.name }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        <!-- End Sidebar Section -->
+
+        <!-- Nav Section --> {# CustomComponent #}
+        <div class="col-md-8 col-lg-9 column-divider-md">
+          <div class="ml-lg-2">
+            <!-- Title -->
+            <div class="mb-5">
+              <h1>{{ product.name }}</h1>
+            </div>
+            <!-- End Title -->
+
+            <!-- Nav Classic -->
+            <ul class="nav nav-classic nav-rounded nav-justified border" id="pills-tab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link font-weight-bold active" id="pills-one-tab" data-toggle="pill" href="#information" role="tab" aria-controls="information" aria-selected="true">
+                  <div class="d-md-flex justify-content-md-center align-items-md-center">
+                    <figure class="d-none d-md-block w-100 max-w-5rem mr-3">
+                      <img class="img-fluid" src="{{ marketplace_product.nav__info_section__icon }}">
+                    </figure>
+                    <h2 class="h5 text-secondary mb-0">{{ marketplace_product.nav__info_section }}</h2>
+                  </div>
+                </a>
+              </li>
+              {% if product.pricing | length >= 1 %}
+              <li class="nav-item">
+                <a class="nav-link font-weight-bold" id="pills-two-tab" data-toggle="pill" href="#pricing" role="tab" aria-controls="pricing" aria-selected="false">
+                  <div class="d-md-flex justify-content-md-center align-items-md-center">
+                    <figure class="d-none d-md-block w-100 max-w-5rem mr-3">
+                      <img class="img-fluid" src="{{ marketplace_product.nav__pricing_section__icon }}">
+                    </figure>
+                    <h2 class="h5 text-secondary mb-0">{{ marketplace_product.nav__pricing_section }}</h2>
+                  </div>
+                </a>
+              </li>
+              {% endif %}
+            </ul>
+            <!-- End Nav Classic -->
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="pills-tabContent">
+              <!-- Info Section -->
+              <div class="tab-pane fade pt-6 show active" id="information" role="tabpanel" aria-labelledby="pills-one-tab">
+                {{ product.content | markdown | safe }}
+              </div>
+              <!-- End Info Section -->
+
+              {% if product.pricing | length >= 1 %}
+                <!-- Pricing Section --> {# Pricing.Component#10 #}
+                <div class="tab-pane fade pt-6" id="pricing" role="tabpanel" aria-labelledby="pills-two-tab">
+                  <h4 class="mb-3">{{ marketplace_product.pricing__title }}</h4>
+
+                  {% for price in product.pricing %}
+                    <!-- Pricing -->
+                    <div class="custom-control custom-radio custom-control-inline checkbox-outline checkbox-icon w-100">
+                      <input type="radio" id="pricingRadio{{loop.index}}" name="price" value="{{ price.amount }}" class="custom-control-input checkbox-outline-input checkbox-icon-input" {% if loop.first %} checked {% endif %}>
+                      <label class="checkbox-outline-label checkbox-icon-label w-100 rounded-lg p-4" for="pricingRadio{{loop.index}}">
+                        <span class="row">
+                          <span class="col-sm-3 order-sm-2 text-sm-right mb-3 mb-sm-0">
+                            <span class="d-block mb-2">
+                              <span class="text-primary font-weight-bold align-top">$</span>
+                              <span class="font-size-3 text-primary font-weight-bold">{{ price.amount }}</span>
+                              {% if price.duration %} <span class="font-size-1">/ {{ price.duration }}</span> {% endif %}
+                            </span>
+                          </span>
+                          <span class="col-sm-9 order-sm-1">
+                            <span class="d-block h3 mb-1">{{ price.name }}</span>
+                            <span class="d-block">{{ price.description }}</span>
+                          </span>
+                        </span>
+                      </label>
+                    </div>
+                    <!-- End Pricing -->
+                  {% endfor %}
+
+                  <div class="text-center mt-5">
+                    {% if marketplace_product.pricing__additional_info %}
+                    <div class="mb-5">
+                      <p class="font-size-1">{{ marketplace_product.pricing__additional_info | safe }}</p>
+                    </div>
+                    {% endif %}
+                    <button type="submit" class="btn btn-primary btn-wide transition-3d-hover">{{ marketplace_product.pricing__submit_button }}</button>
+                  </div>
+                </div>
+                <!-- End Pricing Section -->
+              {% endif %}
+            </div>
+            <!-- End Tab Content -->
+          </div>
+        </div>
+        <!-- End Nav Section -->
+      </div>
+      <!-- End Content -->
+    </div>
+    <!-- End Products Description -->
+
+    <!-- Breadcrumb Section --> {# Breadcrumb.Component#1 #}
+    <div class="bg-dark" style="background-image: url(@@autopath/assets/svg/components/abstract-shapes-20.svg);">
+      <div class="container space-1 space-lg-2">
+        <div class="row align-items-center">
+          <div class="col">
+            <div class="d-none d-lg-block">
+              <h3 class="h3 text-white mb-0">{{ marketplace_product.breadcrumb__message }}</h3>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="d-none d-lg-block">
+              <a class="btn btn-sm btn-block btn-primary transition-3d-hover" href="{{ product.marketplace_url }}" target="_blank">{{ marketplace_product.breadcrumb__action_button }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <hr class="opacity-xs my-0">
+      </div>
+    </div>
+    <!-- End Breadcrumb Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  {% include "./partials/footer.html" %}
+
+  {% include "./partials/go-to.html" %}
+{% endblock %}
+
+{% block js_plugins %}
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script> <!-- Header --> {# HSLibraries.Headers #}
+  <script src="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <script src="@@autopath/node_modules/select2/dist/js/select2.full.min.js"></script> <!-- Review --> {# OtherLibraries.Select2 #}
+  <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script> <!-- Footer --> {# OtherLibraries.Unfold #}
+  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script> <!-- Go-to --> {# HSLibraries.Go-to #}
+
+  <!-- JS Front -->
+  <!-- bundlejs:theme [@@autopath] -->
+  <script src="@@autopath/assets/js/hs.core.js"></script>
+  <script src="@@autopath/assets/js/hs.select2.js"></script> <!-- Review Section --> {# OtherLibraries.Select2 #}
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF SELECT2
+      // =======================================================
+      $('.js-custom-select').each(function () {
+        var select2 = $.HSCore.components.HSSelect2.init($(this));
+      });
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+
+  {% from "./partials/footer.html" import footerLanguageScript with context %}
+  {{ footerLanguageScript() }}
+{% endblock %}

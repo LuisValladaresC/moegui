@@ -1,0 +1,87 @@
+---
+# -------------------------------------- #
+# ------------- Information ------------ #
+# -------------------------------------- #
+
+info__logo: '@@autopath/assets/svg/theme-custom/logos/moegui_white.svg'
+info__address: 
+  url: '@@autopathwithlang/contact.html#map'
+  content: | # You can use HTML
+    100 E 7th Street <br>
+    Suite #0001 <br>
+    Cheyenne, WY, USA
+info__phone: 
+  url: '#'
+  content: | # You can use HTML
+    1-800-643-4500 <br>
+    English / Español
+
+info__copyright: "© 2021 Moegui. Reservados todos los derechos."
+info__additional_content: "Cuando visita o interactúa con nuestros sitios, servicios o herramientas, nosotros o nuestros proveedores de servicios autorizados podemos usar cookies para almacenar información para ayudarlo a brindarle una experiencia mejor, más rápida y segura y con fines de marketing."
+
+
+# -------------------------------------- #
+# --------------- Navbar --------------- #
+# -------------------------------------- #
+
+# The "url" property in the links is optional, but if it is not defined it will be shown disabled
+nav__sections:
+  - name: "Empresa"
+    items:
+      - link: "Sobre"
+        url: "@@autopathwithlang/about.html"
+      - link: "Contacto"
+        url: "@@autopathwithlang/contact.html"
+      - link: "Carreras"
+        url: "@@autopathwithlang/careers"
+      - link: "Blog"
+        url: "@@autopathwithlang/blog"
+      - link: "Contratenos"
+        url: "@@autopathwithlang/hire-us.html"
+  - name: "Servicios"
+    items:
+      - link: "DevOps"
+        url: "@@autopathwithlang/services/devops.html"
+      - link: "SecOps"
+        url: "@@autopathwithlang/services/secops.html"
+      - link: "TestOps"
+        url: "@@autopathwithlang/services/testops.html"
+  - name: "Productos"
+    items:
+      - link: "Moegui STK for ElasticSearch"
+        url: "@@autopathwithlang/products/stack-for-elasticsearch.html"
+      - link: "Moegui STK for RabbitMQ"
+        url: ""
+      - link: "Moegui STK for MongoDB"
+        url: ""
+  - name: "Recursos"
+    items:
+      - link: "Ayuda"
+        url: "@@autopathwithlang/help/"
+      - link: "Documentacion"
+        url: "#"
+
+# The "url" property in the links is optional, but if it is not defined it will be shown disabled
+nav__footer_items:
+  - link: "Privacy & Policy"
+    url: "@@autopathwithlang/privacy.html"
+  - link: "Terms"
+    url: "@@autopathwithlang/terms.html"
+  - link: "Site Map"
+    url: "#"
+
+nav__social_networks:
+  linkedin: "#"
+  instagram: "#"
+  twitter: "#"
+  github: "#"
+  gitlab: "#"
+
+# -------------------------------------- #
+# -------------- Languages ------------- #
+# -------------------------------------- #
+
+languages:
+  english: 'English'
+  spanish: 'Español'
+  portuguese: 'Português'

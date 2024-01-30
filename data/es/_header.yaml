@@ -1,0 +1,66 @@
+---
+# -------------------------------------- #
+# --------------- NavBar --------------- #
+# -------------------------------------- #
+
+nav__logo: '@@autopath/assets/svg/theme-custom/logos/moegui.svg'
+nav__logo_white: '@@autopath/assets/svg/theme-custom/logos/moegui_white.svg'
+
+# 3 possible designs have been created for the different navigation links:
+# Design 1: Normal navigation link. Requires the `link` and `url` properties
+# Design 2: Submenu with multiple possible links, each one includes an icon, title, and optional description. Requires the `link` and` items` properties. You can use HTML in the `items[n].description` property
+# Design 3: Submenu with a promo card and multiple possible links, each one includes an icon, title, and optional description. Requires the `link`,` items`, and `card` properties. You can use HTML in the `items[n].description` and `card.content` properties
+# The "url" property in the links is optional, but if it is not defined it will be shown disabled
+nav__items:
+  - link: 'Productos'
+    items:
+      - title: 'Moegui STK for ElasticSearch'
+        description: |
+          <span class="badge badge-success badge-pill">New</span>'
+        url: '@@autopathwithlang/products/stack-for-elasticsearch.html'
+        icon: '@@autopath/assets/svg/icons/icon-67.svg'
+        
+      - title: 'Moegui STK for RabbitMQ'
+        description: |
+          Pronto...
+        url: ''
+        icon: '@@autopath/assets/svg/icons/icon-45.svg'
+
+      - title: 'Moegui STK for MongoDB'
+        description: |
+          Pronto...
+        url: ''
+        icon: '@@autopath/assets/svg/icons/icon-4.svg'
+    card:
+      url: '@@autopathwithlang/products'
+      background: '@@autopath/assets/img/theme-custom/components/card1.jpg'
+      content: |
+        Instala tu Stack desde el Marketplace en minutos.
+      aditional_info: ''
+
+  - link: 'Servicios'
+    items:
+      - title: 'DevOps'
+        description: 'Desarrollo & Operaciones'
+        url: '@@autopathwithlang/services/devops.html'
+        icon: '@@autopath/assets/svg/icons/icon-3.svg'
+        
+      - title: 'SecOps'
+        description: 'Seguridad & Operaciones'
+        url: '@@autopathwithlang/services/secops.html'
+        icon: '@@autopath/assets/svg/icons/icon-20.svg'
+
+      - title: 'TestOps'
+        description: 'Testing & Operaciones'
+        url: '@@autopathwithlang/services/testops.html'
+        icon: '@@autopath/assets/svg/icons/icon-1.svg'
+
+  - link: 'Blog'
+    url: '@@autopathwithlang/blog'
+
+  - link: 'Carreras'
+    url: '@@autopathwithlang/careers'
+
+nav__button:
+  text: '¡Cotiza ya!'
+  url: '@@autopathwithlang/hire-us.html'

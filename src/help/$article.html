@@ -1,0 +1,286 @@
+---
+generate:
+  collection: help_article.articles
+  variable: article
+  filename: '/help/{{article.page.file_name}}'
+---
+
+{% extends "./partials/layout.html" %}
+
+{% block page_title %} 
+  <title>{{ article.page.head_title }}</title>
+{% endblock %}
+
+{% block css_plugins %}
+  <!-- CSS Implementing Plugins -->
+  <!-- bundlecss:vendor [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/vendor/fontawesome/css/all.min.css"> <!-- General --> {# Content.FontAwesome #}
+  <link rel="stylesheet" href="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css"> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+{% endblock %}
+
+{% block content %}
+  {% include "./partials/header.html" %}
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Hero Section --> {# Hero.Component#30 #}
+    <div id="hero" class="bg-light">
+      <div class="container">
+        <div class="row justify-content-lg-between">
+          <div class="col-lg-6 space-2 space-top-lg-5 space-bottom-lg-3">
+            <div class="mb-3">
+              <h1>{{ help.hero__title }}</h1>
+            </div>
+
+            <!-- Form -->
+            <form id="searchForm">
+              <div class="card p-2 mb-3">
+                <div class="form-row input-group-borderless">
+                  <div class="col-sm">
+                    <input type="search" name="search" class="form-control shadow-none" placeholder="{{ help.hero__search_input.placeholder }}" aria-label="{{ help.hero__search_input.placeholder }}">
+                  </div>
+                  <div class="col-sm-auto">
+                    <button type="submit" class="btn btn-block btn-primary">
+                      <i class="fas fa-search"></i>
+                      <span class="d-sm-none ml-1">{{ help.hero__search_input.label }}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!-- End Form -->
+          </div>
+
+          <div class="col-lg-6 align-self-lg-end d-none d-lg-inline-block">
+            <!-- SVG Icon -->
+            <figure class="mb-n7 ml-lg-4">
+              <img class="img-fluid" src="{{ help.hero__image }}">
+            </figure>
+            <!-- End SVG Icon -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Article Section -->
+    <div class="container space-bottom-2">
+      <div class="w-lg-80 mx-lg-auto">
+        <!-- Breadcrumbs -->
+        <div id="breadcrumbs" class="space-top-2 space-top-lg-3 space-bottom-1">
+          <nav aria-label="breadcrumb">
+            <ol id="breadcrumbsItems" class="breadcrumb breadcrumb-no-gutter font-size-1 mb-0">
+              <li class="breadcrumb-item"><a href="./">Help Center</a></li>
+              <li class="breadcrumb-item active" aria-current="page">{{ article.title }}</li>
+            </ol>
+          </nav>
+        </div>
+        <!-- End Breadcrumbs -->
+
+        <!-- Article -->
+        <div class="card card-bordered p-4 p-md-7">
+          <h1 class="h2">{{ article.title }}</h1>
+          <p>{{ article.description }}</p>
+
+          <!-- Article Authors -->
+          <div class="media mb-5">
+            <div class="avatar avatar-xs avatar-circle mr-2">
+              <img class="avatar-img" src="{{ article.author.avatar }}" alt="{{ article.author.name }}">
+            </div>
+
+            <div class="media-body">
+              <small class="d-block text-dark">
+                <span class="text-muted">Written by</span> {{ article.author.name }}
+              </small>
+              <small class="d-block text-dark">
+                <span class="text-muted">Updated on</span> {{ article.date | printDate('DDMMYYYY', 'MMMM DD') }}
+              </small>
+            </div>
+          </div>
+          <!-- End Article Authors -->
+
+          {{ article.content | markdown | safe }}
+
+          <div class="row border-top mt-6 pt-6">
+            <!-- Related Articles -->
+            <div class="col-md-5" id="relatedArticlesContainer">
+              <div class="mb-4">
+                <h3 class="h5">Related articles</h3>
+              </div>
+    
+              <ul class="list-unstyled list-article mb-0" id="relatedArticles">
+                {# Related articles inyected by Javascript #}
+              </ul>
+            </div>
+            <!-- End Related Articles -->
+
+            <!-- Lastest Articles -->
+            <div class="col-md-5 mt-6 mt-md-0" id="latestArticlesContainer">
+              <div class="mb-4">
+                <h3 class="h5">Latest articles</h3>
+              </div>
+    
+              <ul class="list-unstyled list-article" id="latestArticles">
+                {# Latest articles inyected by Javascript #}
+              </ul>
+            </div>
+            <!-- End Related Articles -->
+          </div>
+        </div>
+        <!-- End Article -->
+      </div>
+    </div>
+    <!-- End Article Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  {% include "./partials/footer.html" %}
+
+  {% include "./partials/go-to.html" %}
+{% endblock %}
+
+{% block js_plugins %}
+   <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script> <!-- Header --> {# HSLibraries.Headers #}
+  <script src="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <script src="@@autopath/node_modules/moment/min/moment.min.js"></script> <!-- Blog Section --> {# momentjs.com #}
+  <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script> <!-- Footer --> {# OtherLibraries.Unfold #}
+  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script> <!-- Go-to --> {# HSLibraries.Go-to #}
+
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+
+  <!-- JS Custom -->
+  <script>
+    /* ------------------------------------------------------------ */
+    /* --------------------- GLOBAL VARIABLES --------------------- */
+    /* ------------------------------------------------------------ */
+
+    const $relatedArticlesContainer = document.getElementById("relatedArticlesContainer");
+    const $relatedArticles = document.getElementById("relatedArticles");
+    const $latestArticlesContainer = document.getElementById("latestArticlesContainer");
+    const $latestArticles = document.getElementById("latestArticles");
+
+    var dataArticles;
+    var currentArticle;
+    var relatedArticles;
+    var latestArticles;
+
+    /* ------------------------------------------------------------ */
+    /* -------------- GLOBAL MANAGEMENT OF DATA LOAD -------------- */
+    /* ------------------------------------------------------------ */
+
+    (function loadData() {
+      dataArticles = getArticles();
+      currentArticle = getCurrentArticle();
+      relatedArticles = getRelatedArticles();
+      latestArticles = getLatestArticles();
+
+      if (relatedArticles.length >= 1) {
+        relatedArticlesTemplate = createTemplateHTML(relatedArticles, $relatedArticles);
+        $relatedArticles.innerHTML = relatedArticlesTemplate;
+      } else {
+        $relatedArticlesContainer.classList.add('d-none');
+      }
+
+      if (latestArticles.length >= 1) {
+        latestArticlesTemplate = createTemplateHTML(latestArticles, $latestArticles);
+        $latestArticles.innerHTML = latestArticlesTemplate;
+
+        if (relatedArticles.length >= 1) $latestArticlesContainer.classList.add('offset-md-2')
+      } else {
+        $latestArticlesContainer.classList.add('d-none');
+      }
+    })();
+
+
+    /* ------------------------------------------------------------ */
+    /* ---------- FUNCTIONS IN CHARGE OF DATA COLLECTION ---------- */
+    /* ------------------------------------------------------------ */
+
+    function getArticles(){
+      let articles = {{ help_article.articles | dump | safe }};
+
+      // Sort the articles by date (highest to lowest)
+      articles.sort((a, b) => moment(a.date, 'DDMMYYYY') <= moment(b.date, 'DDMMYYYY') ? 1 : -1)
+
+      return articles;
+    }
+
+    function getCurrentArticle(){
+      let currentArticle = {{ article | dump | safe }};
+
+      return currentArticle;
+    }
+
+    function getRelatedArticles(){
+      let relatedArticles = [];
+
+      dataArticles.map(article => {
+        if (JSON.stringify(article) != JSON.stringify(currentArticle) && relatedArticles.length <= 5) {
+          let includeTag = article.tags.find(tag => currentArticle.tags.includes(tag))
+          if (includeTag) relatedArticles.push(article);
+        }
+      })
+
+      return relatedArticles;
+    }
+
+    function getLatestArticles(){
+      let latestArticles = [];
+
+      dataArticles.map((article, index) => {
+        if (JSON.stringify(article) != JSON.stringify(currentArticle) && latestArticles.length <= 5) {
+          latestArticles.push(article);
+        }
+      })
+
+      return latestArticles;
+    }
+
+    /* ------------------------------------------------------------ */
+    /* --------- CREATION OF THE DIFFERENT HTML TEMPLATES --------- */
+    /* ------------------------------------------------------------ */
+  
+    function createTemplateHTML(data, $container) {
+      let templateHTML = "";
+  
+      switch ($container) {
+        // Article Template
+        case $relatedArticles:
+        case $latestArticles:
+          data.map(article => {
+            templateHTML += `<li><a class="link-underline" href="./${article.page.file_name}">${article.title}</a></li>`;
+          })
+        break;
+      }
+
+      return templateHTML;
+    }
+  </script>
+
+  {% from "./partials/footer.html" import footerLanguageScript with context %}
+  {{ footerLanguageScript() }}
+{% endblock %}

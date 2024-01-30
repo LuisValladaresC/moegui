@@ -1,0 +1,66 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - DevOps - SecOps - TestOps'
+
+# -------------------------------------- #
+# ------------ Hero Section ------------ #
+# -------------------------------------- #
+
+hero__title: 'Got a project for us?'
+hero__description: 'We help brands and platforms turn big ideas into beautiful digital products and experiences.'
+
+# -------------------------------------- #
+# ------------ Hire Us Form ------------ #
+# -------------------------------------- #
+
+form__inputs:
+  name:
+    label: 'Your name'
+    placeholder: 'Jeff Fisher'
+    error_messages:
+      required: 'Please enter your name.'
+      validation: 'The name must be at least 3 characters'
+  email:
+    label: 'Your email address'
+    placeholder: 'jackwayley@gmail.com'
+    error_messages: 
+      required: 'Please enter a valid email address.'
+      validation: 'Please enter a valid email address.'
+  company:
+    label: 'Your company name'
+    placeholder: 'JackWayley Inc.'
+  platform:
+    label: 'Choose your platform'
+    options:
+      - 'DevOps'
+      - 'SecOps'
+      - 'TestOps'
+  budget:
+    label: 'Tell us about your budget'
+    placeholder: '...'
+    options:
+      - '$10,000 - $25,000'
+      - '$25,000 - $50,000'
+      - '$50,000 - $100,000'
+      - '$100,000+'
+  message:
+    label: 'Tell us about your project'
+    placeholder: 'Hi there, I would like to ...'
+    error_messages: 
+      required: 'Please enter a message.'
+      validation: 'The message must be at least 10 characters'
+
+form__label_optional: '(optional)'
+
+form__submit: 'Let''s Start Working Together'
+form__info: 'We''ll get back to you in 1-2 business days.'
+
+form__success_modal:
+  title: 'Message sent!'
+  text: ''
+form__error_message:
+  title: 'Error sending message!'
+  text: 'Please try again later.'

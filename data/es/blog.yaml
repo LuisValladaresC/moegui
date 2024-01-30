@@ -1,0 +1,38 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - DevOps - SecOps - TestOps'
+
+# -------------------------------------- #
+# ------------ Hero Section ------------ #
+# -------------------------------------- #
+
+hero__title: 'Blog'
+hero__description: 'Latest updates and Hand-picked resources.'
+
+
+# -------------------------------------- #
+# ------------ Blogs Section ----------- #
+# -------------------------------------- #
+
+blogs_tags_label: 'Tags:'
+blogs_input_search: 'Search articles'
+blogs_button_close_search: 'Close'
+
+blogs__pagination_next: 'Next'
+blogs__pagination_previous: 'Previous'
+
+# -------------------------------------- #
+# ---------- Subscribe Section --------- #
+# -------------------------------------- #
+
+subscribe__title: 'Stay in the know'
+subscribe__description: 'Get the latest developments from Moegui.'
+
+subscribe__input_label: 'Your Email'
+subscribe__button: 'Get Started'
+
+subscribe__additional_info: | # You can use HTML
+  You can unsubscribe at any time. Read our <a href="#">privacy policy</a>

@@ -1,0 +1,70 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - DevOps - SecOps - TestOps'
+
+# -------------------------------------- #
+# ------------ Hero Section ------------ #
+# -------------------------------------- #
+
+hero__title: 'Work with us'
+hero__description: 'Work hard with a highly motivated team of talented people and great teammates to launch perfectly crafted products you''ll love.'
+hero__jobs_button: 'See Job Openings'
+
+# -------------------------------------- #
+# ------- Company Values Section ------- #
+# -------------------------------------- #
+
+company_values__title: 'Company values'
+company_values__subtitle: 'The Moegui culture'
+
+company_values: 
+  - title: 'Remotes Everywhere'
+    description: 'Hiring and working from all over the world instead of from a central location.'
+  - title: 'Handle your time'
+    description: 'Flexible working hours over set working hours.'
+  - title: 'Keep it as simple'
+    description: 'Writing down and recording knowledge over verbal explanations.'
+  - title: 'Fast onboarding'
+    description: 'Written down processes over on-the-job training.'
+  - title: 'Reduced calls'
+    description: 'Asynchronous communication over synchronous communication.'
+  - title: 'Be collaborative'
+    description: 'Formal communication channels over informal communication channels.'
+
+# -------------------------------------- #
+# --------- Our Values Section --------- #
+# -------------------------------------- #
+
+our_values__title: 'Our values'
+our_values__subtitle: 'What it''s like to work here'
+
+# You can use Markdown and HTML
+# If you want to use 2 columns, use the "column_1" and "column_2" properties to define the content.
+our_values__content: |
+  We strongly believe in collaboration teamwork. We provide all available state-of-the-art tools to work stressless and ensure that everyone is on the same page no matter what time zone lives. Pretty much all our work goes over GitLab and Google Workspace. Also, Confluence to enforce our communication.
+
+  We offer Paid Vacations, Xmas break, and three leaves per quarter. You can apply for part-time or full-time, and that depends on your desired time to work. We do respect that because we want you happy and fresh.
+
+  **Because we're a fully remote team — we hire people from all over the world!**
+
+# -------------------------------------- #
+# ------------ Jobs Section ------------ #
+# -------------------------------------- #
+
+jobs__title: 'Open positions'
+jobs__subtitle: 'Current job openings'
+
+jobs__vacancies:
+  singular: 'open position'
+  plural: 'open positions'
+jobs__department_vacancies:
+  singular: 'opening'
+  plural: 'openings'
+jobs__job_link: 'Apply'
+
+# You can use Markdown and HTML
+jobs__additional_info: |
+  Can't find a position that suits you? <a class="font-weight-bold text-nowrap" href="../contact.html">Contact us <i class="fas fa-angle-right fa-sm ml-1"></i></a>

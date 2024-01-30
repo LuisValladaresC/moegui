@@ -1,0 +1,76 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - DevOps - SecOps - TestOps'
+
+# -------------------------------------- #
+# ---------- Contacts Section ---------- #
+# -------------------------------------- #
+
+contact__title: 'Contact us'
+contact__description: 'We''d love to talk about how we can help you.'
+
+contact__inputs:
+  name:
+    label: 'Name'
+    placeholder: 'John Doe'
+    error_messages:
+      required: 'Please enter your name.'
+      validation: 'The name must be at least 3 characters'
+  email:
+    label: 'Email Address'
+    placeholder: 'johndoe@gmail.com'
+    error_messages: 
+      required: 'Please enter a valid email address.'
+      validation: 'Please enter a valid email address.'
+  phone:
+    label: 'Phone Number'
+    placeholder: '1-800-555-5555'
+    error_messages: 
+      required: 'Please enter a valid phone number.'
+      validation: 'Please enter a valid phone number.'
+  subject:
+    label: 'Subject'
+    placeholder: 'DevOps Consulting'
+    error_messages: 
+      required: 'Please enter a subject.'
+      validation: 'The subject must be at least 3 characters'
+  message:
+    label: 'How can we help you?'
+    placeholder: 'Hi there, I would like to ...'
+    error_messages: 
+      required: 'Please enter a message.'
+      validation: 'The message must be at least 10 characters'
+
+contact__submit: 'Submit'
+contact__info: 'You''ll hear from us within 1-2 business days.'
+
+contact__success_modal:
+  title: 'Message sent!'
+  text: ''
+contact__error_message:
+  title: 'Error sending message!'
+  text: 'Please try again later.'
+
+# -------------------------------------- #
+# ------------- Map Section ------------ #
+# -------------------------------------- #
+
+map__state: 'Wyoming'
+map__city: 'Cheyenne'
+
+# "address.coords" defines the location of the marker in the map. 
+# "address.link" is optional.
+map__contacts:
+  phone:
+    title: 'Call Us'
+    content: '1-800-643-4500'
+  email:
+    title: 'Email Us'
+    content: 'info@moegui.com'
+  address:
+    title: 'Visit Us'
+    content: '100 E 7th Street Suite #0001'
+    link: '#'

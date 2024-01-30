@@ -1,0 +1,60 @@
+# -------------------------------------- #
+# ----------- Article Section ---------- #
+# -------------------------------------- #
+
+article__share_label: 'Share:'
+article__related_stories: 'Related stories'
+
+# -------------------------------------- #
+# ---------- Subscribe Section --------- #
+# -------------------------------------- #
+
+subscribe__title: 'Stay in the know'
+subscribe__description: 'Get special offers on the latest developments from Front.'
+
+subscribe__input_label: 'Your Email'
+subscribe__button: 'Get Started'
+
+# -------------------------------------- #
+# ------------ Articles Data ----------- #
+# -------------------------------------- #
+
+# This array defines each of the articles available on the "blog" page and will also be used to create a page for each of them.
+
+# The 'page.file_name' attribute defines the name and path of the page to be created
+# The 'page.head_title' attribute defines the name of the tab in the browser and helps improve SEO
+
+# The "date" attribute is used to sort items on the "Blog" page and must be defined in the "DDMMYY" format.
+# Recommended image size for articles: 900x450
+# You can use Markdown and HTML in the "content" keys
+
+articles:
+  - page:
+      file_name: 'moegui-stk-for-elasticsearch-v0-7.html'
+      head_title: 'Moegui STK for ElasticSearch® release v0.7 - Moegui'
+    title: 'Moegui STK for ElasticSearch® release v0.7'
+    description: 'Check out this latest release of our top-rated Stack. Find what we improved and how to upgrade.'
+    image: '@@autopath/assets/img/900x450/img12.jpg'
+    date: '20/01/2021'
+    tags:
+      - 'Stacks'
+      - 'DevOps'
+      - 'Release'
+    content: |
+      We are proud to announce the last [Moegui STK for ElasticSearch®](#) release v0.7
+
+      This version uses ElasticSearch® and Kibana® 7.10.2
+
+      ### Changes Implemented
+
+      - Stack SSM Parameters template moved to Galaxy role.
+      - Stack Security template moved to Galaxy role.
+      - Stack AutoScalingGroup template moved to Galaxy role.
+      - Stack LoadBalancer template moved to Galaxy role.
+      - Stack SSM State Manager template moved to Galaxy role.
+      - Stack CodeSuite template moved to Galaxy role.
+      - Updated Image to 7.10.2.
+
+      ### Where to get?
+
+      You can deploy or update this new version directly from our [MarketPlace](../products/stack-for-elasticsearch.html).

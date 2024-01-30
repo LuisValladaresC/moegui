@@ -1,0 +1,139 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - DevOps - SecOps - TestOps'
+
+# -------------------------------------- #
+# ------------- Hero Section ----------- #
+# -------------------------------------- #
+
+hero__services:
+  - title: 'True DevOps'
+    description: 'Buscando un equipo ágil para continuar la entrega e integrar el código en una infraestructura de nube compleja'
+    background_image: '@@autopath/assets/img/theme-custom/hero-devops.jpg'
+    url: "@@autopathwithlang/services/devops.html"
+    info_items:
+      - title: 'Integración y Despliege Continuo'
+        description: 'Innove con confianza sabiendo que sus aplicaciones se construirán e implementarán automáticamente en sus entornos. Siempre'
+      - title: 'Infraestructura Repetitiva y Predecible'
+        description: 'Con Infrastructura como Codigo, acelere su presencia global en todo el mundo. Replica toda tu arquitectura en horas.'
+
+  - title: 'True SecOps'
+    description: 'Buscando un equipo activo para descubrir y mitigar problemas de seguridad en su código e infraestructura'
+    background_image: '@@autopath/assets/img/theme-custom/hero-secops.jpg'
+    # url: "./services/secops.html"
+    url: "@@autopathwithlang/services/secops.html"    
+    info_items:
+      - title: 'Seguridad de Aplicaciones Web'
+        description: 'Casi el 92% de los incidentes de seguridad son el resultado de atacantes que explotan errores de software conocidos que deben analizarse y corregirse antes de implementarlos en producción.'
+      - title: 'Monitoreo de Seguridad en la Nube'
+        description: 'Las rutinas de supervisión de IAM y grupos de seguridad programadas evitan infracciones de seguridad y dolores de cabeza innecesarios.'
+
+  - title: 'True TestOps'
+    description: 'Buscando un equipo inteligente para diseñar e implementar pruebas automatizadas para sus aplicaciones'
+    background_image: '@@autopath/assets/img/theme-custom/hero-testops.jpg'
+    # url: './services/testops.html'
+    url: "@@autopathwithlang/services/testops.html"     
+    info_items: 
+      - title: 'Prueba de Regresión Automatizada'
+        description: 'Libere a un equipo de pruebas de ejecutar largas y grandes cantidades de tareas repetitivas. Aumente la precisión y permita una retroalimentación más rápida de las pruebas tan pronto como se publique una nueva versión de su software.'
+      - title: 'Prueba de Humo Programada'
+        description: 'Controle lo que implementa en producción ejecutando tareas programadas realizando pruebas simples en sitios públicos y reciba alertas si algo no funciona como se esperaba.'
+
+# -------------------------------------- #
+# ------------- Step Section ----------- #
+# -------------------------------------- #
+
+steps__title: 'Como pensamos'
+steps__subtitle: 'Soluciones arraigadas en diseños Well-Architected'
+
+steps:
+  - title: 'Excelencia Operativa'
+    description: 'Ejecute y supervise sistemas para ofrecer valor comercial y mejorar continuamente los procesos y procedimientos de soporte.'
+  - title: 'Aplicación de seguridad'
+    description: 'Proteja la información, los sistemas y los activos a la vez que ofrece valor comercial a través de evaluaciones de riesgos y estrategias de mitigación.'
+  - title: 'Fiabilidad Efectiva'
+    description: 'Recuperarse de las interrupciones de la infraestructura o del servicio, adquirir recursos informáticos de forma dinámica para satisfacer la demanda y mitigar las interrupciones.'
+  - title: 'Eficiencia en el desempeño'
+    description: 'Utilice los recursos informáticos de manera eficiente para cumplir con los requisitos del sistema y mantener esa eficiencia a medida que la demanda cambia y las tecnologías evolucionan.'
+  - title: 'Optimización de costos'
+    description: 'Evite o elimine costos innecesarios o recursos subóptimos, implementando una estrategia de etiquetado para desglosar su facturación.'
+
+# -------------------------------------- #
+# ----------- Clients Section ---------- #
+# -------------------------------------- #
+
+clients__title: 'Como innovamos'
+clients__subtitle: 'Soluciones empresariales y de código abierto, Nosotros confiamos'
+
+clients:
+  - name: 'Amazon Web Services'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/amazon_aws.svg'
+  - name: 'Google Cloud'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/google_cloud.svg'
+  - name: 'Microsoft Azure'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/microsoft_azure.svg'
+  - name: 'Kubernetes'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/kubernetes.svg'
+  - name: 'Openshift'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/openshift.svg'
+  - name: 'Docker'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/docker.svg'
+  - name: 'Ansible'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/ansible.svg'
+  - name: 'Helm'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/helmsh.svg'
+  - name: 'GitLab'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/gitlab.svg'
+  - name: 'Jenkins'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/jenkins.svg'
+  - name: 'Istio'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/istioio.svg'
+
+# -------------------------------------- #
+# ---------- Features Section ---------- #
+# -------------------------------------- #
+
+features__title: 'Como trabajamos'
+features__subtitle: 'Ponga en marcha cualquier proyecto en semanas basándose en nuestros Stacks altamente fiables'
+features__card_title: 'Potenciar la innovación a cualquier escala'
+features__card_content: | # You can use Markdown and HTML
+  Trabajando bajo una planificación Agile Scrum, nuestro equipo de ingenieros certificados construye Powerful Stacks en función de las necesidades del cliente y lo implementa como código.
+features__card_image: '@@autopath/assets/svg/icons/icon-2.svg'
+
+features:
+  - 'Ingenieros Certificados'
+  - 'Stacks Poderosos'
+  - 'Equipos Agiles'
+  - 'Desarrollo Scrum'
+  - 'Todo como Codigo'
+  - 'Los clientes importan, de verdad'
+
+# -------------------------------------- #
+# ---------- Articles Section ---------- #
+# -------------------------------------- #
+
+articles:
+  - title: 'Necesita Ayuda?'
+    description: 'Revise nuestra base de conocimientos para obtener su respuesta.'
+    image: '@@autopath/assets/svg/icons/icon-15.svg'
+    url: '@@autopathwithlang/help/'
+  - title: 'Necesita Documentacion?'
+    description: 'Profundice en los detalles técnicos de nuestros productos.'
+    image: '@@autopath/assets/svg/icons/icon-2.svg'
+    url: '#'
+
+# -------------------------------------- #
+# ----------- Stories Section ---------- #
+# -------------------------------------- #
+
+stories__title: 'Subscribase'
+stories__subtitle: 'Reciba lo último de Moegui'
+stories__label: 'Email'
+stories__input: 'ejemplo@gmail.com'
+stories__button: 'Empezar'
+stories__paragraph: | # You can use HTML
+  Puede darse de baja en cualquier momento. Lea nuestra <a href="#"> política de privacidad </a>.
+...

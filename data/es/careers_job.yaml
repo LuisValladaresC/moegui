@@ -1,0 +1,92 @@
+# -------------------------------------- #
+# -------- Career Detail Section ------- #
+# -------------------------------------- #
+
+career__listing_link: 'Back to Listings'
+career__apply_button: 'Apply Now'
+
+# -------------------------------------- #
+# ------------- Apply Form ------------- #
+# -------------------------------------- #
+
+form__title: 'Apply for this Job'
+
+form__inputs:
+  name:
+    label: 'Full Name'
+    placeholder: 'John Doe'
+    error_messages:
+      required: 'Please enter your full name.'
+      validation: 'The full name must be at least 6 characters'
+  email:
+    label: 'Email Address'
+    placeholder: 'johndoe@gmail.com'
+    error_messages: 
+      required: 'Please enter a valid email address.'
+      validation: 'Please enter a valid email address.'
+  url:
+    label: 'Your Online CV/Resume'
+    placeholder: 'https://www.linkedin.com/in/johndoe'
+    error_messages: 
+      required: 'Please enter a valid URL.'
+      validation: 'Please enter a valid URL.'
+  message:
+    label: 'In a few words...'
+    placeholder: 'I want to apply to this job because...'
+    error_messages: 
+      required: 'Please enter a message.'
+      validation: 'The message must be at least 10 characters'
+
+form__submit: 'Submit Application'
+
+form__success_modal:
+  title: 'Message sent!'
+  text: ''
+form__error_message:
+  title: 'Error sending message!'
+  text: 'Please try again later.'
+
+# -------------------------------------- #
+# -------------- Jobs Data ------------- #
+# -------------------------------------- #
+
+# This array defines each of the jobs available on the "careers" page and will also be used to create a page for each of them.
+# The 'page.file_name' attribute defines the name and path of the page to be created
+# The 'page.head_title' attribute defines the name of the tab in the browser and helps improve SEO
+# You can use Markdown and HTML in the "content" keys
+
+jobs:
+  - page:
+      file_name: 'devops-engineer.html'
+      head_title: 'DevOps Engineer - Moegui'
+    position: 'DevOps Engineer'
+    department: 'Technology'
+    location: 'Remote'
+    content: |
+      DevOps brings a collaborative approach to software development, testing and deployment. It puts small teams with varying objectives together to work toward more efficient and high-quality code releases. There cannot be any barriers between the different personas, making communication skills (both verbal and written) a necessity for a successful DevOps engineer.
+
+      Engineers need to regularly speak with internal management teams involved in the DevOps process and stay familiar with the objectives, roadmap, blocking issues, and other project areas. Also, they need to communicate with customers around support issues effectively.
+
+      Communication is critical, but so too is the ability to collaborate. DevOps engineers should be team players and support their colleagues throughout sprints or software iterations. This is about more than just being a good teammate — you should also have the skills to mentor and advise team members on the best ways to deliver code, what tools to use when coding, and how to test the latest features.
+
+      ### Requirements:
+
+      - Performance tuning, task automation, and improving our continuous integration and deployment processes. 
+      - System troubleshooting and problem-solving across platform and application domains
+      - Create/maintain monitoring solutions and instrument applications to provide insights into performance and to understand emerging issues.
+      - Actively participate in high-level team activities such as suggesting architecture improvements, recommending process improvements, and conducting tool evaluations. 
+      - Identify and implement improvements to the platform and processes around release and maintenance. Conduct routine security and software updates.
+      - Assist with the maintenance and monitoring of current systems infrastructure on an ongoing basis.
+      - Are team-focused, pragmatic engineers who enjoy working in small, agile teams.
+
+      ### Must have:
+
+      - Software Control Management
+      - Continuous Integration
+      - Configuration Management
+      - Deployment Automation
+      - Containers
+      - Infrastructure Orchestration
+      - Monitoring and analytics
+      - Testing and Cloud Quality tools
+      - Network protocols

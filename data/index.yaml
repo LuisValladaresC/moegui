@@ -1,0 +1,137 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - DevOps - SecOps - TestOps'
+
+# -------------------------------------- #
+# ------------- Hero Section ----------- #
+# -------------------------------------- #
+
+hero__services:
+  - title: 'True DevOps'
+    description: 'Looking for an agile team to continue delivery and integrate code into a complex cloud infrastructure'
+    background_image: '@@autopath/assets/img/theme-custom/hero-devops.jpg'
+    url: "@@autopathwithlang/services/devops.html"
+    info_items:
+      - title: 'Continuous Delivery and Integration'
+        description: 'Innovate with confidence knowing your Apps will automatically build and deploy to your environments. Always'
+      - title: 'Repetitive and Predictable Infrastructure'
+        description: 'With Infrastructure as a Code, accelerate your global presence across the world. Replicate your entire architecture in hours.'
+
+  - title: 'True SecOps'
+    description: 'Looking for an active team to discover and mitigate security issues in your code and infrastructure'
+    background_image: '@@autopath/assets/img/theme-custom/hero-secops.jpg'
+    url: "@@autopathwithlang/services/secops.html"    
+    info_items:
+      - title: 'Web Application Security'
+        description: 'Almost 92% of security incidents result from attackers exploiting known software bugs that need to be scanned and fixed before deploying to production.'
+      - title: 'Cloud Security Monitoring'
+        description: 'Scheduled IAM and Security Groups monitoring routines prevent unnecessaries security breaches and headaches.'
+
+  - title: 'True TestOps'
+    description: 'Looking for a smart team to design and implement automated tests for your Apps'
+    background_image: '@@autopath/assets/img/theme-custom/hero-testops.jpg'
+    url: "@@autopathwithlang/services/testops.html"   
+    info_items: 
+      - title: 'Automated Regression Testing'
+        description: 'Free up a testing team from running long and large amounts of repetitive tasks. Increase accuracy and enable faster feedback of the tests as soon as a new build of your software is released.'
+      - title: 'Scheduled Smoke Testing'
+        description: 'Control what you deploy to production running scheduled tasks performing simple tests on public sites and get alerted if something does not work as expected.'
+
+# -------------------------------------- #
+# ------------- Step Section ----------- #
+# -------------------------------------- #
+
+steps__title: 'How we think'
+steps__subtitle: 'Solutions Rooted in Well-Architected Design'
+
+steps:
+  - title: 'Operational Excellence'
+    description: 'Run and monitor systems to deliver business value and to improve supporting processes and procedures continually.'
+  - title: 'Security Enforcement'
+    description: 'Protect information, systems, and assets while delivering business value through risk assessments and mitigation strategies.'
+  - title: 'Effective Reliability'
+    description: 'Recover from infrastructure or service disruptions, dynamically acquire computing resources to meet demand, and mitigate disruptions.'
+  - title: 'Performance Efficiency'
+    description: 'Use computing resources efficiently to meet system requirements and to maintain that efficiency as demand changes and technologies evolve.'
+  - title: 'Cost Optimization'
+    description: 'Avoid or eliminate unneeded cost or suboptimal resources, implementing a tagging strategy to break down your billing.'
+
+# -------------------------------------- #
+# ----------- Clients Section ---------- #
+# -------------------------------------- #
+
+clients__title: 'How we Innovate'
+clients__subtitle: 'Enterprise and Open Source Solutions, We Trust'
+
+clients:
+  - name: 'Amazon Web Services'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/amazon_aws.svg'
+  - name: 'Google Cloud'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/google_cloud.svg'
+  - name: 'Microsoft Azure'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/microsoft_azure.svg'
+  - name: 'Kubernetes'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/kubernetes.svg'
+  - name: 'Openshift'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/openshift.svg'
+  - name: 'Docker'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/docker.svg'
+  - name: 'Ansible'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/ansible.svg'
+  - name: 'Helm'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/helmsh.svg'
+  - name: 'GitLab'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/gitlab.svg'
+  - name: 'Jenkins'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/jenkins.svg'
+  - name: 'Istio'
+    image: '@@autopath/assets/svg/theme-custom/clients-logo/istioio.svg'
+
+# -------------------------------------- #
+# ---------- Features Section ---------- #
+# -------------------------------------- #
+
+features__title: 'How we work'
+features__subtitle: 'Go live with any project in weeks building on our highly reliable Stacks'
+features__card_title: 'Enhancing innovation at any scale'
+features__card_content: | # You can use Markdown and HTML
+  Working under an Agile Scrum planning, our team of Certified Engineers builds Powerful Stacks based on Customer's needs and deploying it as Code.
+features__card_image: '@@autopath/assets/svg/icons/icon-2.svg'
+
+features:
+  - 'Certified Engineers'
+  - 'Powerful Stacks'
+  - 'Agile Teams'
+  - 'Scrum Development'
+  - 'All as a Code'
+  - 'Customers matter, really'
+
+# -------------------------------------- #
+# ---------- Articles Section ---------- #
+# -------------------------------------- #
+
+articles:
+  - title: 'Need Help?'
+    description: 'Review our knowledge base to get your answer.'
+    image: '@@autopath/assets/svg/icons/icon-15.svg'
+    url: '@@autopathwithlang/help/'
+  - title: 'Read documentation'
+    description: 'Dig into the technical details of our products.'
+    image: '@@autopath/assets/svg/icons/icon-2.svg'
+    url: '#'
+
+# -------------------------------------- #
+# ----------- Stories Section ---------- #
+# -------------------------------------- #
+
+stories__title: 'Subscribe'
+stories__subtitle: 'Get the latest from Moegui'
+stories__label: 'Email'
+stories__input: 'example@gmail.com'
+stories__button: 'Get Started'
+stories__paragraph: | # You can use HTML
+  You can unsubscribe at any time. Read our <a href="#">privacy policy</a>
+...

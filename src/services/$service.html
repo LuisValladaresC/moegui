@@ -1,0 +1,426 @@
+---
+generate:
+  collection: _services
+  variable: service
+  filename: '/services/{{service.page}}'
+---
+
+{% extends "./partials/layout.html" %}
+
+{% block page_title %} 
+  <title>{{ service.page__title }}</title>
+{% endblock %}
+
+{% block css_plugins %}
+  <!-- CSS Implementing Plugins -->
+  <!-- bundlecss:vendor [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/vendor/fontawesome/css/all.min.css"> <!-- General --> {# Content.FontAwesome #}
+  <link rel="stylesheet" href="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css"> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <link rel="stylesheet" href="@@autopath/node_modules/aos/dist/aos.css"> <!-- Articles --> {# OtherLibraries.Aos #}
+{% endblock %}
+
+{% block content %}
+  {% include "./partials/header.html" %}
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main" class="overflow-hidden">
+    <!-- Hero Section -->
+    <div class="gradient-y-gray position-relative">
+      <div class="container space-top-3 space-bottom-2">
+        <div class="row">
+          <!-- Content -->
+          <div class="col-lg-6 d-flex flex-column justify-content-center text-center text-lg-left space-0 space-md-1 space-lg-0">
+            <h1 class="display-4">{{ service.hero__title }}</h1>
+            <p class="lead ml-lg-1 mb-5">{{ service.hero__description }}</p>
+          </div>
+          <!-- End Content -->
+
+          <!-- SVG Illustration -->
+          <div class="col-md-6 d-none d-lg-inline-block">
+            <figure class="w-100 text-center">
+              <img class="img-fluid" src="{{ service.hero__image }}">
+            </figure>
+          </div>
+          <!-- End SVG Illustration -->
+        </div>
+      </div>
+
+      <!-- SVG Bottom Shape -->
+      <figure>
+        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1920 100.1">
+          <path fill="#fff" d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"/>
+        </svg>
+      </figure>
+      <!-- End SVG Bottom Shape -->
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Features Section -->
+    <div class="overflow-hidden space-top-3 space-bottom-2">
+      <div class="container">
+        <div class="row justify-content-lg-between align-items-lg-center">
+          <!-- SVG Element -->
+          <div class="col-lg-6 col-xl-5 space-bottom-md-2 d-none d-lg-block">
+            <div class="position-relative min-h-500rem mx-auto" style="max-width: 28rem;">
+              <figure class="position-absolute top-0 right-0 z-index-2 mr-11">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 450 450" width="165" height="165">
+                  <g>
+                    <defs>
+                      <path id="circleImgID2" d="M225,448.7L225,448.7C101.4,448.7,1.3,348.5,1.3,225l0,0C1.2,101.4,101.4,1.3,225,1.3l0,0
+                        c123.6,0,223.7,100.2,223.7,223.7l0,0C448.7,348.6,348.5,448.7,225,448.7z"/>
+                    </defs>
+                    <clipPath id="circleImgID1">
+                      <use xlink:href="#circleImgID2"/>
+                    </clipPath>
+                    <g clip-path="url(#circleImgID1)">
+                      <image width="450" height="450" xlink:href="{{ service.features__images.top_circle }}" ></image>
+                    </g>
+                  </g>
+                </svg>
+              </figure>
+
+              <figure class="position-absolute top-0 left-0">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 335.2 335.2" width="120" height="120">
+                  <circle fill="none" stroke="#377DFF" stroke-width="75" cx="167.6" cy="167.6" r="130.1"/>
+                </svg>
+              </figure>
+
+              <figure class="d-none d-sm-block position-absolute top-0 left-0 mt-11">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 515 515" width="200" height="200">
+                  <g>
+                    <defs>
+                      <path id="circleImgID4" d="M260,515h-5C114.2,515,0,400.8,0,260v-5C0,114.2,114.2,0,255,0h5c140.8,0,255,114.2,255,255v5
+                        C515,400.9,400.8,515,260,515z"/>
+                    </defs>
+                    <clipPath id="circleImgID3">
+                      <use xlink:href="#circleImgID4"/>
+                    </clipPath>
+                    <g clip-path="url(#circleImgID3)">
+                      <image width="515" height="515" xlink:href="{{ service.features__images.middle_circle }}" transform="matrix(1 0 0 1 1.639390e-02 2.880859e-02)"></image>
+                    </g>
+                  </g>
+                </svg>
+              </figure>
+
+              <figure class="position-absolute top-0 right-0" style="margin-top: 11rem; margin-right: 13rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 67 67" width="25" height="25">
+                  <circle fill="#00C9A7" cx="33.5" cy="33.5" r="33.5"/>
+                </svg>
+              </figure>
+
+              <figure class="position-absolute top-0 right-0 mr-3" style="margin-top: 8rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 141 141" width="50" height="50">
+                  <circle fill="#FFC107" cx="70.5" cy="70.5" r="70.5"/>
+                </svg>
+              </figure>
+
+              <figure class="position-absolute bottom-0 right-0">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 770.4 770.4" width="280" height="280">
+                  <g>
+                    <defs>
+                      <path id="circleImgID6" d="M385.2,770.4L385.2,770.4c212.7,0,385.2-172.5,385.2-385.2l0,0C770.4,172.5,597.9,0,385.2,0l0,0
+                        C172.5,0,0,172.5,0,385.2l0,0C0,597.9,172.4,770.4,385.2,770.4z"/>
+                    </defs>
+                    <clipPath id="circleImgID5">
+                      <use xlink:href="#circleImgID6"/>
+                    </clipPath>
+                    <g clip-path="url(#circleImgID5)">
+                      <image width="900" height="900" xlink:href="{{ service.features__images.bottom_circle }}" transform="matrix(1 0 0 1 -64.8123 -64.8055)"></image>
+                    </g>
+                  </g>
+                </svg>
+              </figure>
+            </div>
+            <!-- End SVG Element -->
+          </div>
+          <!-- End SVG Element -->
+
+          <!-- Content -->
+          <div class="col-lg-6">
+            <div class="mb-7 mb-lg-5 text-center text-lg-left">
+              <h2>{{ service.features__title }}</h2>
+            </div>
+
+            <!-- Features -->
+            <ul class="step step-dashed mb-7">
+              {% for feature in service.features %}
+              <!-- Feature -->
+              <li class="step-item {% if loop.last %} mb-0 {% endif %}">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-xs step-icon-soft-primary">{{ loop.index }}</span>
+                  <div class="step-content">
+                    <h3 class="h4">{{ feature.title }}</h3>
+                    <p class="{% if loop.last %} mb-0 {% endif %}">
+                      {{ feature.description | markdown| safe }}
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <!-- End Feature -->
+              {% endfor %}
+            </ul>
+            <!-- Features -->
+
+            <div class="mt-2">
+              <a class="btn btn-primary transition-3d-hover px-4 d-block d-lg-inline-block" href="{{ service.features__button.url }}">{{ service.features__button.text }}</a>
+            </div>
+          </div>
+          <!-- End Content -->
+        </div>
+      </div>
+    </div>
+    <!-- End Features Section -->
+
+    <!-- Stats Progress Section -->
+    <div class="container space-top-3 space-bottom-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <h2>{{ service.stats__title }}</h2>
+      </div>
+      <!-- End Title -->
+
+      <div class="row mb-7 justify-content-center">
+        {% for stat in service.stats %}
+        <div class="col-sm-6 col-lg-3 mb-7 mb-lg-4">
+          <div class="stats-progress position-relative d-flex align-items-center justify-content-center">
+            <!-- Pie Circle -->
+            <div class="js-circle text-center"
+                 data-hs-circles-options='{
+                   "value": {{ stat.value }},
+                   "maxValue": {{ stat.max_value }},
+                   "duration": 2000,
+                   "isViewportInit": true,
+                   "colors": ["#f8fafd", "{{ stat.color }}"],
+                   "radius": 100,
+                   "width": 8,
+                   "fgStrokeLinecap": "round",
+                   "fgStrokeMiterlimit": "10",
+                   "textClass": "stats-progress-info",
+                   "textFontSize": 24,
+                   "textFontWeight": 500,
+                   "textColor": "{{ stat.color }}",
+                   "secondaryText": "{{ stat.description }}",
+                   "secondaryTextColor": "#77838f",
+                   "secondaryTextFontSize": "13",
+                   "secondaryTextFontWeight": "400",
+                   "dividerSpace": "10"
+                 }'></div>
+            <!-- End Pie Circle -->
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!-- End Stats Progress Section -->
+
+    <!-- Testimonials Section -->
+    <div class="container space-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <h2>{{ service.testimonials__title }}</h2>
+      </div>
+      <!-- End Title -->
+      
+      <!-- Testimonials Section -->
+      <div class="row">
+        {% for testimonial in service.testimonials %}
+        <!-- Testimonial -->
+        <div class="col-md-6 col-lg-4 {% if loop.last == false %} mb-3 mb-lg-0 {% endif %} {% if loop.last == false and loop.index + 1 != service.testimonials | length %} mb-md-5 {% endif %}">
+          <div class="card h-100">
+            <div class="card-body">
+              <ul class="list-inline text-warning">
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+              </ul>
+              <div class="mb-auto">
+                <p class="text-dark mb-0">{{ testimonial.description }}</p>
+              </div>
+            </div>
+
+            <div class="card-footer border-0 bg-transparent pt-0 px-5 pb-5">
+              <div class="media align-items-center">
+                <div class="avatar avatar-circle mr-3">
+                  <img class="avatar-img" src="{{ testimonial.avatar }}" alt="{{ testimonial.name }}">
+                </div>
+                <div class="media-body">
+                  <h4 class="mb-0">{{ testimonial.name }}</h4>
+                  <small class="d-block text-body">
+                    <span>{{ testimonial.position }}</span>
+                    {% if testimonial.reference_social_network and testimonial.reference_social_network.name and testimonial.reference_social_network.url %}
+                      </span> | <a href="{{ testimonial.reference_social_network.url }}">{{ testimonial.reference_social_network.name }}</a></span>
+                    {% endif %}
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Testimonial -->
+        {% endfor %}
+      </div>
+    </div>
+    <!-- End Testimonials Section -->
+
+    <!-- Info Section -->
+    <div class="container space-top-3 space-bottom-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-5 mb-md-9">
+        <h2>{{ service.info__title }}</h2>
+      </div>
+      <!-- End Title -->
+
+      <div class="row">
+        {% for item in service.info__items %}
+        <!-- Info Item -->
+        <div class="col-md-6 col-lg-4 {% if loop.last == false %} mb-3 mb-lg-0 {% endif %} {% if loop.last == false and loop.index + 1 != service.info__items | length %} mb-md-5 {% endif %}">
+          <a class="card card-bg-light shadow-none overflow-hidden transition-3d-hover">
+            <div class="row align-items-center">
+              <div class="col-8 col-md-0">
+                <div class="py-3 pl-4">
+                  <h2 class="h4">{{ item.name }}</h2>
+                  <span class="font-size-1 font-weight-bold">{{ item.text | markdown | safe }}</span>
+                </div>
+              </div>
+              <div class="col-4 col-md-4 px-0">
+                <img class="img-fluid" src="{{ item.image }}" alt="SVG">
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- End Info Item -->
+        {% endfor %}
+      </div>
+    </div>
+    <!-- End Info Section -->
+
+
+    <!-- Articles Section -->
+    <div class="overflow-hidden space-top-3 space-bottom-2">
+      <div class="container">
+        <div class="row justify-content-lg-between">
+          <div class="col-lg-5 mb-9 mb-lg-0">
+            <div class="max-w-19rem mb-4 d-none d-lg-block">
+              <img class="img-fluid" src="{{ service.articles__image }}" alt="SVG">
+            </div>
+
+            <div class="mb-5">
+              <h2 class="mb-5 mb-lg-2 text-center text-lg-left">{{ service.articles__title }}</h2>
+              <p>{{ service.articles__description | markdown | safe}}</p>
+            </div>
+
+            <a class="btn btn-primary transition-3d-hover px-4 d-block d-lg-inline-block" href="{{ service.articles__button.url }}">{{ service.articles__button.text }}</a>
+          </div>
+
+          <div class="col-lg-6">
+            {% if service.articles[0] %}
+            <div class="row">
+              <!-- Article Item -->
+              <div class="col-sm-6 mb-5 mb-sm-0">
+                <a class="d-block" href="{{ service.articles[0].link.url }}" data-aos="fade-left" data-aos-delay="100">
+                  <img class="img-fluid w-100 rounded" src="{{ service.articles[0].image }}">
+                  <div class="shadow-none py-4">
+                    <h4>{{ service.articles[0].title }}</h4>
+                    <p class="text-body">{{ service.articles[0].description }}</p>
+                    <span class="font-size-1 font-weight-bold">{{ service.articles[0].link.text }} <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+                  </div>
+                </a>
+              </div>
+              <!-- End Article Item -->
+
+              {% if service.articles[1] %}
+              <!-- Article Item -->
+              <div class="col-sm-6">
+                <a class="d-block" href="{{ service.articles[1].link.url }}" data-aos="fade-left">
+                  <img class="img-fluid w-100 rounded" src="{{ service.articles[1].image }}">
+                  <div class="shadow-none py-4">
+                    <h4>{{ service.articles[1].title }}</h4>
+                    <p class="text-body">{{ service.articles[1].description }}</p>
+                    <span class="font-size-1 font-weight-bold">{{ service.articles[1].link.text }} <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+                  </div>
+                </a>
+              </div>
+              <!-- End Article Item -->
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Articles Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  {% include "./partials/footer.html" %}
+
+  {% include "./partials/go-to.html" %}
+{% endblock %}
+
+{% block js_plugins %}
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script> <!-- Header --> {# HSLibraries.Headers #}
+  <script src="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <script src="@@autopath/node_modules/appear/dist/appear.min.js"></script> <!-- Stats --> {# OtherLibraries.Circle #}
+  <script src="@@autopath/node_modules/circles.js/circles.js"></script> <!-- Stats --> {# OtherLibraries.Circle #}
+  <script src="@@autopath/node_modules/aos/dist/aos.js"></script> <!-- Articles --> {# OtherLibraries.Aos #}
+  <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script> <!-- Footer --> {# OtherLibraries.Unfold #}
+  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script> <!-- Go-to --> {# HSLibraries.Go-to #}
+
+  <!-- JS Front -->
+  <!-- bundlejs:theme [@@autopath] -->
+  <script src="@@autopath/assets/js/hs.core.js"></script>
+  <script src="@@autopath/assets/js/hs.circles.js"></script> <!-- Stats --> {# OtherLibraries.Circle #}
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF CIRCLES
+      // =======================================================
+      $('.js-circle').each(function () {
+        var circle = $.HSCore.components.HSCircles.init($(this));
+      });
+
+      // INITIALIZATION OF AOS
+      // =======================================================
+      AOS.init({
+        duration: 650,
+        once: true
+      });
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+
+  {% from "./partials/footer.html" import footerLanguageScript with context %}
+  {{ footerLanguageScript() }}
+{% endblock %}

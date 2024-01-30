@@ -1,0 +1,37 @@
+<!-- Go to Top --> {# HSLibraries.Go-to #}
+<a class="js-go-to go-to position-fixed" href="#" style="visibility: hidden;"
+  data-hs-go-to-options='{
+    "offsetTop": 700,
+    "position": {
+      "init": {
+        "right": 15
+      },
+      "show": {
+        "bottom": 15
+      },
+      "hide": {
+        "bottom": -15
+      }
+    }
+  }'>
+  <i class="fas fa-arrow-up"></i>
+</a>
+<!-- End Go to Top -->
+
+{# -------------------------------------- #}
+{# ------- JS & CSS files required ------ #}
+{# -------------------------------------- 
+
+<!-- JS Plugins -->
+<script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script>
+
+<!-- JS Plugins Init. -->
+<script>
+  $(document).on('ready', function () {
+    // INITIALIZATION OF GO TO
+    // =======================================================
+    $('.js-go-to').each(function () {
+      var goTo = new HSGoTo($(this)).init();
+    });
+  });
+</script> #}

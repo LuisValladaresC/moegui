@@ -1,0 +1,460 @@
+---
+# This array defines each of the jobs available on the "careers" page and will create a page for each of them
+# The 'page' attribute defines the name of the page to be created for the corresponding job
+# You can use Markdown and HTML in the "content" keys
+
+
+  # -------------------------------------- #
+  # --------------- DevOps --------------- #
+  # -------------------------------------- #
+
+- page: 'devops.html'
+  page__title: 'DevOps - Ansible Terraform CloudFormation Docker Kubernetes OpenShift Helm GitLab GitHub Jenkins Python Node.js'
+
+  # ---------------- Hero ---------------- #
+  hero__title: 'True DevOps'
+  hero__description: 'Looking for an agile team to continue delivery and integrate code into a complex cloud infrastructure'
+  hero__image: '@@autopath/assets/svg/theme-custom/devops.svg'
+
+  # -------------- Features -------------- #
+  features__title: 'Advanced infrastructure easy to understand'
+  features__images:
+    top_circle: '@@autopath/assets/img/450x450/img1.jpg'
+    middle_circle: '@@autopath/assets/img/515x515/img1.jpg'
+    bottom_circle: '@@autopath/assets/img/900x900/img2.jpg'
+  features: 
+    - title: 'Industry-leading IaaC Development'
+      description: | # You can use Markdown and HTML
+        Using Ansible, Terraform, and CloudFormation, we deliver infrastructure as a code to create, maintain and update immutable resources.
+    - title: 'Continues deliver and integrate'
+      description: | # You can use Markdown and HTML
+        Using GitLab CI, GitHub Actions, and Jenkins CI, we continue to deliver and integrate our code into your Infrastructure.
+    - title: 'Backend Development'
+      description: | # You can use Markdown and HTML
+        Ensure your rapid deployment leverage your Python and Node.js backend code on us. We package your App with Helm + Docker on Kubernetes.      
+    - title: 'Support that matters'
+      description: | # You can use Markdown and HTML
+        Backed by our two Teams, America and India, we can genuinely deliver real-time support around the clock. No more, sorry but *I got slept*.        
+  features__button:
+    text: 'Got a project?'
+    url: '@@autopathwithlang/hire-us.html'
+
+  # ----------- Stats Progress ----------- #
+  stats__title: 'Our Development Lifecycle Metrics'
+  stats: 
+    - description: 'Median time from issue created to issue closed'
+      value: 4.85
+      max_value: 7
+      color: '#00c9a7'
+    - description: 'Median time before an issue starts implementation'
+      value: 3.15
+      max_value: 7
+      color: '#ffc107'
+    - description: 'Median time until first merge request'
+      value: 0.25
+      max_value: 7
+      color: '#de4437'
+    - description: 'Median time it takes to test the code'
+      value: 0.05
+      max_value: 7
+      color: '#377dff'
+    - description: 'Median time between merge request creation and merge/close'
+      value: 0.95
+      max_value: 7
+      color: '#00c9a7' 
+    - description: 'Median time between merging and deploying to production'
+      value: 2.75
+      max_value: 7
+      color: '#ffc107'            
+
+  # ------------- Testimonials ------------ #
+  testimonials__title: 'Moegui True DevOps is trusted by clients worldwide'
+  testimonials:
+    - name: 'Dariel Vila'
+      position: 'Co-Founder @ Front10'
+      avatar: 'https://raw.githubusercontent.com/front10/landing-page-book/master/assets/images/logo/front10.png'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: "With Moegui, we're able to easily to deploy our infrastructure. It's become an essential tool for rock-solid growing"
+    - name: 'Michel Dahdah'
+      position: 'Co-Founder @ Rand Labs'
+      avatar: 'https://avatars.githubusercontent.com/u/51415786'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Moegui provides a great all-in-one solution bringing all the skills that your DevOps needs in a single team making their service ideal for growing companies like ours.'
+    - name: 'Jose Rafaelly'
+      position: 'CTO @ EveryMundo'
+      avatar: 'https://yt3.ggpht.com/ytc/AAUvwngtKU0X1Wt-2D0jgTbBBVAQPClL9bzbLDz2IM8i=s68-c-k-c0x00ffffff-no-rj'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Valuable cooperation to enhance our DevOps team with planning, knowledge, and reliable delivery.'
+
+  # ---------------- Info ---------------- #
+  info__title: 'Looking for Consulting Solutions?'
+  info__items:
+    - name: 'Code your Infrastructure'
+      image: '@@autopath/assets/svg/theme-custom/infrastructure.svg'
+      text: |
+        - Ansible<br>
+        - Terraform<br>
+        - CloudFormation<br>
+    - name: 'Scaling your Environment'
+      image: '@@autopath/assets/svg/theme-custom/orchestration.svg'
+      text: |
+        - Docker Swarm<br>
+        - Kubernetes<br>
+        - OpenShift<br> 
+    - name: 'Code your Applications'
+      image: '@@autopath/assets/svg/theme-custom/code.svg'
+      text: |
+        - Python<br>
+        - Node.js<br>
+        - Go<br>
+    - name: 'Automation that works'
+      image: '@@autopath/assets/svg/theme-custom/automation.svg'
+      text: |
+        - Jenkins CI<br>
+        - GitLab CI<br>
+        - GitHub CI<br>   
+    - name: 'Making the planning real'
+      image: '@@autopath/assets/svg/illustrations/calendar.svg'
+      text: |
+        - Agile Scrum<br>
+        - Agile Kanban<br>
+        - Agile Reporting<br>
+    - name: 'Collaboration made easy'
+      image: '@@autopath/assets/svg/illustrations/communication.svg'
+      text: |
+        - Slack Connect<br>
+        - Google Chat<br>
+        - Email & Phone Support<br>
+
+  # -------------- Articles -------------- #
+  articles__title: "Looking for True DevOps Stacks?"
+  articles__description: |
+    Discover our curated True DevOps Stacks, following best practices and ready to be deployed!! **Heads up! Most are free to use**
+  articles__image: '@@autopath/assets/svg/illustrations/medal.svg'
+  articles__button:
+    text: 'View all Stacks'
+    url: '@@autopathwithlang/products/'
+
+  articles: # Only the first 2 values are used in the array
+    - title: 'Moegui STK for ElasticSearch®'
+      description: 'An AWS ElasticSearch® Stack made under True DevOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/elasticsearch.svg'
+      link:
+        text: 'Learn More'
+        url: '@@autopathwithlang/products/stack-for-elasticsearch.html'
+    - title: 'Moegui STK for RabbitMQ®'
+      description: 'An AWS RabbitMQ® Stack made under True DevOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/rabbitmq.svg'
+      link:
+        text: 'Learn More'
+        url: '@@autopathwithlang/products/stack-for-rabbitmq.html'
+
+- page: 'secops.html'
+  page__title: 'SecOps - OWASP SAST DAST'
+
+  # ---------------- Hero ---------------- #
+  hero__title: 'True SecOps'
+  hero__description: 'Looking for an agile team to enhance code security into a complex cloud infrastructure'
+  hero__image: '@@autopath/assets/svg/theme-custom/secops.svg'
+
+  # -------------- Features -------------- #
+  features__title: 'Advanced security easy to understand'
+  features__images:
+    top_circle: '@@autopath/assets/img/450x450/img1.jpg'
+    middle_circle: '@@autopath/assets/img/515x515/img1.jpg'
+    bottom_circle: '@@autopath/assets/img/900x900/img2.jpg'
+  features: 
+    - title: 'Industry-leading IaaC Development'
+      description: | # You can use Markdown and HTML
+        Using Ansible, Terraform, and CloudFormation, we deliver infrastructure as a code to create, maintain and update immutable resources.
+    - title: 'Continues deliver and integrate'
+      description: | # You can use Markdown and HTML
+        Using GitLab CI, GitHub Actions, and Jenkins CI, we continue to deliver and integrate our code into your Infrastructure.
+    - title: 'Enforcing Security'
+      description: | # You can use Markdown and HTML
+        Enhance code security using OWASP trusted frameworks, such as SAST or DAST, to protect and enforce your internal security.
+    - title: 'Support that matters'
+      description: | # You can use Markdown and HTML
+        Backed by our two Teams, America and India, we can genuinely deliver real-time support around the clock. No more, sorry but *I got slept*.        
+  features__button:
+    text: 'Got a project?'
+    url: '@@autopathwithlang/hire-us.html'
+
+  # ----------- Stats Progress ----------- #
+  stats__title: 'Our Development Lifecycle Metrics'
+  stats: 
+    - description: 'Median time from issue created to issue closed'
+      value: 5.36
+      max_value: 7
+      color: '#00c9a7'
+    - description: 'Median time before an issue starts implementation'
+      value: 4.30
+      max_value: 7
+      color: '#ffc107'
+    - description: 'Median time until first merge request'
+      value: 0.5
+      max_value: 7
+      color: '#de4437'
+    - description: 'Median time it takes to test the code'
+      value: 0.1
+      max_value: 7
+      color: '#377dff'
+    - description: 'Median time between merge request creation and merge/close'
+      value: 2.03
+      max_value: 7
+      color: '#00c9a7' 
+    - description: 'Median time between merging and deploying to production'
+      value: 3.56
+      max_value: 7
+      color: '#ffc107'            
+
+  # ------------- Testimonials ------------ #
+  testimonials__title: 'Moegui True SecOps is trusted by clients worldwide'
+  testimonials:
+    - name: 'Dariel Vila'
+      position: 'Co-Founder @ Front10'
+      avatar: 'https://raw.githubusercontent.com/front10/landing-page-book/master/assets/images/logo/front10.png'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: "With Moegui, we're able to easily to deploy our infrastructure. It's become an essential tool for rock-solid growing"
+    - name: 'Michel Dahdah'
+      position: 'Co-Founder @ Rand Labs'
+      avatar: 'https://avatars.githubusercontent.com/u/51415786'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Moegui provides a great all-in-one solution bringing all the skills that your DevOps needs in a single team making their service ideal for growing companies like ours.'
+    - name: 'Jose Rafaelly'
+      position: 'CTO @ EveryMundo'
+      avatar: 'https://yt3.ggpht.com/ytc/AAUvwngtKU0X1Wt-2D0jgTbBBVAQPClL9bzbLDz2IM8i=s68-c-k-c0x00ffffff-no-rj'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Valuable cooperation to enhance our DevOps team with planning, knowledge, and reliable delivery.'
+
+  # ---------------- Info ---------------- #
+  info__title: 'Looking for Consulting Solutions?'
+  info__items:
+    - name: 'Code your Infrastructure'
+      image: '@@autopath/assets/svg/theme-custom/infrastructure.svg'
+      text: |
+        - Ansible<br>
+        - Terraform<br>
+        - CloudFormation<br>
+    - name: 'Secure your Applications'
+      image: '@@autopath/assets/svg/theme-custom/security.svg'
+      text: |
+        - OWASP® ZAP<br>
+        - Semgrep<br>
+        - GoSec<br>
+    - name: 'Scaling your Environment'
+      image: '@@autopath/assets/svg/theme-custom/orchestration.svg'
+      text: |
+        - Docker Swarm<br>
+        - Kubernetes<br>
+        - OpenShift<br> 
+    - name: 'Automation that works'
+      image: '@@autopath/assets/svg/theme-custom/automation.svg'
+      text: |
+        - Jenkins CI<br>
+        - GitLab CI<br>
+        - GitHub CI<br>   
+    - name: 'Making the planning real'
+      image: '@@autopath/assets/svg/illustrations/calendar.svg'
+      text: |
+        - Agile Scrum<br>
+        - Agile Kanban<br>
+        - Agile Reporting<br>
+    - name: 'Collaboration made easy'
+      image: '@@autopath/assets/svg/illustrations/communication.svg'
+      text: |
+        - Slack Connect<br>
+        - Google Chat<br>
+        - Email & Phone Support<br>
+
+  # -------------- Articles -------------- #
+  articles__title: "Looking for True SecOps Stacks?"
+  articles__description: |
+    Discover our curated True SecOps Stacks, following best practices and ready to be deployed!! **Heads up! Most are free to use**
+  articles__image: '@@autopath/assets/svg/illustrations/medal.svg'
+  articles__button:
+    text: 'View all Stacks'
+    url: '@@autopathwithlang/products/'
+
+  articles: # Only the first 2 values are used in the array
+    - title: 'Moegui STK for ElasticSearch®'
+      description: 'An AWS ElasticSearch® Stack made under True DevOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/elasticsearch.svg'
+      link:
+        text: 'Learn More'
+        url: '@@autopathwithlang/products/stack-for-elasticsearch.html'
+    - title: 'Moegui STK for RabbitMQ®'
+      description: 'An AWS RabbitMQ® Stack made under True DevOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/rabbitmq.svg'
+      link:
+        text: 'Learn More'
+        url: '@@autopathwithlang/products/stack-for-rabbitmq.html'
+
+- page: 'testops.html'
+  page__title: 'TestOps - Selenium Cucumber Website Mobile Testing'
+
+  # ---------------- Hero ---------------- #
+  hero__title: 'True TestOps'
+  hero__description: 'Looking for an agile team to implement a successful framework for testing web and mobile applications'
+  hero__image: '@@autopath/assets/svg/theme-custom/testops.svg'
+
+  # -------------- Features -------------- #
+  features__title: 'Advanced testing easy to understand'
+  features__images:
+    top_circle: '@@autopath/assets/img/450x450/img1.jpg'
+    middle_circle: '@@autopath/assets/img/515x515/img1.jpg'
+    bottom_circle: '@@autopath/assets/img/900x900/img2.jpg'
+  features: 
+    - title: 'Industry-leading IaaC Development'
+      description: | # You can use Markdown and HTML
+        Using Ansible, Terraform, and CloudFormation, we deliver infrastructure as a code to create, maintain and update immutable resources.
+    - title: 'Continues deliver and integrate'
+      description: | # You can use Markdown and HTML
+        Using GitLab CI, GitHub Actions, and Jenkins CI, we continue to deliver and integrate our code into your Infrastructure.
+    - title: 'Automated Regression Testing'
+      description: | # You can use Markdown and HTML
+        Implement a successful Selenium or Cucumber framework for testing web and mobile applications.
+    - title: 'Support that matters'
+      description: | # You can use Markdown and HTML
+        Backed by our two Teams, America and India, we can genuinely deliver real-time support around the clock. No more, sorry but *I got slept*.        
+  features__button:
+    text: 'Got a project?'
+    url: '@@autopathwithlang/hire-us.html'
+
+  # ----------- Stats Progress ----------- #
+  stats__title: 'Our Development Lifecycle Metrics'
+  stats: 
+    - description: 'Median time from issue created to issue closed'
+      value: 5.00
+      max_value: 7
+      color: '#00c9a7'
+    - description: 'Median time before an issue starts implementation'
+      value: 2.30
+      max_value: 7
+      color: '#ffc107'
+    - description: 'Median time until first merge request'
+      value: 1.0
+      max_value: 7
+      color: '#de4437'
+    - description: 'Median time it takes to test the code'
+      value: 1.0
+      max_value: 7
+      color: '#377dff'
+    - description: 'Median time between merge request creation and merge/close'
+      value: 2.50
+      max_value: 7
+      color: '#00c9a7' 
+    - description: 'Median time between merging and deploying to production'
+      value: 4.05
+      max_value: 7
+      color: '#ffc107'            
+
+  # ------------- Testimonials ------------ #
+  testimonials__title: 'Moegui True TestOps is trusted by clients worldwide'
+  testimonials:
+    - name: 'Dariel Vila'
+      position: 'Co-Founder @ Front10'
+      avatar: 'https://raw.githubusercontent.com/front10/landing-page-book/master/assets/images/logo/front10.png'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: "With Moegui, we're able to easily to deploy our infrastructure. It's become an essential tool for rock-solid growing"
+    - name: 'Michel Dahdah'
+      position: 'Co-Founder @ Rand Labs'
+      avatar: 'https://avatars.githubusercontent.com/u/51415786'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Moegui provides a great all-in-one solution bringing all the skills that your DevOps needs in a single team making their service ideal for growing companies like ours.'
+    - name: 'Jose Rafaelly'
+      position: 'CTO @ EveryMundo'
+      avatar: 'https://yt3.ggpht.com/ytc/AAUvwngtKU0X1Wt-2D0jgTbBBVAQPClL9bzbLDz2IM8i=s68-c-k-c0x00ffffff-no-rj'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Valuable cooperation to enhance our DevOps team with planning, knowledge, and reliable delivery.'
+
+  # ---------------- Info ---------------- #
+  info__title: 'Looking for Consulting Solutions?'
+  info__items:
+    - name: 'Code your Infrastructure'
+      image: '@@autopath/assets/svg/theme-custom/infrastructure.svg'
+      text: |
+        - Ansible<br>
+        - Terraform<br>
+        - CloudFormation<br>
+    - name: 'Testing your Applications'
+      image: '@@autopath/assets/svg/theme-custom/testing.svg'
+      text: |
+        - Selenium<br>
+        - Cucumber<br>
+        - WebdriverIO<br>
+    - name: 'Scaling your Environment'
+      image: '@@autopath/assets/svg/theme-custom/orchestration.svg'
+      text: |
+        - Docker Swarm<br>
+        - Kubernetes<br>
+        - OpenShift<br> 
+    - name: 'Automation that works'
+      image: '@@autopath/assets/svg/theme-custom/automation.svg'
+      text: |
+        - Jenkins CI<br>
+        - GitLab CI<br>
+        - GitHub CI<br>   
+    - name: 'Making the planning real'
+      image: '@@autopath/assets/svg/illustrations/calendar.svg'
+      text: |
+        - Agile Scrum<br>
+        - Agile Kanban<br>
+        - Agile Reporting<br>
+    - name: 'Collaboration made easy'
+      image: '@@autopath/assets/svg/illustrations/communication.svg'
+      text: |
+        - Slack Connect<br>
+        - Google Chat<br>
+        - Email & Phone Support<br>
+
+  # -------------- Articles -------------- #
+  articles__title: "Looking for True TestOps Stacks?"
+  articles__description: |
+    Discover our curated True TestOps Stacks, following best practices and ready to be deployed!! **Heads up! Most are free to use**
+  articles__image: '@@autopath/assets/svg/illustrations/medal.svg'
+  articles__button:
+    text: 'View all Stacks'
+    url: '@@autopathwithlang/products/'
+
+  articles: # Only the first 2 values are used in the array
+    - title: 'Moegui STK for ElasticSearch®'
+      description: 'An AWS ElasticSearch® Stack made under True DevOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/elasticsearch.svg'
+      link:
+        text: 'Learn More'
+        url: '@@autopathwithlang/products/stack-for-elasticsearch.html'
+    - title: 'Moegui STK for RabbitMQ®'
+      description: 'An AWS RabbitMQ® Stack made under True DevOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/rabbitmq.svg'
+      link:
+        text: 'Learn More'
+        url: '@@autopathwithlang/products/stack-for-rabbitmq.html'
+...

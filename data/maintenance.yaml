@@ -1,0 +1,27 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - DevOps - SecOps - TestOps'
+
+# -------------------------------------- #
+# ------------- Hero Section ----------- #
+# -------------------------------------- #
+
+hero__title: 'We''re just tuning up a few things.'
+hero__description: 'We apologize for the inconvenience but Front is currently undergoing planned maintenance. Stay tuned!'
+
+# -------------------------------------- #
+# --------------- Footer --------------- #
+# -------------------------------------- #
+
+# Supported social networks: linkedin, instagram, facebook, twitter, gitlab, github
+footer__socialnetworks:
+  linkedin: '#'
+  instagram: '#'
+  twitter: '#'
+  gitlab: '#'
+  github: '#'
+
+footer__copyright: '© Front. 2020 Htmlstream.'

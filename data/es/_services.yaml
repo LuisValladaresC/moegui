@@ -1,0 +1,460 @@
+---
+# This array defines each of the jobs available on the "careers" page and will create a page for each of them
+# The 'page' attribute defines the name of the page to be created for the corresponding job
+# You can use Markdown and HTML in the "content" keys
+
+
+  # -------------------------------------- #
+  # --------------- DevOps --------------- #
+  # -------------------------------------- #
+
+- page: 'devops.html'
+  page__title: 'DevOps - Ansible Terraform CloudFormation Docker Kubernetes OpenShift Helm GitLab GitHub Jenkins Python Node.js'
+
+  # ---------------- Hero ---------------- #
+  hero__title: 'True DevOps'
+  hero__description: 'Buscando un equipo ágil para el despliege e integracion del código en una infraestructura de nube compleja'
+  hero__image: '@@autopath/assets/svg/theme-custom/devops.svg'
+
+  # -------------- Features -------------- #
+  features__title: 'Infraestructura avanzada fácil de entender'
+  features__images:
+    top_circle: '@@autopath/assets/img/450x450/img1.jpg'
+    middle_circle: '@@autopath/assets/img/515x515/img1.jpg'
+    bottom_circle: '@@autopath/assets/img/900x900/img2.jpg'
+  features: 
+    - title: 'Desarrollo de IaaC con líderes en la industria'
+      description: | # You can use Markdown and HTML
+        Utilizando Ansible, Terraform y CloudFormation, entregamos infraestructura como un código para crear, mantener y actualizar recursos inmutables.
+    - title: 'Despliegue e Integracion Continúa'
+      description: | # You can use Markdown and HTML
+        Con GitLab CI, GitHub Actions y Jenkins CI, integramos y desplegamos el código en su infraestructura.
+    - title: 'Desarrollo Backend'
+      description: | # You can use Markdown and HTML
+        Asegúrese de que su implementación rápida aproveche su código de backend de Python y Node.js. Empaquetamos su aplicación con Helm + Docker en Kubernetes.
+    - title: 'Soporte que importa'
+      description: | # You can use Markdown and HTML
+        Respaldados por nuestros dos equipos, Estados Unidos e India, podemos brindar realmente soporte en tiempo real las 24 horas del día. No más, lo siento pero *me dormí*.        
+  features__button:
+    text: '¿Tienes un proyecto?'
+    url: '@@autopathwithlang/hire-us.html'
+
+  # ----------- Stats Progress ----------- #
+  stats__title: 'Nuestras métricas del ciclo de vida de desarrollo'
+  stats: 
+    - description: 'Tiempo medio desde que se creó el problema hasta que se cerró el problema'
+      value: 4.85
+      max_value: 7
+      color: '#00c9a7'
+    - description: 'Tiempo medio antes de que un problema comience a implementarse'
+      value: 3.15
+      max_value: 7
+      color: '#ffc107'
+    - description: 'Tiempo medio hasta la primera solicitud de fusión'
+      value: 0.25
+      max_value: 7
+      color: '#de4437'
+    - description: 'Tiempo medio que se tarda en probar el código'
+      value: 0.05
+      max_value: 7
+      color: '#377dff'
+    - description: 'Tiempo medio entre la creación de la solicitud de fusión y la fusión / cierre'
+      value: 0.95
+      max_value: 7
+      color: '#00c9a7' 
+    - description: 'Tiempo medio entre la fusión y la implementación en producción'
+      value: 2.75
+      max_value: 7
+      color: '#ffc107'            
+
+  # ------------- Testimonials ------------ #
+  testimonials__title: 'Clientes en todo el mundo confían en Moegui True DevOps'
+  testimonials:
+    - name: 'Dariel Vila'
+      position: 'Co-Founder @ Front10'
+      avatar: 'https://raw.githubusercontent.com/front10/landing-page-book/master/assets/images/logo/front10.png'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: "Con Moegui, podemos implementar fácilmente nuestra infraestructura. Se ha convertido en una herramienta esencial para un crecimiento sostenido."
+    - name: 'Michel Dahdah'
+      position: 'Co-Founder @ Rand Labs'
+      avatar: 'https://avatars.githubusercontent.com/u/51415786'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Moegui proporciona una excelente solución todo en uno que reúne todas las habilidades que su DevOps necesita en un solo equipo, lo que hace que su servicio sea ideal para empresas en crecimiento como la nuestra.'
+    - name: 'Jose Rafaelly'
+      position: 'CTO @ EveryMundo'
+      avatar: 'https://yt3.ggpht.com/ytc/AAUvwngtKU0X1Wt-2D0jgTbBBVAQPClL9bzbLDz2IM8i=s68-c-k-c0x00ffffff-no-rj'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Cooperación valiosa para mejorar nuestro equipo de DevOps con planificación, conocimiento y entrega confiable.'
+
+  # ---------------- Info ---------------- #
+  info__title: '¿Busca soluciones de consultoría?'
+  info__items:
+    - name: 'Codifique su infraestructura'
+      image: '@@autopath/assets/svg/theme-custom/infrastructure.svg'
+      text: |
+        - Ansible<br>
+        - Terraform<br>
+        - CloudFormation<br>
+    - name: 'Escale su entorno'
+      image: '@@autopath/assets/svg/theme-custom/orchestration.svg'
+      text: |
+        - Docker Swarm<br>
+        - Kubernetes<br>
+        - OpenShift<br>
+    - name: 'Programe sus Aplicaciones'
+      image: '@@autopath/assets/svg/theme-custom/code.svg'
+      text: |
+        - Python<br>
+        - Node.js<br>
+        - Go<br>         
+    - name: 'Automatización que funciona'
+      image: '@@autopath/assets/svg/theme-custom/automation.svg'
+      text: |
+        - Jenkins CI<br>
+        - GitLab CI<br>
+        - GitHub CI<br>   
+    - name: 'Haciendo realidad la planificación'
+      image: '@@autopath/assets/svg/illustrations/calendar.svg'
+      text: |
+        - Agile Scrum<br>
+        - Agile Kanban<br>
+        - Agile Reporting<br>
+    - name: 'Colaboración simplificada'
+      image: '@@autopath/assets/svg/illustrations/communication.svg'
+      text: |
+        - Slack Connect<br>
+        - Google Chat<br>
+        - Email & Phone Support<br>
+
+  # -------------- Articles -------------- #
+  articles__title: "¿Busca True DevOps Stacks?"
+  articles__description: |
+    Descubra nuestros True DevOps Stacks seleccionados, siguiendo las mejores prácticas y listos para ser implementados. **¡Aviso! La mayoría son de uso gratuito**
+  articles__image: '@@autopath/assets/svg/illustrations/medal.svg'
+  articles__button:
+    text: 'Todos los Stacks'
+    url: '@@autopathwithlang/products/'
+
+  articles: # Only the first 2 values are used in the array
+    - title: 'Moegui STK for ElasticSearch®'
+      description: 'Un AWS ElasticSearch® Stack creado bajo True DevOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/elasticsearch.svg'
+      link:
+        text: 'Aprenda más'
+        url: '@@autopathwithlang/products/stack-for-elasticsearch.html'
+    - title: 'Moegui STK for RabbitMQ®'
+      description: 'Un AWS RabbitMQ® Stack creado bajo True DevOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/rabbitmq.svg'
+      link:
+        text: 'Aprenda más'
+        url: '@@autopathwithlang/products/stack-for-rabbitmq.html'
+
+- page: 'secops.html'
+  page__title: 'SecOps - OWASP SAST DAST'
+
+  # ---------------- Hero ---------------- #
+  hero__title: 'True SecOps'
+  hero__description: 'Buscando un equipo ágil para la mejora en la seguridad del código en una infraestructura de nube compleja'
+  hero__image: '@@autopath/assets/svg/theme-custom/secops.svg'
+
+  # -------------- Features -------------- #
+  features__title: 'Seguridad avanzada fácil de entender'
+  features__images:
+    top_circle: '@@autopath/assets/img/450x450/img1.jpg'
+    middle_circle: '@@autopath/assets/img/515x515/img1.jpg'
+    bottom_circle: '@@autopath/assets/img/900x900/img2.jpg'
+  features: 
+    - title: 'Desarrollo de IaaC con líderes en la industria'
+      description: | # You can use Markdown and HTML
+        Utilizando Ansible, Terraform y CloudFormation, entregamos infraestructura como un código para crear, mantener y actualizar recursos inmutables.
+    - title: 'Despliegue e Integracion Continúa'
+      description: | # You can use Markdown and HTML
+        Con GitLab CI, GitHub Actions y Jenkins CI, integramos y desplegamos el código en su infraestructura.
+    - title: 'Haciendo cumplir la seguridad'
+      description: | # You can use Markdown and HTML
+        Mejore la seguridad del código utilizando marcos confiables de OWASP, como SAST o DAST, para proteger y hacer cumplir su seguridad interna.
+    - title: 'Soporte que importa'
+      description: | # You can use Markdown and HTML
+        Respaldados por nuestros dos equipos, Estados Unidos e India, podemos brindar realmente soporte en tiempo real las 24 horas del día. No más, lo siento pero *me dormí*.        
+  features__button:
+    text: '¿Tienes un proyecto?'
+    url: '@@autopathwithlang/hire-us.html'
+
+  # ----------- Stats Progress ----------- #
+  stats__title: 'Nuestras métricas del ciclo de vida de desarrollo'
+  stats: 
+    - description: 'Tiempo medio desde que se creó el problema hasta que se cerró el problema'
+      value: 5.36
+      max_value: 7
+      color: '#00c9a7'
+    - description: 'Tiempo medio antes de que un problema comience a implementarse'
+      value: 4.30
+      max_value: 7
+      color: '#ffc107'
+    - description: 'Tiempo medio hasta la primera solicitud de fusión'
+      value: 0.5
+      max_value: 7
+      color: '#de4437'
+    - description: 'Tiempo medio que se tarda en probar el código'
+      value: 0.1
+      max_value: 7
+      color: '#377dff'
+    - description: 'Tiempo medio entre la creación de la solicitud de fusión y la fusión / cierre'
+      value: 2.03
+      max_value: 7
+      color: '#00c9a7' 
+    - description: 'Tiempo medio entre la fusión y la implementación en producción'
+      value: 3.56
+      max_value: 7
+      color: '#ffc107'            
+
+  # ------------- Testimonials ------------ #
+  testimonials__title: 'Clientes en todo el mundo confían en Moegui True SecOps'
+  testimonials:
+    - name: 'Dariel Vila'
+      position: 'Co-Founder @ Front10'
+      avatar: 'https://raw.githubusercontent.com/front10/landing-page-book/master/assets/images/logo/front10.png'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: "With Moegui, we're able to easily to deploy our infrastructure. It's become an essential tool for rock-solid growing"
+    - name: 'Michel Dahdah'
+      position: 'Co-Founder @ Rand Labs'
+      avatar: 'https://avatars.githubusercontent.com/u/51415786'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Moegui provides a great all-in-one solution bringing all the skills that your DevOps needs in a single team making their service ideal for growing companies like ours.'
+    - name: 'Jose Rafaelly'
+      position: 'CTO @ EveryMundo'
+      avatar: 'https://yt3.ggpht.com/ytc/AAUvwngtKU0X1Wt-2D0jgTbBBVAQPClL9bzbLDz2IM8i=s68-c-k-c0x00ffffff-no-rj'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Valuable cooperation to enhance our DevOps team with planning, knowledge, and reliable delivery.'
+
+  # ---------------- Info ---------------- #
+  info__title: '¿Busca soluciones de consultoría?'
+  info__items:
+    - name: 'Codifique su infraestructura'
+      image: '@@autopath/assets/svg/theme-custom/infrastructure.svg'
+      text: |
+        - Ansible<br>
+        - Terraform<br>
+        - CloudFormation<br>
+    - name: 'Asegure sus Aplicaciones'
+      image: '@@autopath/assets/svg/theme-custom/security.svg'
+      text: |
+        - OWASP® ZAP<br>
+        - Semgrep<br>
+        - GoSec<br>
+    - name: 'Escale su entorno'
+      image: '@@autopath/assets/svg/theme-custom/orchestration.svg'
+      text: |
+        - Docker Swarm<br>
+        - Kubernetes<br>
+        - OpenShift<br> 
+    - name: 'Automatización que funciona'
+      image: '@@autopath/assets/svg/theme-custom/automation.svg'
+      text: |
+        - Jenkins CI<br>
+        - GitLab CI<br>
+        - GitHub CI<br>   
+    - name: 'Haciendo realidad la planificación'
+      image: '@@autopath/assets/svg/illustrations/calendar.svg'
+      text: |
+        - Agile Scrum<br>
+        - Agile Kanban<br>
+        - Agile Reporting<br>
+    - name: 'Colaboración simplificada'
+      image: '@@autopath/assets/svg/illustrations/communication.svg'
+      text: |
+        - Slack Connect<br>
+        - Google Chat<br>
+        - Email & Phone Support<br>
+
+  # -------------- Articles -------------- #
+  articles__title: "¿Busca True SecOps Stacks?"
+  articles__description: |
+    Descubra nuestros True SecOps Stacks seleccionados, siguiendo las mejores prácticas y listos para ser implementados. **¡Aviso! La mayoría son de uso gratuito**
+  articles__image: '@@autopath/assets/svg/illustrations/medal.svg'
+  articles__button:
+    text: 'Todos los Stacks'
+    url: '@@autopathwithlang/products/'
+
+  articles: # Only the first 2 values are used in the array
+    - title: 'Moegui STK for ElasticSearch®'
+      description: 'Un AWS ElasticSearch® Stack creado bajo True SecOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/elasticsearch.svg'
+      link:
+        text: 'Aprenda más'
+        url: '@@autopathwithlang/products/stack-for-elasticsearch.html'
+    - title: 'Moegui STK for RabbitMQ®'
+      description: 'Un AWS RabbitMQ® Stack creado bajo True SecOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/rabbitmq.svg'
+      link:
+        text: 'Aprenda más'
+        url: '@@autopathwithlang/products/stack-for-rabbitmq.html'
+
+- page: 'testops.html'
+  page__title: 'TestOps - Selenium Cucumber Website Mobile Testing'
+
+  # ---------------- Hero ---------------- #
+  hero__title: 'True TestOps'
+  hero__description: 'Buscando un equipo ágil para implementar un marco de pruebas para aplicaciones web y móviles'
+  hero__image: '@@autopath/assets/svg/theme-custom/testops.svg'
+
+  # -------------- Features -------------- #
+  features__title: 'Pruebas avanzadas fáciles de entender'
+  features__images:
+    top_circle: '@@autopath/assets/img/450x450/img1.jpg'
+    middle_circle: '@@autopath/assets/img/515x515/img1.jpg'
+    bottom_circle: '@@autopath/assets/img/900x900/img2.jpg'
+  features: 
+    - title: 'Desarrollo de IaaC con líderes en la industria'
+      description: | # You can use Markdown and HTML
+        Utilizando Ansible, Terraform y CloudFormation, entregamos infraestructura como un código para crear, mantener y actualizar recursos inmutables.
+    - title: 'Despliegue e Integracion Continúa'
+      description: | # You can use Markdown and HTML
+        Con GitLab CI, GitHub Actions y Jenkins CI, integramos y desplegamos el código en su infraestructura.
+    - title: 'Prueba de Regresión Automatizada'
+      description: | # You can use Markdown and HTML
+        Implemente un marco de Selenium o Cucumber exitoso para probar aplicaciones web y móviles.
+    - title: 'Soporte que importa'
+      description: | # You can use Markdown and HTML
+        Respaldados por nuestros dos equipos, Estados Unidos e India, podemos brindar realmente soporte en tiempo real las 24 horas del día. No más, lo siento pero *me dormí*.        
+  features__button:
+    text: '¿Tienes un proyecto?'
+    url: '@@autopathwithlang/hire-us.html'
+
+  # ----------- Stats Progress ----------- #
+  stats__title: 'Nuestras métricas del ciclo de vida de desarrollo'
+  stats: 
+    - description: 'Tiempo medio desde que se creó el problema hasta que se cerró el problema'
+      value: 5.00
+      max_value: 7
+      color: '#00c9a7'
+    - description: 'Tiempo medio antes de que un problema comience a implementarse'
+      value: 2.30
+      max_value: 7
+      color: '#ffc107'
+    - description: 'Tiempo medio hasta la primera solicitud de fusión'
+      value: 1.0
+      max_value: 7
+      color: '#de4437'
+    - description: 'Tiempo medio que se tarda en probar el código'
+      value: 1.0
+      max_value: 7
+      color: '#377dff'
+    - description: 'Tiempo medio entre la creación de la solicitud de fusión y la fusión / cierre'
+      value: 2.50
+      max_value: 7
+      color: '#00c9a7' 
+    - description: 'Tiempo medio entre la fusión y la implementación en producción'
+      value: 4.05
+      max_value: 7
+      color: '#ffc107'            
+
+  # ------------- Testimonials ------------ #
+  testimonials__title: 'Clientes en todo el mundo confían en Moegui True TestOps'
+  testimonials:
+    - name: 'Dariel Vila'
+      position: 'Co-Founder @ Front10'
+      avatar: 'https://raw.githubusercontent.com/front10/landing-page-book/master/assets/images/logo/front10.png'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: "With Moegui, we're able to easily to deploy our infrastructure. It's become an essential tool for rock-solid growing"
+    - name: 'Michel Dahdah'
+      position: 'Co-Founder @ Rand Labs'
+      avatar: 'https://avatars.githubusercontent.com/u/51415786'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Moegui provides a great all-in-one solution bringing all the skills that your DevOps needs in a single team making their service ideal for growing companies like ours.'
+    - name: 'Jose Rafaelly'
+      position: 'CTO @ EveryMundo'
+      avatar: 'https://yt3.ggpht.com/ytc/AAUvwngtKU0X1Wt-2D0jgTbBBVAQPClL9bzbLDz2IM8i=s68-c-k-c0x00ffffff-no-rj'
+      reference_social_network:
+        name: 'LinkedIn'
+        url: '#'
+      rating: 5
+      description: 'Valuable cooperation to enhance our DevOps team with planning, knowledge, and reliable delivery.'
+
+  # ---------------- Info ---------------- #
+  info__title: '¿Busca soluciones de consultoría?'
+  info__items:
+    - name: 'Codifique su infraestructura'
+      image: '@@autopath/assets/svg/theme-custom/infrastructure.svg'
+      text: |
+        - Ansible<br>
+        - Terraform<br>
+        - CloudFormation<br>
+    - name: 'Pruebe sus Aplicacions'
+      image: '@@autopath/assets/svg/theme-custom/testing.svg'
+      text: |
+        - Selenium<br>
+        - Cucumber<br>
+        - WebdriverIO<br>
+    - name: 'Escale su entorno'
+      image: '@@autopath/assets/svg/theme-custom/orchestration.svg'
+      text: |
+        - Docker Swarm<br>
+        - Kubernetes<br>
+        - OpenShift<br> 
+    - name: 'Automatización que funciona'
+      image: '@@autopath/assets/svg/theme-custom/automation.svg'
+      text: |
+        - Jenkins CI<br>
+        - GitLab CI<br>
+        - GitHub CI<br>   
+    - name: 'Haciendo realidad la planificación'
+      image: '@@autopath/assets/svg/illustrations/calendar.svg'
+      text: |
+        - Agile Scrum<br>
+        - Agile Kanban<br>
+        - Agile Reporting<br>
+    - name: 'Colaboración simplificada'
+      image: '@@autopath/assets/svg/illustrations/communication.svg'
+      text: |
+        - Slack Connect<br>
+        - Google Chat<br>
+        - Email & Phone Support<br>
+
+  # -------------- Articles -------------- #
+  articles__title: "¿Busca True TestOps Stacks?"
+  articles__description: |
+    Descubra nuestros True TestOps Stacks seleccionados, siguiendo las mejores prácticas y listos para ser implementados. **¡Aviso! La mayoría son de uso gratuito**
+  articles__image: '@@autopath/assets/svg/illustrations/medal.svg'
+  articles__button:
+    text: 'Todos los Stacks'
+    url: '@@autopathwithlang/products/'
+
+  articles: # Only the first 2 values are used in the array
+    - title: 'Moegui STK for ElasticSearch®'
+      description: 'Un AWS ElasticSearch® Stack creado bajo True TestOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/elasticsearch.svg'
+      link:
+        text: 'Aprenda más'
+        url: '@@autopathwithlang/products/stack-for-elasticsearch.html'
+    - title: 'Moegui STK for RabbitMQ®'
+      description: 'Un AWS RabbitMQ® Stack creado bajo True TestOps Framework'
+      image: '@@autopath/assets/svg/theme-custom/rabbitmq.svg'
+      link:
+        text: 'Aprenda más'
+        url: '@@autopathwithlang/products/stack-for-rabbitmq.html'        
+...

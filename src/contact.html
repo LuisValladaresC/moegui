@@ -1,0 +1,306 @@
+{% extends "./partials/layout.html" %}
+
+{% block page_title %} 
+  <title>{{ contact.page__title }}</title>
+{% endblock %}
+
+{% block css_plugins %}
+  <!-- CSS Implementing Plugins -->
+  <!-- bundlecss:vendor [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/vendor/fontawesome/css/all.min.css"> <!-- General --> {# Content.FontAwesome #}
+  <link rel="stylesheet" href="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css"> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <link rel="stylesheet" href="@@autopath/node_modules/leaflet/dist/leaflet.css"> <!-- Map --> {# OtherLibraries.Leaflet #}
+{% endblock %}
+
+{% block content %}
+  {% include "./partials/header.html" %}
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main" class="bg-img-hero" style="background-image: url(@@autopath/assets/svg/components/abstract-shapes-12.svg);">
+
+    <!-- Contacts Section --> {# Contacts.Component#3 #}
+    <div class="space-top-3 space-bottom-2">
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-md-1 d-none d-md-inline-block">
+            <!-- Illustration -->
+            <figure class="position-absolute bottom-0 left-0 w-100">
+              <img class="img-fluid" src="@@autopath/assets/svg/illustrations/flowers.svg" alt="Image Description">
+            </figure>
+            <!-- End Illustration -->
+          </div>
+
+          <div class="col-md-10 col-lg-7">
+            <!-- Contact Form -->
+            <form class="js-validate card p-4 p-md-5" id="contactForm" method="POST">
+              <div class="text-center mb-4">
+                <h1>{{ contact.contact__title }}</h1>
+                <p>{{ contact.contact__description }}</p>
+              </div>
+
+              <div class="row mx-n2">
+                <div class="col-md-6 px-2 mb-4">
+                  <!-- Input -->
+                  <label for="name" class="input-label">{{ contact.contact__inputs.name.label }}</label>
+                  <div class="js-form-message">
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="name" id="name" placeholder="{{ contact.contact__inputs.name.placeholder }}" aria-label="{{ contact.contact__inputs.name.placeholder }}" required>
+                    </div>
+                  </div>
+                  <!-- End Input -->
+                </div>
+
+                <div class="col-md-6 px-2 mb-4">
+                  <!-- Input -->
+                  <label for="email" class="input-label">{{ contact.contact__inputs.email.label }}</label>
+                  <div class="js-form-message">
+                    <div class="input-group">
+                      <input type="email" class="form-control" name="email" id="email" placeholder="{{ contact.contact__inputs.email.placeholder }}" aria-label="{{ contact.contact__inputs.email.placeholder }}" required>
+                    </div>
+                  </div>
+                  <!-- End Input -->
+                </div>
+
+                <div class="w-100"></div>
+
+                <div class="col-md-6 px-2 mb-4">
+                  <!-- Input -->
+                  <label for="subject" class="input-label">{{ contact.contact__inputs.subject.label }}</label>
+                  <div class="js-form-message">
+                    <div class="input-group">
+                      <input type="text" class="form-control" name="subject" id="subject" placeholder="{{ contact.contact__inputs.subject.placeholder }}" aria-label="{{ contact.contact__inputs.subject.placeholder }}" required>
+                    </div>
+                  </div>
+                  <!-- End Input -->
+                </div>
+
+                <div class="col-md-6 px-2 mb-4">
+                  <!-- Input -->
+                  <label for="phone" class="input-label">{{ contact.contact__inputs.phone.label }}</label>
+                  <div class="js-form-message">
+                    <div class="input-group">
+                      <input type="tel" class="form-control" name="phone" id="phone" placeholder="{{ contact.contact__inputs.phone.placeholder }}" aria-label="{{ contact.contact__inputs.phone.placeholder }}" required>
+                    </div>
+                  </div>
+                  <!-- End Input -->
+                </div>
+              </div>
+
+              <!-- Input -->
+              <div class="mb-5">
+                <label for="message" class="input-label">{{ contact.contact__inputs.message.label }}</label>
+                <div class="js-form-message input-group">
+                  <textarea class="form-control" rows="4" name="message" id="message" placeholder="{{ contact.contact__inputs.message.placeholder }}" aria-label="{{ contact.contact__inputs.message.placeholder }}" required></textarea>
+                </div>
+              </div>
+              <!-- End Input -->
+
+              <button type="submit" class="btn btn-primary transition-3d-hover mb-2">{{ contact.contact__submit }}</button>
+            </form>
+            <!-- End Contact Form -->
+          </div>
+
+          <div class="col-md-1 d-none d-md-inline-block">
+            <!-- Illustration -->
+            <figure class="position-absolute bottom-0 left-0 w-100">
+              <img class="img-fluid" src="@@autopath/assets/svg/illustrations/chatting-man.svg" alt="Image Description">
+            </figure>
+            <!-- End Illustration -->
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="small">{{ contact.contact__info }}</p>
+        </div>
+      </div>
+    </div>
+    <!-- End Contacts Section -->
+
+    <!-- Map Section --> {# Contacts.Component#4 #}
+    <div id="contactsSection" class="position-relative mx-3 mx-md-8 space-bottom-md-2">
+      <!-- Gmap -->
+      <div class="position-md-absolute top-0 right-0 bottom-0 left-0 space-bottom-md-2">
+        <div id="map" class="min-h-300rem h-100 rounded"></div>
+      </div>
+      <!-- End Gmap -->
+
+      <!-- Card -->
+      <div class="container space-2">
+        <div class="row justify-content-md-end">
+          <div class="col-md-6 col-lg-5">
+            <div class="card bg-white position-relative z-index-999 p-5 p-sm-7">
+              <div class="mb-5">
+                <span class="d-block font-size-2 text-dark text-lh-sm">{{ contact.map__state }},</span>
+                <span class="d-block font-size-4 text-dark font-weight-bold text-lh-sm">{{ contact.map__city }}</span>
+              </div>
+
+              <!-- Contacts -->
+              <div class="media mb-5">
+                <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                  <i class="fas fa-phone"></i>
+                </span>
+                <div class="media-body">
+                  <h5 class=" mb-1">{{ contact.map__contacts.phone.title }}</h5>
+                    <a class="d-block text-body font-size-1" href="tel:{{ contact.map__contacts.phone.content }}">{{ contact.map__contacts.phone.content }}</a>
+                </div>
+              </div>
+              <!-- End Contacts -->
+
+              <!-- Contacts -->
+              <div class="media mb-5">
+                <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <div class="media-body text-truncate">
+                  <h5 class=" mb-1">{{ contact.map__contacts.email.title }}</h5>
+                  <a class="d-block text-body font-size-1" href="mailto:{{ contact.map__contacts.email.content }}">{{ contact.map__contacts.email.content }}</a>
+                </div>
+              </div>
+              <!-- End Contacts -->
+
+              <!-- Contacts -->
+              <div class="media">
+                <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                  <i class="fas fa-map-marker-alt"></i>
+                </span>
+                <div class="media-body">
+                  <h5 class=" mb-1">{{ contact.map__contacts.address.title }}</h5>
+                  {% if contact.map__contacts.address.link %}
+                    <a class="d-block text-body font-size-1" href="{{ contact.map__contacts.address.link }}" target="_blank">{{ contact.map__contacts.address.content }}</a>
+                  {% else %}
+                    <span class="d-block text-body font-size-1">{{ contact.map__contacts.address.content }}</span>
+                  {% endif %}
+                </div>
+              </div>
+              <!-- End Contacts -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Card -->
+    </div>
+    <!-- End Map Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  {% include "./partials/footer.html" %}
+
+  {% include "./partials/go-to.html" %}
+{% endblock %}
+
+{% block js_plugins %}
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script> <!-- Header --> {# HSLibraries.Headers #}
+  <script src="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <script src="@@autopath/node_modules/leaflet/dist/leaflet.js"></script> <!-- Map --> {# OtherLibraries.Leaflet #}
+  <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script> <!-- Footer --> {# OtherLibraries.Unfold #}
+  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script> <!-- Go-to --> {# HSLibraries.Go-to #}
+  <script src="@@autopath/node_modules/jquery-validation/dist/jquery.validate.min.js"></script> <!-- Subscription --> {# OtherLibraries.Validation #}
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script> <!-- Subscription --> {# https://sweetalert2.github.io/ #}
+
+  <!-- JS Front -->
+  <!-- bundlejs:theme [@@autopath] -->
+  <script src="@@autopath/assets/js/hs.core.js"></script>
+  <script src="@@autopath/assets/js/hs.leaflet.js"></script> <!-- Map --> {# OtherLibraries.Leaflet #}
+  <script src="@@autopath/assets/js/hs.validation.js"></script> <!-- Subscription --> {# OtherLibraries.Validation #}
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF LEAFLET
+      // =======================================================
+      var leaflet = $.HSCore.components.HSLeaflet.init($('#map')[0]);
+
+      leaflet.fire('movestart');
+      leaflet._rawPanBy([leaflet.getCenter().lng + 250, leaflet.getCenter().lat]);
+      leaflet.fire('move');
+      leaflet.fire('moveend');
+
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        id: 'mapbox/light-v9'
+      }).addTo(leaflet);
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+
+      // INITIALIZATION OF FORM VALIDATION
+      // =======================================================
+      $('.js-validate').each(function() {
+        var validation = $.HSCore.components.HSValidation.init($(this), {
+          onkeyup: false,
+          rules: {
+            name: {
+              required: true,
+              minlength: 3
+            },
+            email: {
+              required: true,
+              email: true
+            },
+            subject: {
+              required: true,
+              minlength: 3
+            },
+            phone: {
+              required: true,
+              phone: true
+            },
+            message: {
+              required: true,
+              minlength: 10
+            }
+          },
+          messages: {
+            name: {
+              required: "{{ contact.contact__inputs.name.error_messages.required }}",
+              minlength: "{{ contact.contact__inputs.name.error_messages.validation }}"
+            },
+            email: {
+              required: "{{ contact.contact__inputs.email.error_messages.required }}",
+              email: "{{ contact.contact__inputs.email.error_messages.validation }}"
+            },
+            subject: {
+              required: "{{ contact.contact__inputs.subject.error_messages.required }}",
+              minlength: "{{ contact.contact__inputs.subject.error_messages.validation }}"
+            },
+            phone: {
+              required: "{{ contact.contact__inputs.phone.error_messages.required }}",
+              phone: "{{ contact.contact__inputs.phone.error_messages.validation }}"
+            },
+            message: {
+              required: "{{ contact.contact__inputs.message.error_messages.required }}",
+              minlength: "{{ contact.contact__inputs.message.error_messages.validation }}"
+            }
+          },
+          submitHandler: ($form, event) => {
+            //
+          }
+        });
+      });
+
+      $.validator.addMethod("phone", function(value, element) {
+        regex = new RegExp(/^[+]{0,1}[0-9]{0,3}[-\s]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s/0-9]*$/g)
+        return regex.test(value);
+      });
+    });
+  </script>
+
+  {% from "./partials/footer.html" import footerLanguageScript with context %}
+  {{ footerLanguageScript() }}
+{% endblock %}

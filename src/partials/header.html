@@ -1,0 +1,189 @@
+<!-- ========== HEADER ========== --> {# Headers.Transparent.HideTopbar.ChangingLogo.NavWrap #}
+<header id="header" class="header header-bg-transparent {% if logo_color == 'white' %} header-white-nav-links-lg {% endif %} header-abs-top header-show-hide header-change-appearance"
+  data-hs-header-options='{
+  "fixMoment": 1000,
+  "fixEffect": "slide"
+}'>
+  <div class="header-section" data-hs-header-item-options='{
+    "fixMomentClasses": "bg-dark header-white-nav-links-lg"
+  }'>
+    <div id="logoAndNav" class="container">
+      <!-- Nav -->
+      <nav class="js-mega-menu navbar navbar-expand-lg">
+        <!-- Default Logo -->
+        <a class="navbar-brand navbar-nav-wrap-brand navbar-brand-default" href="@@autopathwithlang/" aria-label="Front">
+          <img src="{% if logo_color == 'white' %} {{ _header.nav__logo_white }} {% else %} {{ _header.nav__logo }} {% endif %}" alt="Moegui">
+        </a>
+        <!-- End Default Logo -->
+
+        <!-- On Scroll Logo -->
+        <a class="navbar-brand navbar-brand-on-scroll mr-auto" href="@@autopathwithlang/" aria-label="Front">
+          <img src="{{ _header.nav__logo_white }}" alt="Moegui">
+        </a>
+        <!-- End On Scroll Logo -->
+
+        <!-- Secondary Content -->
+        <div class="navbar-nav-wrap-content justify-self-end">
+          <a class="btn btn-sm btn-light  text-right transition-3d-hover" href="{{ _header.nav__button.url }}">
+            {{ _header.nav__button.text }}
+          </a>
+        </div>
+        <!-- End Secondary Content -->
+
+        <!-- Responsive Toggle Button -->
+        <button type="button" class="navbar-toggler navbar-nav-wrap-navbar-toggler btn btn-icon btn-sm text-dark rounded-circle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navBar"
+                data-toggle="collapse"
+                data-target="#navBar">
+          <span class="navbar-toggler-default">
+            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M17.4,6.2H0.6C0.3,6.2,0,5.9,0,5.5V4.1c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,5.9,17.7,6.2,17.4,6.2z M17.4,14.1H0.6c-0.3,0-0.6-0.3-0.6-0.7V12c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,13.7,17.7,14.1,17.4,14.1z"/>
+            </svg>
+          </span>
+          <span class="navbar-toggler-toggled">
+            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"/>
+            </svg>
+          </span>
+        </button>
+        <!-- End Responsive Toggle Button -->
+
+        <!-- Navigation -->
+        <div id="navBar" class="collapse navbar-collapse navbar-nav-wrap-collapse">
+          <div class="navbar-body header-abs-top-inner mr-lg-6">
+            <ul class="navbar-nav">
+              {% for nav_item in _header.nav__items %}
+                {% if nav_item.items and nav_item.card %}
+                  <!-- Nav Menu -->
+                  <li class="hs-has-mega-menu navbar-nav-item" data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "position": "right",
+                      "maxWidth": "900px"
+                    }
+                  }'>
+                    <a id="megaMenuWithCard{{loop.index}}" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">{{ nav_item.link }}</a>
+
+                    <div class="hs-mega-menu dropdown-menu w-100" aria-labelledby="megaMenuWithCard{{loop.index}}">
+                      <div class="row no-gutters">
+                        <!-- Items -->
+                        <div class="col-lg-8">
+                          {% set sliceCount = nav_item.items.length / 2 %}
+                          {% for items in nav_item.items | slice(sliceCount) %}
+                            <div class="navbar-promo-card-deck">
+                              {% for item in items %}
+                                <!-- Item -->
+                                <div class="navbar-promo-card navbar-promo-item">
+                                  <a class="navbar-promo-link {{ '' if item.url else 'disabled' }}" href="{{ item.url }}">
+                                    <div class="media align-items-center">
+                                      <img class="navbar-promo-icon" src="{{ item.icon }}">
+                                      <div class="media-body">
+                                        <span class="navbar-promo-title">{{ item.title }}</span>
+                                        <span class="navbar-promo-text">{{ item.description | safe }}</span>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <!-- End Item -->
+
+                                {% if items.length == 1 %} 
+                                  <div class="navbar-promo-card navbar-promo-item"></div>
+                                {% endif%}
+                              {% endfor %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <!-- End Items -->
+
+                        <!-- Card -->
+                        <div class="col-lg-4 navbar-promo d-none d-lg-flex align-items-center">
+                          <a class="d-block navbar-promo-inner" href="{{ nav_item.card.url }}">
+                            <div class="position-relative d-flex align-items-center">
+                              <img class="img-fluid rounded" src="{{ nav_item.card.background }}">
+                              <div class="position-absolute text-white p-4">
+                                <p><strong>{{ nav_item.card.content | safe }}</strong></p>
+                              </div>
+                            </div>
+                            {% if nav_item.card.aditional_info %}
+                              <span class="navbar-promo-text font-size-1 mt-3">{{ nav_item.card.aditional_info }}</span>
+                            {% endif %}
+                          </a>
+                        </div>
+                        <!-- End Card -->
+                      </div>
+                    </div>
+                  </li>
+                  <!-- End Nav Menu -->
+                {% elif nav_item.items %}
+                  <!-- Nav Menu -->
+                  <li class="hs-has-mega-menu navbar-nav-item"
+                  data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "position": "right",
+                      "maxWidth": "260px"
+                    }
+                  }'>
+                    <a id="megaMenu{{loop.index}}" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">{{ nav_item.link }}</a>
+
+                    <div class="hs-mega-menu dropdown-menu mega-menu-position-right-fix" aria-labelledby="megaMenu{{loop.index}}" style="min-width: 330px;">
+                      {% for item in nav_item.items %}
+                      <!-- Item -->
+                      <div class="navbar-promo-item">
+                        <a class="navbar-promo-link {{ '' if item.url else 'disabled' }}" href="{{ item.url }}">
+                          <div class="media align-items-center">
+                            <img class="navbar-promo-icon" src="{{ item.icon }}">
+                            <div class="media-body">
+                              <span class="navbar-promo-title">{{ item.title }}</span>
+                              <small class="navbar-promo-text">{{ item.description | safe }}</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End Item -->
+                      {% endfor %}
+                    </div>
+                  </li>
+                  <!-- End Nav Menu -->
+                {% else %}
+                  <li class="navbar-nav-item">
+                    <a class="nav-link {{ '' if nav_item.url else 'disabled' }}" href="{{ nav_item.url }}"><span class="px-1">{{ nav_item.link }}</span></a>
+                  </li>
+                {% endif%}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <!-- End Navigation -->
+      
+      </nav>
+      <!-- End Nav -->
+    </div>
+  </div>
+</header>
+<!-- ========== END HEADER ========== -->
+
+{# -------------------------------------- #}
+{# ------- JS & CSS files required ------ #}
+{# --------------------------------------
+
+<!-- CSS Plugins -->
+<link rel="stylesheet" href="@@autopath/assets/vendor/@fortawesome/fontawesome-free/css/all.css">
+<link rel="stylesheet" href="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css">
+
+<!-- JS Plugins -->
+<script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script>
+<script src="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script>
+
+<!-- JS Plugins Init. -->
+<script>
+  $(document).on('ready', function () {
+    // INITIALIZATION OF HEADER
+    // =======================================================
+    var header = new HSHeader($('#header')).init();
+
+    // INITIALIZATION OF MEGA MENU
+    // =======================================================
+    var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+  });
+</script> #}

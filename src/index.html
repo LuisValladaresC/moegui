@@ -1,0 +1,342 @@
+{% extends "./partials/layout.html" %}
+
+{% block page_title %} 
+  <title>{{ index.page__title }}</title>
+{% endblock %}
+
+{% block css_plugins %}
+  <!-- CSS Implementing Plugins -->
+  <!-- bundlecss:vendor [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/vendor/fontawesome/css/all.min.css"> <!-- General --> {# Content.FontAwesome #}
+  <link rel="stylesheet" href="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css"> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <link rel="stylesheet" href="@@autopath/assets/vendor/slick-carousel/slick/slick.css"> <!-- Hero --> {# OtherLibraries.SlickCarousel #}
+  <link rel="stylesheet" href="@@autopath/node_modules/aos/dist/aos.css"> <!-- Articles --> {# OtherLibraries.Aos #}
+{% endblock %}
+
+{% block content %}
+  {% set logo_color='white' %} {% include "./partials/header.html" %}
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Hero Section --> {# Hero.Component#9 #}
+    <div class="position-relative border-bottom">
+      <!-- Hero Carousel Main -->
+      <div id="heroNav" class="js-slick-carousel slick slick-equal-height"
+        data-hs-slick-carousel-options='{
+          "prevArrow": "<span class=\"fas fa-arrow-left d-none d-md-inline-block slick-arrow slick-arrow-soft-white slick-arrow-left slick-arrow-centered-y rounded-circle ml-sm-2 ml-xl-4\"></span>",
+          "nextArrow": "<span class=\"fas fa-arrow-right d-none d-md-inline-block slick-arrow slick-arrow-soft-white slick-arrow-right slick-arrow-centered-y rounded-circle mr-sm-2 mr-xl-4\"></span>",
+          "infinite": true,
+          "autoplay": true,
+          "autoplaySpeed": 10000,
+          "adaptiveHeight": true,
+          "counterSelector": "#slickCounter",
+          "counterDivider": "/",
+          "counterClassMap": {
+            "current": "slick-counter-current",
+            "total": "slick-counter-total",
+            "divider": "slick-counter-divider"
+          },
+          "dots": true,
+          "dotsClass": "slick-pagination slick-pagination-white d-md-none container position-absolute bottom-0 right-0 left-0 justify-content-start mb-6 pl-3 mx-auto",
+          "asNavFor": "#heroNavThumb"
+        }'>
+
+        {% for service in index.hero__services %}
+          <div class="js-slide gradient-y-overlay-sm-gray-900 bg-img-hero" style="background-image: url({{ service.background_image }});">
+            <!-- Slide #{{loop.index}} -->
+            <div class="container d-md-flex align-items-md-center vh-md-70 space-top-4 space-bottom-3 space-md-0">
+              <div class="w-80 w-lg-50">
+                <span class="d-block h3 text-white mb-2"
+                      data-hs-slick-carousel-animation="fadeInUp">
+                    {{ service.description }}
+                </span>
+                  <h1 class="display-3 mb-0"
+                    data-hs-slick-carousel-animation="fadeInUp"
+                    data-hs-slick-carousel-animation-delay="200">
+                    <a class="text-light" href="{{ service.url }}">
+                      {{ service.title }}
+                    </a>
+                  </h1>
+              </div>
+            </div>
+            <!-- End Slide -->
+          </div>
+        {% endfor %}
+      </div>
+      <!-- End Hero Carousel Main -->
+
+      <!-- Slick Paging -->
+      <div class="container position-relative">
+        <div id="slickCounter" class="slick-counter"></div>
+      </div>
+      <!-- End Slick Paging -->
+
+      <!-- Hero Carousel Secondary -->
+      <div id="heroNavThumb" class="js-slick-carousel slick"
+          data-hs-slick-carousel-options='{
+            "infinite": true,
+            "autoplay": true,
+            "autoplaySpeed": 10000,
+            "isThumbs": true,
+            "asNavFor": "#heroNav"
+          }'>
+        {% for service in index.hero__services %}
+          <div class="js-slide">
+            <!-- Slide #{{loop.index}} -->
+            <div class="d-flex align-items-center bg-white position-relative vh-md-30">
+              <div class="container space-2">
+                <div class="row">
+                  <div class="col-md-7">
+                    <h3 class="text-muted">
+                      <span class="d-block text-dark">{{ service.info_items[0].title }}</span>
+                    </h3>
+                    <p class="mb-0">{{ service.info_items[0].description }}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-5 d-none d-md-inline-block bg-dark position-absolute top-0 right-0 bottom-0">
+                <div class="content-centered-y p-7">
+                  <h3 class="text-white">
+                    <span class="text-white">{{ service.info_items[1].title }}</span>
+                  </h3>
+                  <p class="text-white-70 mb-0">{{ service.info_items[1].description }}</p>
+                </div>
+              </div>
+            </div>
+            <!-- End Slide -->
+          </div>
+        {% endfor %}
+      </div>
+      <!-- End Hero Carousel Secondary -->
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Step Section --> {# Features.Step.Component#1 #}
+    <div class="container space-top-2 space-top-lg-3 space-bottom-lg-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <span class="d-block small font-weight-bold text-cap mb-2">{{ index.steps__title }}</span>
+        <h2>{{ index.steps__subtitle }}</h2>
+      </div>
+      <!-- End Title -->
+
+      <ul class="step step-md step-centered">
+        {% for step in index.steps %}
+          <!-- Step #{{ loop.index }} -->
+          <li class="step-item">
+            <div class="step-content-wrapper">
+              <span class="step-icon step-icon-soft-primary">{{ loop.index }}</span>
+              <div class="step-content">
+                <h3>{{ step.title }}</h3>
+                <p>{{ step.description }}</p>
+              </div>
+            </div>
+          </li>
+          <!-- End Step -->
+        {% endfor %}
+      </ul>
+    </div>
+    <!-- End Step Section -->
+
+    <!-- Clients Section --> {# Clients.Component#2 #}
+    <div class="container space-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-6">
+        <span class="d-block small font-weight-bold text-cap mb-2">{{ index.clients__title }}</span>
+        <h2>{{ index.clients__subtitle }}</h2>
+      </div>
+      <!-- End Title -->
+
+      <!-- Clients -->
+      <div class="row justify-content-sm-center text-center">
+        {% for client in index.clients %}
+          <!-- Client -->
+          <div class="col-4 col-sm-2 mb-7">
+            <img class="max-w-11rem max-w-md-13rem mx-auto" src="{{ client.image }}" alt="{{ client.name }}">
+          </div>
+          <!-- End Client -->
+        {% endfor %}
+      </div>
+      <!-- End Clients -->
+    </div>
+    <!-- End Clients Section -->
+
+    <!-- Features Section --> {# Features.General.Component#3 #}
+    <div class="overflow-hidden">
+      <div class="container space-2 space-lg-3">
+        <!-- Title -->
+        <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+          <span class="d-block small font-weight-bold text-cap mb-2">{{ index.features__title }}</span>
+          <h2>{{ index.features__subtitle }}</h2>
+        </div>
+        <!-- End Title -->
+
+        <div class="w-md-80 mx-md-auto">
+          <div class="row justify-content-lg-center align-items-md-center">
+            <div class="col-md-5 mb-7 mb-md-0">
+              <!-- Features -->
+              {% for feature in index.features %}
+                <div class="media mb-4">
+                  <span class="icon icon-xs icon-soft-primary icon-circle mr-3">
+                    <i class="fas fa-check"></i>
+                  </span>
+                  <div class="media-body text-dark">
+                    {{ feature }}
+                  </div>
+                </div>
+              {% endfor %}
+              <!-- End Features -->
+            </div>
+
+            <div class="col-md-7 col-lg-5">
+              <div class="position-relative">
+                <!-- Card -->
+                <div class="card">
+                  <div class="card-body">
+                    <figure class="w-100 max-w-6rem mb-4">
+                      <img class="img-fluid" src="{{ index.features__card_image }}">
+                    </figure>
+                    <h3>{{ index.features__card_title }}</h3>
+                    {{ index.features__card_content | markdown | safe }}
+                  </div>
+                </div>
+                <!-- End Card -->
+
+                <!-- SVG Elements -->
+                <figure class="max-w-19rem w-100 position-absolute bottom-0 right-0 z-index-n1">
+                  <div class="mb-n7 mr-n7">
+                    <img class="img-fluid" src="@@autopath/assets/svg/components/dots-2.svg">
+                  </div>
+                </figure>
+                <!-- End SVG Elements -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Features Section -->
+
+    <!-- Articles Section --> {# Cards.Grid.Component#3 #}
+    <div class="container">
+      <div class="w-lg-80 mx-lg-auto">
+        <div class="row">
+          {% for article in index.articles %}
+            <div class="col-md-6 mb-3 mb-lg-0" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+              <!-- Icon Block -->
+              <a class="card h-100 transition-3d-hover" href="{{ article.url }}">
+                <div class="card-body">
+                  <div class="media">
+                    <figure class="w-100 max-w-6rem mr-3">
+                      <img class="img-fluid" src="{{ article.image }}">
+                    </figure>
+                    <div class="media-body">
+                      <h3>{{ article.title }}</h3>
+                      <p class="text-body">{{ article.description }}</p>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              <!-- End Icon Block -->
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- End Articles Section -->
+
+    <!-- Subscription Section --> {# FormLayouts.Subscribe.Component#4 #}
+    <div class="container space-2 space-lg-3">
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto">
+        <div class="mb-5">
+          <span class="d-block small font-weight-bold text-cap mb-2">{{ index.stories__title }}</span>
+          <h2>{{ index.stories__subtitle }}</h2>
+        </div>
+
+        <!-- Form -->
+        <div class="mb-2">
+          <label class="sr-only" for="subscriptionFormEmail">{{ index.stories__label }}</label>
+          <div class="input-group">
+            <input type="email" class="form-control" id="subscriptionFormEmail" name="EMAIL" placeholder="{{ index.stories__input }}" aria-label="{{ index.stories__input }}" required>
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-block btn-primary" name="subscribe">{{ index.stories__button }}</button>
+            </div>
+          </div>
+        </div>
+        <!-- End Form -->
+
+        <p class="small">{{ index.stories__paragraph | safe }}</p>
+      </div>
+    </div>
+    <!-- End Subscription Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  {% include "./partials/footer.html" %}
+
+  {% include "./partials/go-to.html" %}
+{% endblock %}
+
+{% block js_plugins %}
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script> <!-- Header --> {# HSLibraries.Headers #}
+  <script src="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <script src="@@autopath/assets/vendor/slick-carousel/slick/slick.js"></script> <!-- Hero --> {# OtherLibraries.SlickCarousel #}
+  <script src="@@autopath/node_modules/aos/dist/aos.js"></script> <!-- Articles --> {# OtherLibraries.Aos #}
+  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script> <!-- Go-to --> {# HSLibraries.Go-to #}
+  <script src="@@autopath/node_modules/jquery-validation/dist/jquery.validate.min.js"></script> <!-- Subscription --> {# OtherLibraries.Validation #}
+  <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script> <!-- Footer --> {# OtherLibraries.Unfold #}
+
+  <!-- JS Front -->
+  <!-- bundlejs:theme [@@autopath] -->
+  <script src="@@autopath/assets/js/hs.core.js"></script>
+  <script src="@@autopath/assets/js/hs.slick-carousel.js"></script> <!-- Hero --> {# OtherLibraries.SlickCarousel #}
+  <script src="@@autopath/assets/js/hs.validation.js"></script> <!-- Subscription --> {# OtherLibraries.Validation #}
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF SLICK CAROUSEL
+      // =======================================================
+      $('.js-slick-carousel').each(function() {
+        var slickCarousel = $.HSCore.components.HSSlickCarousel.init($(this));
+      });
+
+      // INITIALIZATION OF FORM VALIDATION
+      // =======================================================
+      $('.js-validate').each(function () {
+        var validation = $.HSCore.components.HSValidation.init($(this));
+      });
+
+      // INITIALIZATION OF AOS
+      // =======================================================
+      AOS.init({
+        duration: 650,
+        once: true
+      });
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+
+  {% from "./partials/footer.html" import footerLanguageScript with context %}
+  {{ footerLanguageScript() }}
+{% endblock %}

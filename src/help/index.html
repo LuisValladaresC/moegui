@@ -1,0 +1,424 @@
+{% extends "./partials/layout.html" %}
+
+{% if help.page__title %}
+  {% block page_title %}
+    <title>{{ help.page__title }}</title>
+  {% endblock %}
+{% endif %}
+
+{% block css_plugins %}
+  <!-- CSS Implementing Plugins -->
+  <!-- bundlecss:vendor [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/vendor/fontawesome/css/all.min.css"> <!-- General --> {# Content.FontAwesome #}
+  <link rel="stylesheet" href="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css"> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+{% endblock %}
+
+{% block content %}
+  {% include "./partials/header.html" %}
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Hero Section --> {# Hero.Component#30 #}
+    <div id="hero" class="bg-light">
+      <div class="container">
+        <div class="row justify-content-lg-between">
+          <div class="col-lg-6 space-2 space-top-lg-5 space-bottom-lg-3">
+            <div class="mb-3">
+              <h1>{{ help.hero__title }}</h1>
+            </div>
+
+            <!-- Form -->
+            <form id="searchForm">
+              <div class="card p-2 mb-3">
+                <div class="form-row input-group-borderless">
+                  <div class="col-sm">
+                    <input type="search" name="search" class="form-control shadow-none" placeholder="{{ help.hero__search_input.placeholder }}" aria-label="{{ help.hero__search_input.placeholder }}">
+                  </div>
+                  <div class="col-sm-auto">
+                    <button type="submit" class="btn btn-block btn-primary">
+                      <i class="fas fa-search"></i>
+                      <span class="d-sm-none ml-1">{{ help.hero__search_input.label }}</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!-- End Form -->
+          </div>
+
+          <div class="col-lg-6 align-self-lg-end d-none d-lg-inline-block">
+            <!-- SVG Icon -->
+            <figure class="mb-n7 ml-lg-4">
+              <img class="img-fluid" src="{{ help.hero__image }}">
+            </figure>
+            <!-- End SVG Icon -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- FAQ Section --> {# Cards.Grid.Component#2 #}
+    <div class="container space-2 space-lg-3">
+      <div class="w-lg-80 mx-lg-auto">
+        <!-- Breadcrumbs -->
+        <div id="breadcrumbs" class="space-bottom-1 d-none">
+          <nav aria-label="breadcrumb">
+            <ol id="breadcrumbsItems" class="breadcrumb breadcrumb-no-gutter font-size-1 mb-0">
+              {# Items inyected by Javascript #}
+            </ol>
+          </nav>
+        </div>
+        <!-- End Breadcrumbs -->
+
+        <!-- Search Title -->
+        <div id="search" class="row space-bottom-1 d-none">
+          <div class="col">
+            <h3 id="searchTitle" class="mb-0">
+              {# Search title inyected by Javascript #}
+            </h3>
+          </div>
+          <div class="col-auto d-flex justify-content-end align-items-center">
+            <button id="btnCloseSearch" class="btn btn-link font-weight-bold p-0">Close <i class='fas fa-times fa-sm ml-1'></i></button>
+          </div>
+        </div>
+        <!-- End Search Title -->
+
+        <!-- Articles -->
+        <div id="articles" class="d-none">
+          {# Cards inyected by Javascript #}
+        </div>
+        <!-- End Articles -->
+      </div>
+      
+      <!-- Collections -->
+      <div id="collections" class="row">
+        {# Cards inyected by Javascript #}
+      </div>
+      <!-- End Collections -->
+    </div>
+    <!-- End FAQ Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->  
+
+  {% include "./partials/footer.html" %}
+
+  {% include "./partials/go-to.html" %}
+{% endblock %}
+
+{% block js_plugins %}
+  <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script> <!-- Header --> {# HSLibraries.Headers #}
+  <script src="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <script src="@@autopath/node_modules/moment/min/moment.min.js"></script> <!-- FAQ Section --> {# momentjs.com #}
+  <script src="@@autopath/assets/js/search.js"></script> <!-- FAQ Section --> {# custom-JS #}
+  <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script> <!-- Footer --> {# OtherLibraries.Unfold #}
+  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script> <!-- Go-to --> {# HSLibraries.Go-to #}
+
+  <!-- JS Front -->
+  <!-- bundlejs:theme [@@autopath] -->
+  <script src="@@autopath/assets/js/hs.core.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+
+  <!-- JS Custom -->
+  <script>
+    /* ------------------------------------------------------------ */
+    /* --------------------- GLOBAL VARIABLES --------------------- */
+    /* ------------------------------------------------------------ */
+
+    const $collections = document.getElementById("collections");
+    const $articles = document.getElementById("articles");
+    const $breadcrumbs = document.getElementById("breadcrumbs");
+    const $breadcrumbsItems = document.getElementById("breadcrumbsItems");
+    const $search = document.getElementById("search");
+    const $searchForm = document.getElementById('searchForm');
+    const $searchTitle = document.getElementById('searchTitle');
+    const $btnCloseSearch = document.getElementById('btnCloseSearch');
+
+    var dataCollections;
+    var dataArticles;
+
+    /* ------------------------------------------------------------ */
+    /* -------------- GLOBAL MANAGEMENT OF DATA LOAD -------------- */
+    /* ------------------------------------------------------------ */
+
+    loadData({
+      collections: true,
+    });
+
+    function loadData(data = {}){
+      if(data.collections){
+        dataCollections = getCollections();
+        dataArticles = getArticles();
+
+        let cardsTemplate = createTemplateHTML(dataCollections, $collections);
+        $collections.innerHTML = cardsTemplate;
+
+        Array.from($collections.children).map(card => {
+          card.addEventListener('click', () => loadData({ 
+            articles: true, 
+            tag: card.dataset.tag, 
+            collection: card.dataset.collection 
+          }))
+        })
+      }
+
+      if(data.articles){
+        if(data.search){
+          let articlesFound = filterObjectsBySearch(data.search, dataArticles, ['title', 'description'])
+
+          let cardsTemplate = createTemplateHTML(articlesFound, $articles);
+          let searchTitleTemplate = createTemplateHTML({search: data.search, articles: articlesFound}, $searchTitle);
+
+          $articles.innerHTML = cardsTemplate;
+          $searchTitle.innerHTML = searchTitleTemplate;
+
+          showArticlesBySearch();
+        } else 
+        if (data.tag && data.collection) {
+          let articlesByTag = getArticlesByTag(data.tag)
+
+          let cardsTemplate = createTemplateHTML(articlesByTag, $articles);
+          let breadcrumbsItemsTemplate = createTemplateHTML({ collection: data.collection }, $breadcrumbsItems);
+
+          $articles.innerHTML = cardsTemplate;
+          $breadcrumbsItems.innerHTML = breadcrumbsItemsTemplate;
+
+          document.getElementById('showCollections').addEventListener('click', showCollections);
+          showArticlesByCollection();
+        }
+      }
+
+      
+    }
+
+    /* ------------------------------------------------------------ */
+    /* ---------- FUNCTIONS IN CHARGE OF DATA COLLECTION ---------- */
+    /* ------------------------------------------------------------ */
+
+    function getCollections(){
+      let collections = {{ help.faq__collections | dump | safe }};
+
+      return collections;
+    }
+
+    function getArticles(){
+      let articles = {{ help_article.articles | dump | safe }};
+      articles.sort((a, b) => moment(a.date, 'DDMMYYYY') <= moment(b.date, 'DDMMYYYY') ? 1 : -1);
+
+      return articles;
+    }
+
+    function getArticlesByTag(tag){
+      let articlesByTag = [];
+      dataArticles.map(article => {
+        if (article.tags.includes(tag)) articlesByTag.push(article)
+      })
+
+      return articlesByTag;
+    }
+
+    /* ------------------------------------------------------------ */
+    /* --------- CREATION OF THE DIFFERENT HTML TEMPLATES --------- */
+    /* ------------------------------------------------------------ */
+  
+    function createTemplateHTML(data, $container) {
+      let templateHTML = "";
+  
+      switch ($container) {
+        // Collection Template
+        case $collections:
+          data.map((collection, index) => {
+            let articlesByCollection = [];
+            dataArticles.map(article => {
+              if (article.tags.includes(collection.tag)) articlesByCollection.push(article);
+            })
+
+            let authorsInArticlesByCollection = []
+            articlesByCollection.map(article => {
+              let exists = false;
+              authorsInArticlesByCollection.map(author => {
+                if (author.name.trim().toLowerCase() == article.author.name.trim().toLowerCase()) exists = true;
+              })
+              if (exists == false) authorsInArticlesByCollection.push(article.author);
+            })
+            authorsInArticlesByCollection = authorsInArticlesByCollection.sort((a, b) => a.name >= b.name ? 1 : -1)
+
+            templateHTML += `
+            <div class="col-lg-6 ${data.length - 1 != index ? 'mb-3' : ''} ${data.length - 1 != index && (data.length % 2 != 0 || data.length - 2 != index) ? 'mb-lg-5' : 'mb-lg-0'}" data-collection="${ collection.title }" data-tag="${ collection.tag }">
+              <div class="card card-frame h-100" role="button">
+                <div class="card-body">
+                  <!-- Icon Block -->
+                  <div class="media d-block d-sm-flex">
+                    <figure class="w-100 max-w-8rem mb-2 mb-sm-0 mr-sm-4">
+                      <img class="img-fluid" src="${ collection.icon }" alt="SVG">
+                    </figure>
+                    <div class="media-body">
+                      <h2 class="h3">${ collection.title }</h2>
+                      <p class="font-size-1 text-body">${ collection.description }</p>
+
+                      <!-- Article Authors -->
+                      <div class="media">
+                        <div class="avatar-group mr-2">
+                          ${ 
+                            authorsInArticlesByCollection.map(author => `
+                            <div class="avatar avatar-xs avatar-circle">
+                              <img class="avatar-img" src="${author.avatar}" alt="${author.name}">
+                            </div>
+                            `).join('')
+                          }
+                        </div>
+
+                        <div class="media-body">
+                          <small class="d-block text-dark">${ articlesByCollection.length } ${ articlesByCollection.length == 1 ? 'article' : 'articles' } in this collection</small>
+                          <small class="d-block text-dark">
+                            <span class="text-muted">Written by</span>
+                            ${ 
+                              authorsInArticlesByCollection.map((author, index) => {
+                                if (index == 0) return author.name;
+                                else if (index != authorsInArticlesByCollection.length - 1) return ', ' + author.name;
+                                else return ' <span class="text-muted">and</span> ' + author.name;
+                              }).join('')
+                            }
+                          </small>
+                        </div>
+                      </div>
+                      <!-- End Article Authors -->
+                    </div>
+                  </div>
+                  <!-- End Icon Block -->
+                </div>
+              </div>
+            </div>`;
+          })
+        break;
+
+        // Article Template
+        case $articles:
+          data.map((article, index) => {
+            templateHTML += `
+            <a class="card card-frame ${articles.length - 1 != index ? 'mb-3' : ''}" href="./${ article.page.file_name }">
+              <div class="card-body">
+                <!-- Icon Block -->
+                <div class="media d-block d-sm-flex">
+                  <div class="media-body">
+                    <h2 class="h3">${ article.title }</h2>
+                    <p class="font-size-1 text-body">${ article.description }</p>
+
+                    <!-- Article Authors -->
+                    <div class="media">
+                      <div class="avatar-group mr-2">
+                        <div class="avatar avatar-xs avatar-circle">
+                          <img class="avatar-img" src="${article.author.avatar}" alt="${article.author.name}">
+                        </div>
+                      </div>
+
+                      <div class="media-body">
+                        <small class="d-block text-dark">
+                          <span class="text-muted">Written by</span> ${ article.author.name }
+                        </small>
+                        <small class="d-block text-dark">
+                          <span class="text-muted">Updated on</span> ${moment(article.date, 'DDMMYYYY').format("MMMM DD")}
+                        </small>
+                      </div>
+                    </div>
+                    <!-- End Article Authors -->
+                  </div>
+                </div>
+                <!-- End Icon Block -->
+              </div>
+            </a>`;
+          })
+        break;
+
+        // Breadcrumbs Items Template
+        case $breadcrumbsItems:
+          templateHTML = `
+            <li class="breadcrumb-item"><a id="showCollections" href="javascript:void(0)">Help Center</a></li>
+            <li class="breadcrumb-item active" aria-current="page">${ data.collection }</li>`;
+        break;
+        
+        // Search Title Template
+        case $searchTitle:
+          templateHTML = `${data.articles.length} Results <small class="text-body">for "${data.search}"</small>`
+        break;
+      }
+
+      return templateHTML;
+    }
+
+    /* ------------------------------------------------------------ */
+    /* --------------- "SEARCH" INPUT FUNCTIONALITY --------------- */
+    /* ------------------------------------------------------------ */
+
+    $searchForm.addEventListener('submit', loadArticlesBySearch);
+
+    function loadArticlesBySearch(e){
+      e.preventDefault();
+      let currentSearch = new FormData($searchForm).get('search');
+
+      loadData({
+        articles: true,
+        search: currentSearch
+      })
+    }
+
+    $btnCloseSearch.addEventListener('click', closeSearch);
+
+    function closeSearch(){
+      $searchForm.reset()
+      showCollections();
+    }
+
+    /* ------------------------------------------------------------ */
+    /* ------------------- TOGGLE CARDS DISPLAY ------------------- */
+    /* ------------------------------------------------------------ */
+
+    function showCollections() {
+      $collections.classList.remove('d-none');
+      $articles.classList.add('d-none');
+      $search.classList.add('d-none');
+      $breadcrumbs.classList.add('d-none');
+    }
+
+    function showArticlesByCollection() {
+      $collections.classList.add('d-none');
+      $articles.classList.remove('d-none');
+      $search.classList.add('d-none');
+      $breadcrumbs.classList.remove('d-none');
+    }
+
+    function showArticlesBySearch() {
+      $collections.classList.add('d-none');
+      $articles.classList.remove('d-none');
+      $search.classList.remove('d-none');
+      $breadcrumbs.classList.add('d-none');
+    }
+  </script>
+
+  {% from "./partials/footer.html" import footerLanguageScript with context %}
+  {{ footerLanguageScript() }}
+{% endblock %}

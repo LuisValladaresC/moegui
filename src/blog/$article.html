@@ -1,0 +1,303 @@
+---
+generate:
+  collection: blog_article.articles
+  variable: article
+  filename: '/blog/{{article.page.file_name}}'
+---
+
+{% extends "./partials/layout.html" %}
+
+{% block page_title %} 
+  <title>{{ article.page.head_title }}</title>
+{% endblock %}
+
+{% block meta_tags %}
+  <!-- Open Graph -->
+  <meta property="og:url" content="https://moegui.com/blog/{{article.page.file_name}}">
+  <meta property="og:title" content="{{ article.title }}">
+  <meta property="og:description" content="{{ article.description }}">
+  <meta property="og:image" content="{{ article.image }}">
+  
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://moegui.com/{{article.image}}">
+{% endblock %}
+
+{% block css_plugins %}
+  <!-- CSS Implementing Plugins -->
+  <!-- bundlecss:vendor [@@autopath] -->
+  <link rel="stylesheet" href="@@autopath/assets/vendor/fontawesome/css/all.min.css"> <!-- General --> {# Content.FontAwesome #}
+  <link rel="stylesheet" href="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.css"> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+{% endblock %}
+
+{% block content %}
+  {% include "./partials/header.html" %}
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Article Section -->
+    <div class="container space-top-3">
+      <div class="w-lg-60 mx-lg-auto">
+        <!-- Share -->
+        <div class="border-top border-bottom py-3">
+          <div class="d-flex justify-content-center align-items-center">
+            <span class="d-block small font-weight-bold text-cap mr-2">{{ blog_article.article__share_label }}</span>
+            <a href="javascript: void(0);" class="btn btn-xs btn-icon btn-soft-secondary rounded-circle ml-2 btn-share" data-platform="facebook" data-toggle="tooltip" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="javascript: void(0);" class="btn btn-xs btn-icon btn-soft-secondary rounded-circle ml-2 btn-share" data-platform="twitter" data-toggle="tooltip" title="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="javascript: void(0);" class="btn btn-xs btn-icon btn-soft-secondary rounded-circle ml-2 btn-share" data-platform="linkedin" data-toggle="tooltip" title="Linkedin">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="javascript: void(0);" class="btn btn-xs btn-icon btn-soft-secondary rounded-circle ml-2 btn-share" data-platform="clipboard" data-toggle="tooltip" title="Copy URL">
+              <i class="far fa-clipboard"></i>
+            </a>
+          </div>
+        </div>
+        <!-- End Share -->
+
+        <!-- Hero -->
+        <div class="border-bottom py-5 mb-5">
+          <h1 class="h2 mb-4">{{ article.title }}</h1>
+          <img class="img-fluid rounded" src="{{ article.image }}">
+        </div>
+        <!-- End Hero -->
+
+        {{ article.content | markdown | safe }}
+
+        <!-- Tags -->
+        <div class="my-5">
+            {% for tag in article.tags %}
+              <button class="btn btn-xs btn-soft-secondary mb-1">{{ tag }}</button>
+            {% endfor %}
+        </div>
+        <!-- End Tags -->
+      </div>
+    </div>
+    <!-- End Article Section -->
+
+    <!-- Blog Card Section -->
+    <div id="relatedArticles" class="container">
+      <div class="w-lg-75 border-top space-top-2 mx-lg-auto">
+        <div class="mb-3">
+          <h3 class="text-primary">{{ blog_article.article__related_stories }}</h3>
+        </div>
+
+        <div id="relatedArticlesContainer" class="row">
+          {# Blog Cards inyected by Javascript #}
+        </div>
+      </div>
+    </div>
+    <!-- End Blog Card Section -->
+
+    <!-- Subscribe Section -->
+    <div id="subscribe" class="container space-2 space-bottom-lg-3 mt-lg-4">
+      <!-- Title -->
+      <div class="w-md-60 text-center mx-auto mb-7">
+        <h2>{{ blog_article.subscribe__title }}</h2>
+        <p>{{ blog_article.subscribe__description }}</p>
+      </div>
+      <!-- End Title -->
+
+      <div class="w-lg-40 mx-lg-auto">
+        <!-- Form -->
+        <div>
+          <div class="form-row">
+            <div class="col mb-2">
+              <div class="js-form-message">
+                <label class="sr-only" for="subscriptionFormEmail">{{ blog_article.subscribe__input_label }}</label>
+                <div class="input-group">
+                  <input type="email" class="form-control" name="EMAIL" id="subscriptionFormEmail" placeholder="{{ blog_article.subscribe__input_label }}" aria-label="{{ blog_article.subscribe__input_label }}" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-auto">
+              <button type="submit" class="btn btn-primary btn-block" name="subscribe">{{ blog_article.subscribe__button }}</button>
+            </div>
+          </div>
+        </div>
+        <!-- End Form -->
+      </div>
+    </div>
+    <!-- End Subscribe Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  {% include "./partials/footer.html" %}
+
+  {% include "./partials/go-to.html" %}
+{% endblock %}
+
+{% block js_plugins %}
+   <!-- JS Implementing Plugins -->
+  <!-- bundlejs:vendor [@@autopath] -->
+  <script src="@@autopath/assets/vendor/hs-header/dist/hs-header.min.js"></script> <!-- Header --> {# HSLibraries.Headers #}
+  <script src="@@autopath/assets/vendor/hs-mega-menu/dist/hs-mega-menu.min.js"></script> <!-- Header --> {# HSLibraries.HeaderMegaMenu #}
+  <script src="@@autopath/node_modules/moment/min/moment.min.js"></script> <!-- Blog Section --> {# momentjs.com #}
+  <script src="@@autopath/assets/vendor/hs-unfold/dist/hs-unfold.min.js"></script> <!-- Footer --> {# OtherLibraries.Unfold #}
+  <script src="@@autopath/assets/vendor/hs-go-to/dist/hs-go-to.min.js"></script> <!-- Go-to --> {# HSLibraries.Go-to #}
+
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+
+  <!-- JS Custom -->
+  <script>
+    /* ------------------------------------------------------------ */
+    /* --------------------- GLOBAL VARIABLES --------------------- */
+    /* ------------------------------------------------------------ */
+
+    const $subscribeSection = document.getElementById("subscribe");
+    const $relatedArticlesSection = document.getElementById("relatedArticles");
+    const $relatedArticlesContainer = document.getElementById("relatedArticlesContainer");
+    const $shareButtons = Array.from(document.getElementsByClassName('btn-share'))
+
+    /* ------------------------------------------------------------ */
+    /* -------------- GLOBAL MANAGEMENT OF DATA LOAD -------------- */
+    /* ------------------------------------------------------------ */
+
+    const dataArticles = getArticles();
+    const currentArticle = getCurrentArticle();
+
+    let relatedArticles = getRelatedArticles(currentArticle);
+
+    if(relatedArticles.length >= 1){
+      relatedArticlesTemplate = createTemplateHTML(relatedArticles, $relatedArticlesContainer);
+      $relatedArticlesContainer.innerHTML = relatedArticlesTemplate;
+    }else{
+      $subscribeSection.classList.add('border-top');
+      $relatedArticlesSection.classList.add('d-none');
+    }
+
+    /* ------------------------------------------------------------ */
+    /* ---------- FUNCTIONS IN CHARGE OF DATA COLLECTION ---------- */
+    /* ------------------------------------------------------------ */
+
+    function getArticles(){
+      let articles = {{ blog_article.articles | dump | safe }};
+
+      // Sort the articles by date (highest to lowest)
+      articles.sort((a, b) => moment(a.date, 'DDMMYYYY') <= moment(b.date, 'DDMMYYYY') ? 1 : -1)
+
+      return articles;
+    }
+
+    function getCurrentArticle(){
+      let currentArticle = {{ article | dump | safe }};
+
+      return currentArticle;
+    }
+
+    function getRelatedArticles(articleToCompare){
+      let relatedArticles = [];
+
+      dataArticles.map(article => {
+        if (relatedArticles.length < 4 && 
+            JSON.stringify(article) != JSON.stringify(articleToCompare))
+        {
+          let includeTag = article.tags.find(tag => articleToCompare.tags.includes(tag))
+          if (includeTag) relatedArticles.push(article);
+        }
+      })
+
+      return relatedArticles;
+    }
+
+    /* ------------------------------------------------------------ */
+    /* --------- CREATION OF THE DIFFERENT HTML TEMPLATES --------- */
+    /* ------------------------------------------------------------ */
+  
+    function createTemplateHTML(data, $container) {
+      let templateHTML = "";
+  
+      switch ($container) {
+        // Article Template
+        case $relatedArticlesContainer:
+          data.map(article => {
+            templateHTML += `
+            <div class="col-md-6">
+              <article class="border-bottom h-100 py-5">
+                <div class="row justify-content-between">
+                  <div class="col-6 d-flex align-items-center">
+                    <h4 class="mb-0"><a class="text-inherit" href="./${article.page.file_name}">${article.title}</a></h4>
+                  </div>
+  
+                  <div class="col-6">
+                    <img class="img-fluid rounded" src="${article.image}">
+                  </div>
+                </div>
+              </article>
+            </div>`;
+          })
+        break;
+      }
+
+      return templateHTML;
+    }
+
+    /* ------------------------------------------------------------ */
+    /* -------------------- SHARE FUNCTIONALITY ------------------- */
+    /* ------------------------------------------------------------ */
+
+    $shareButtons.map($button => $button.addEventListener('click', () => share($button.dataset.platform)));
+
+    function share(platform){
+      let currentURL = window.location.href;
+
+      if(platform != 'clipboard'){
+        let platformURL = '';
+
+        switch (platform) {
+          case 'facebook':
+            platformURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(currentURL)}`;
+            break;
+          case 'twitter':
+            platformURL = `https://twitter.com/intent/tweet?url=${encodeURIComponent(currentURL)}`;
+            break;
+          case 'linkedin':
+            platformURL = `http://www.linkedin.com/shareArticle?url=${encodeURIComponent(currentURL)}`;
+            break;
+        }
+
+        window.open(platformURL,'share', 'toolbar=0, status=0, width=650, height=650');
+      }else{
+        let inputURL = document.createElement('input')
+        document.body.appendChild(inputURL);
+        inputURL.value = currentURL;
+
+        inputURL.select(); /* Select the text field */
+        inputURL.setSelectionRange(0, 99999); /* For mobile devices */
+        document.execCommand("copy"); /* Copy the text inside the input */
+
+        document.body.removeChild(inputURL);
+        alert('URL copied to clipboard')
+      }
+    }
+  </script>
+
+  {% from "./partials/footer.html" import footerLanguageScript with context %}
+  {{ footerLanguageScript() }}
+{% endblock %}

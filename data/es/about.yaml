@@ -1,0 +1,71 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - DevOps - SecOps - TestOps'
+
+# -------------------------------------- #
+# ------------- Hero Section ----------- #
+# -------------------------------------- #
+
+hero__title: 'About Us'
+hero__description: 'Moegui is a service company that builds DevOps, SecOps, and TestOps stacks. From new startups to public companies, businesses of every size use our solutions to develop and manage their businesses online.'
+hero__galery_images:
+  top_left: '@@autopath/assets/img/480x320/img17.jpg'
+  top_center: '@@autopath/assets/img/480x320/img6.jpg'
+  top_right: '@@autopath/assets/img/480x320/img14.jpg'
+  bottom_left: '@@autopath/assets/img/480x320/img25.jpg'
+  bottom_center: '@@autopath/assets/img/480x320/img16.jpg'
+  bottom_right: '@@autopath/assets/img/480x320/img12.jpg'
+
+# -------------------------------------- #
+# ------------ Stats Section ----------- #
+# -------------------------------------- #
+
+stats:
+  - value: '3'
+    description: 'years in business'
+  - value: '35k+'
+    description: 'code commits'
+  - value: '1800+'
+    description: 'issues worked'
+
+# -------------------------------------- #
+# ---------- Services Section ---------- #
+# -------------------------------------- #
+
+services__title: 'What we do'
+services__subtitle: 'Moegui makes infrastructure as a code a simple reality'
+
+services: 
+  - title: 'Creative minds'
+    description: 'We choose and train our teams carefully. Our people are the secret to great work.'
+    image: '@@autopath/assets/svg/icons/icon-18.svg'
+  - title: 'Conquer the best'
+    description: 'Carefully listening to our Customers and following best practices; we produce the best.'
+    image: '@@autopath/assets/svg/icons/icon-27.svg'
+  - title: 'Effortless Stacks'
+    description: 'Benefit from curated Stacks ready to use in Cloud Marketplaces.'
+    image: '@@autopath/assets/svg/icons/icon-28.svg'
+  - title: 'Designing for developers'
+    description: 'We actively pursue the right balance between functionality and simplicity, peace of mind.'
+    image: '@@autopath/assets/svg/icons/icon-45.svg'
+  - title: 'Strong resilience'
+    description: 'We''ve strong tested all our Stacks with the power to continue to integrate and deliver quality.'
+    image: '@@autopath/assets/svg/icons/icon-19.svg'
+  - title: 'Stay curious'
+    description: 'We dedicate ourselves to research and experiment time to improve our creativity and knowledge.'
+    image: '@@autopath/assets/svg/icons/icon-7.svg'
+
+# -------------------------------------- #
+# ------------ About Section ----------- #
+# -------------------------------------- #
+
+about__title: 'Our Mission: Don''t reinvent the wheel, stay focused on best practices, and listen to our Customers'' needs.'
+
+about__content: | # You can use Markdown and HTML
+  Since 2018, we have helped many companies launch their online products and services. We believe the best solutions are built at the intersection of business strategy, available technology, and real users' needs.
+
+  Things can get complicated quickly, and a pragmatic, synthetic and clear vision is essential to be able to create something that, after all, is meant to be used. Starting from a Developer point of view, we always try to archive for our Stacks a lineal conductor that makes it very easy to understand where we came from and where we are going.
+...

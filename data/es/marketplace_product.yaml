@@ -1,0 +1,89 @@
+# -------------------------------------- #
+# ---------- Sidebar Section ----------- #
+# -------------------------------------- #
+
+sidebar__action_button: 'Get Now'
+sidebar__categories_section: 'Categories'
+sidebar__features_section: 'Features'
+
+# -------------------------------------- #
+# ------------ Nav Section ------------- #
+# -------------------------------------- #
+
+nav__info_section: 'Information'
+nav__info_section__icon: '@@autopath/assets/svg/icons/icon-24.svg'
+
+nav__pricing_section: 'Pricing'
+nav__pricing_section__icon: '@@autopath/assets/svg/icons/icon-22.svg'
+
+# -------------------------------------- #
+# ---------- Pricing Section ----------- #
+# -------------------------------------- #
+
+pricing__title: 'Pricing plans'
+pricing__additional_info: | # You can use HTML (optional)
+  Do you have any questions? <a class="font-weight-bold" href="../contact.html">Contact us</a>
+pricing__submit_button: 'Submit'
+
+# -------------------------------------- #
+# --------- Breadcrumb Section --------- #
+# -------------------------------------- #
+
+breadcrumb__action_button: 'Get Now'
+breadcrumb__message: 'Create better experiences with Our Products'
+
+# -------------------------------------- #
+# ------------ Products Data ----------- #
+# -------------------------------------- #
+
+# This array defines each of the products available on the "marketplace" and will also be used to create a page for each of them.
+
+# The 'page.file_name' attribute defines the name and path of the page to be created
+# The 'page.head_title' attribute defines the name of the tab in the browser and helps improve SEO
+
+# The 'features' and 'pricing' attributes are optional
+# The "twitter.widget_token" attribute is used to load the widget provided by WOXO. For this task, just copy the value of the property "data-mc-src" in the provided code.
+# You can use Markdown and HTML in the "content" property
+
+products:
+  - page:
+      file_name: 'stack-for-elasticsearch.html'
+      head_title: 'Moegui STK for ElasticSearch® - Moegui'
+    name: 'Moegui STK for ElasticSearch®'
+    description: 'an AWS CloudFormation set of a template to deploy an ElasticSearch® & Kibana® Stack with best practices configurations made by experts ready to be used'
+    image: '@@autopath/assets/svg/theme-custom/elasticsearch.svg'
+    marketplace_url: '#'
+    categories: 
+      - 'Top rated'
+      - 'Amazon Web Services'
+      - 'Free'
+    features: 
+      - name: 'Documentation'
+        url: '#'
+    pricing: 
+      - name: 'Free'
+        description: 'Free Stack for Developers'
+        amount: 0
+        duration: 'mo'
+    content: |
+      #### What is it?
+      It is an AWS CloudFormation set of a template to deploy an <a href="https://www.elastic.co/elasticsearch" target="_blank">ElasticSearch®</a> & <a href="https://www.elastic.co/kibana" target="_blank">Kibana®</a> Stack with best practices configurations made by experts ready to be used.
+
+      #### Where to start?
+      We have prepared a complete <a href="#" target="_blank">Getting started</a> to guide you over all the deployment processes identifying the most relevant concepts. This guide uses a full set of screenshots that captures where you can follow a smooth deployment process. Following inner links, you can go deeper for advanced features or modifications.
+
+      #### Stack Components
+      Our Stack deploys a curated Amazon AMI based on the official Ubuntu 18.04 LTS.
+
+      We add the following packages:
+
+      - Docker Engine
+      - AWS System Manager Agent
+      - Python
+      - Git
+      - Ansible 2.9
+
+      We make many Security and Performance improvements needed for ElasticSearch®.
+
+      For more information, check out our <a href="#" target="_blank">overview</a>
+      

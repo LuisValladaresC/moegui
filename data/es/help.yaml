@@ -1,0 +1,75 @@
+---
+# -------------------------------------- #
+# -------------- General --------------- #
+# -------------------------------------- #
+
+page__title: 'Moegui - DevOps - SecOps - TestOps'
+
+# -------------------------------------- #
+# ---------------- Hero ---------------- #
+# -------------------------------------- #
+
+hero__title: 'How can we help?'
+hero__search_input:
+  label: 'Search'
+  placeholder: 'Search the knowledge base...'
+
+hero__aditional_info: | # You can use HTML and Markdown
+  Popular help topics:
+  <a class="link" href="#">pricing,</a>
+  <a class="link ml-1" href="#">upgrade,</a>
+  <a class="link ml-1" href="#">account,</a>
+  <a class="link ml-1" href="#">stacks</a>
+
+hero__image: '@@autopath/assets/svg/illustrations/knowledgebase-community-1.svg'
+
+# -------------------------------------- #
+# ----------------- FAQ ---------------- #
+# -------------------------------------- #
+
+faq__collections:
+  - title: 'Programming'
+    description: 'Computer programming is the process of designing and building an executable computer program to accomplish a specific computing result or to perform a specific task.'
+    icon: '@@autopath/assets/svg/icons/icon-9.svg'
+    tag: 'programming'
+
+  - title: 'Infrastructure as Code'
+    description: 'Infrastructure as code is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.'
+    icon: '@@autopath/assets/svg/icons/icon-13.svg'
+    tag: 'infrastructure'
+
+  - title: 'Automation'
+    description: 'QA automation refers to using a separate piece of software to run tests on the software that you’re developing. In the past, human testers would have to perform many of these tasks themselves, with the aid of some technology to reduce repetition.'
+    icon: '@@autopath/assets/svg/icons/icon-1.svg'
+    tag: 'automation'    
+
+  - title: 'Cloud Computing'
+    description: 'Cloud computing is the on-demand availability of computer system resources, especially data storage and computing power, without direct active management by the user. The term is generally used to describe data centers available to many users over the Internet.'
+    icon: '@@autopath/assets/svg/icons/icon-6.svg'
+    tag: 'computing'
+
+  - title: 'Microservices'
+    description: 'Microservice architecture – a variant of the service-oriented architecture structural style – arranges an application as a collection of loosely-coupled services. In a microservices architecture, services are fine-grained and the protocols are lightweight.'
+    icon: '@@autopath/assets/svg/icons/icon-22.svg'
+    tag: 'microservices'    
+
+  - title: 'Orchestation'
+    description: 'Orchestration is the automated configuration, management, and coordination of computer systems, applications, and services, prioritizing processes and using infrastructure as code to be able to carry them out.'
+    icon: '@@autopath/assets/svg/icons/icon-25.svg'
+    tag: 'orchestation' 
+
+  - title: 'CI/CD Pipelines'
+    description: 'Also known as Continuous Integration/Continuous Deployment, is the backbone of the modern DevOps environment. It bridges the gap between development and operations teams by automating the building, testing, and deployment of applications by automating the different development stages.'
+    icon: '@@autopath/assets/svg/icons/icon-3.svg'
+    tag: 'pipelines'
+
+  - title: 'Serverless'
+    description: 'Serverless computing is a cloud computing execution model in which the cloud provider allocates machine resources on demand, taking care of the servers on behalf of their customers.'
+    icon: '@@autopath/assets/svg/icons/icon-23.svg'
+    tag: 'serverless'
+
+  - title: 'Security'
+    description: 'Computer security, cybersecurity or information technology security is the protection of computer systems and networks from information disclosure, theft of or damage to their hardware, software, or electronic data, as well as from the disruption or misdirection of the services they provide.'
+    icon: '@@autopath/assets/svg/icons/icon-20.svg'
+    tag: 'security'
+...

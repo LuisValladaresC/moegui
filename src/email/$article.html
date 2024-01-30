@@ -1,0 +1,295 @@
+---
+generate:
+  collection: blog_article.articles
+  variable: article
+  filename: '/email/{{article.page.file_name}}'
+---
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- <link rel="stylesheet" href="@@autopath/assets/css/theme.css"> -->
+
+  <!--[if !mso]><!-->
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+  </style>
+  <!--<![endif]-->
+
+  <style type="text/css">
+    /* GENERAL */
+    .ExternalClass {
+      width: 100%;
+    }
+    
+    html {
+      font-family: sans-serif;
+      line-height: 1.15;
+    }
+    body * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.6;
+      text-align: left;
+      color: #677788;
+      background-color: #e6e4e4!important;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    img {
+      vertical-align: middle;
+      border-style: none;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      color: #1e2022;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      line-height: 1.4
+    }
+    h1, .h1 {
+      font-size: 2.5rem;
+    }
+    h2, .h2 {
+      font-size: 1.875rem;
+    }
+    h3, .h3 {
+      font-size: 1.3125rem;
+    }
+    h4, .h4 {
+      font-size: 1.125rem;
+    }
+    h5, .h5 {
+      font-size: 1rem;
+    }
+    h6, .h6 {
+      font-size: 0.875rem;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      text-align: left;
+      color: #677788;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    a {
+      color: #377dff;
+      text-decoration: none;
+      background-color: transparent;
+    }
+    ol, ul, dl {
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    hr {
+      box-sizing: content-box;
+      height: 0;
+      overflow: visible;
+    }
+
+    .econtainer {
+      width: 100%;
+      max-width: 686px;
+    }
+
+    /* HEADER */
+    .header__info td {
+      white-space: normal;
+      color: #8f8f8f;
+      font-size: 11px;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      text-align: center;
+    }
+
+    .header__info td a {
+      color: #8f8f8f;
+      text-decoration: underline;
+    }
+
+    .header__logo td {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+      background-color: #21325b;
+    }
+
+    .header__logo td img {
+      width: 123px;
+      height: auto;
+      display: block;
+    }
+
+    /* ARTICLE */
+    .article {
+      width: 100%;
+      background-color: #ffffff;
+    }
+
+    .article__hero td {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .article__hero td h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    .article__hero td img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+
+    .article__divider td {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    .article__divider td hr {
+      margin-top: 0;
+      margin-bottom: 0;
+      border: 0;
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-top-color: #e7eaf3;
+    }
+
+    .article__content td {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    /* FOOTER */
+    .footer {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+      padding-top: 2rem;
+    }
+
+    .footer p {
+      color: #92979b;
+      font-size: 0.75rem;
+    }
+    .footer p a {
+      color: #2c7cb0;
+      text-decoration: none;
+    }
+
+    .footer table {
+      width: 240px;
+    }
+    .footer__social_network {
+      height: 50px;
+      padding-top: 10px;
+      padding-bottom: 2rem;
+    }
+    .footer__social_network img {
+      width: 36px;
+      height: 36px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body bgcolor="#e6e4e4">
+  <table class="econtainer" align="center" border="0" cellpadding="0" cellspacing="0">
+    <!-- ========== HEADER ========== -->
+    <tr class="header__info">
+      <td>
+        You can also view this email as a <a href="#" target="_blank">webpage</a>.
+      </td>
+    </tr>
+    <tr class="header__logo">
+      <td align="center">
+        <a href="#" target="_blank">
+          <img src="@@autopath/assets/svg/theme-custom/logos/moegui_white.svg" alt="Moegui - DevOps | SecOps | TestOps" />
+        </a>
+      </td>
+    </tr>
+    <!-- ========== END HEADER ========== -->
+
+    <!-- ========== ARTICLE ========== -->
+    <tr>
+      <td>
+        <table class="article" align="center" border="0" cellpadding="0" cellspacing="0">
+          <tr class="article__hero">
+            <td>
+              <h1 class="h2">{{ article.title }}</h1>
+              <img src="{{ article.image }}">
+            </td>
+          </tr>
+
+          <tr class="article__divider">
+            <td>
+              <hr>
+            </td>
+          </tr>
+
+          <tr class="article__content">
+            <td>
+              {{ article.content | markdown | safe }}
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!-- ========== END ARTICLE ========== -->
+
+    <!-- ========== FOOTER ========== -->
+    <tr>
+      <td class="footer">
+        <p>This email was sent to *|EMAIL|* because you are signed up to receive&nbsp;product news and promotions communications&nbsp;from Moegui. If you don't wish to receive product news and promotions  communications in the future, you may <a href="*|UNSUB|*" target="_blank">unsubscribe</a>.</p>
+        
+        <p>©&nbsp;2021 <a href="#" target="_blank">Moegui.com</a> All Rights Reserved. 109 E 17th Street, Suite #5614, Cheyenne, WY, USA.</p>
+
+        <table border="0" align="center" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="footer__social_network" align="center">
+              <a href="#" target="_blank">
+                <img src="@@autopath/assets/img/theme-custom/social_networks/Linkedin.png" alt="LinkedIn">
+              </a>
+            </td>
+            <td class="footer__social_network" align="center">
+              <a href="#" target="_blank">
+                <img src="@@autopath/assets/img/theme-custom/social_networks/instagram.png" alt="Instagram">
+              </a>
+            </td>
+            <td class="footer__social_network" align="center">
+              <a href="#" target="_blank">
+                <img src="@@autopath/assets/img/theme-custom/social_networks/twitter.png" alt="Twitter">
+              </a>
+            </td>
+            <td class="footer__social_network" align="center">
+              <a href="#" target="_blank">
+                <img src="@@autopath/assets/img/theme-custom/social_networks/github.png" alt="Github">
+              </a>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <!-- ========== END FOOTER ========== -->
+  </table>
+</body>
+
+</html>
