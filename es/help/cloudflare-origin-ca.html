@@ -653,10 +653,10 @@ English / Español
   
                   <div id="languageDropdown" class="hs-unfold-content dropdown-menu dropdown-unfold dropdown-menu-bottom mb-2">
                     
-                      <a class="dropdown-item " data-lang="en" href="/">English</a>
+                      <a class="dropdown-item " data-lang="en">English</a>
                     
                     
-                    <a class="dropdown-item  active disabled " data-lang="es" href="/es/">Español</a>
+                    <a class="dropdown-item  active disabled " data-lang="es">Español</a>
                     
                     
                   </div>
@@ -853,14 +853,20 @@ English / Español
     var $languageLinks = Array.from(document.querySelectorAll('#languageDropdown a'))
 
     var pathName = window.location.pathname;
-    var pathNameWithoutLang = pathName.replace('/es/', '/').replace('/pt/', '/');
+
+    var routePrefix = '/moegui';
+    if (!pathName.includes(routePrefix)) routePrefix = '';
+
+    var route = pathName.replace(routePrefix, '')
+                        .replace('/es', '')
+                        .replace('/pt', '');
 
     $languageLinks.map($languageLink => {
       let pathNameWithLinkLang;
 
-      if ($languageLink.dataset.lang == 'en') pathNameWithLinkLang = '' + pathNameWithoutLang;
-      if ($languageLink.dataset.lang == 'es') pathNameWithLinkLang = '/es' + pathNameWithoutLang;
-      if ($languageLink.dataset.lang == 'pt') pathNameWithLinkLang = '/pt' + pathNameWithoutLang;
+      if ($languageLink.dataset.lang == 'en') pathNameWithLinkLang = routePrefix + route;
+      if ($languageLink.dataset.lang == 'es') pathNameWithLinkLang = routePrefix +'/es' + route;
+      if ($languageLink.dataset.lang == 'pt') pathNameWithLinkLang = routePrefix + '/pt' + route;
 
       $languageLink.setAttribute('href', pathNameWithLinkLang)
       $languageLink.addEventListener('click', () => localStorage.setItem('lang', $languageLink.dataset.lang))
