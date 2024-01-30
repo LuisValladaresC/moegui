@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Title -->
+   
+  <title>SecOps - OWASP SAST DAST</title>
+
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Custom Meta Tags -->
+   
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../../favicon.ico">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../../assets/css/vendor.min.css">
+
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="../../assets/css/theme.min.css?v=1.0">
+</head>
+<body>
+  
+  <!-- ========== HEADER ========== --> 
+<header id="header" class="header header-bg-transparent  header-abs-top header-show-hide header-change-appearance"
+  data-hs-header-options='{
+  "fixMoment": 1000,
+  "fixEffect": "slide"
+}'>
+  <div class="header-section" data-hs-header-item-options='{
+    "fixMomentClasses": "bg-dark header-white-nav-links-lg"
+  }'>
+    <div id="logoAndNav" class="container">
+      <!-- Nav -->
+      <nav class="js-mega-menu navbar navbar-expand-lg">
+        <!-- Default Logo -->
+        <a class="navbar-brand navbar-nav-wrap-brand navbar-brand-default" href="../../es/" aria-label="Front">
+          <img src=" ../../assets/svg/theme-custom/logos/moegui.svg " alt="Moegui">
+        </a>
+        <!-- End Default Logo -->
+
+        <!-- On Scroll Logo -->
+        <a class="navbar-brand navbar-brand-on-scroll mr-auto" href="../../es/" aria-label="Front">
+          <img src="../../assets/svg/theme-custom/logos/moegui_white.svg" alt="Moegui">
+        </a>
+        <!-- End On Scroll Logo -->
+
+        <!-- Secondary Content -->
+        <div class="navbar-nav-wrap-content justify-self-end">
+          <a class="btn btn-sm btn-light  text-right transition-3d-hover" href="../../es/hire-us.html">
+            ¡Cotiza ya!
+          </a>
+        </div>
+        <!-- End Secondary Content -->
+
+        <!-- Responsive Toggle Button -->
+        <button type="button" class="navbar-toggler navbar-nav-wrap-navbar-toggler btn btn-icon btn-sm text-dark rounded-circle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navBar"
+                data-toggle="collapse"
+                data-target="#navBar">
+          <span class="navbar-toggler-default">
+            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M17.4,6.2H0.6C0.3,6.2,0,5.9,0,5.5V4.1c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,5.9,17.7,6.2,17.4,6.2z M17.4,14.1H0.6c-0.3,0-0.6-0.3-0.6-0.7V12c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,13.7,17.7,14.1,17.4,14.1z"/>
+            </svg>
+          </span>
+          <span class="navbar-toggler-toggled">
+            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"/>
+            </svg>
+          </span>
+        </button>
+        <!-- End Responsive Toggle Button -->
+
+        <!-- Navigation -->
+        <div id="navBar" class="collapse navbar-collapse navbar-nav-wrap-collapse">
+          <div class="navbar-body header-abs-top-inner mr-lg-6">
+            <ul class="navbar-nav">
+              
+                
+                  <!-- Nav Menu -->
+                  <li class="hs-has-mega-menu navbar-nav-item" data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "position": "right",
+                      "maxWidth": "900px"
+                    }
+                  }'>
+                    <a id="megaMenuWithCard1" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Productos</a>
+
+                    <div class="hs-mega-menu dropdown-menu w-100" aria-labelledby="megaMenuWithCard1">
+                      <div class="row no-gutters">
+                        <!-- Items -->
+                        <div class="col-lg-8">
+                          
+                          
+                            <div class="navbar-promo-card-deck">
+                              
+                                <!-- Item -->
+                                <div class="navbar-promo-card navbar-promo-item">
+                                  <a class="navbar-promo-link " href="../../es/products/stack-for-elasticsearch.html">
+                                    <div class="media align-items-center">
+                                      <img class="navbar-promo-icon" src="../../assets/svg/icons/icon-67.svg">
+                                      <div class="media-body">
+                                        <span class="navbar-promo-title">Moegui STK for ElasticSearch</span>
+                                        <span class="navbar-promo-text"><span class="badge badge-success badge-pill">New</span>'
+</span>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <!-- End Item -->
+
+                                
+                              
+                                <!-- Item -->
+                                <div class="navbar-promo-card navbar-promo-item">
+                                  <a class="navbar-promo-link disabled" href="">
+                                    <div class="media align-items-center">
+                                      <img class="navbar-promo-icon" src="../../assets/svg/icons/icon-45.svg">
+                                      <div class="media-body">
+                                        <span class="navbar-promo-title">Moegui STK for RabbitMQ</span>
+                                        <span class="navbar-promo-text">Pronto...
+</span>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <!-- End Item -->
+
+                                
+                              
+                            </div>
+                          
+                            <div class="navbar-promo-card-deck">
+                              
+                                <!-- Item -->
+                                <div class="navbar-promo-card navbar-promo-item">
+                                  <a class="navbar-promo-link disabled" href="">
+                                    <div class="media align-items-center">
+                                      <img class="navbar-promo-icon" src="../../assets/svg/icons/icon-4.svg">
+                                      <div class="media-body">
+                                        <span class="navbar-promo-title">Moegui STK for MongoDB</span>
+                                        <span class="navbar-promo-text">Pronto...
+</span>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <!-- End Item -->
+
+                                 
+                                  <div class="navbar-promo-card navbar-promo-item"></div>
+                                
+                              
+                            </div>
+                          
+                        </div>
+                        <!-- End Items -->
+
+                        <!-- Card -->
+                        <div class="col-lg-4 navbar-promo d-none d-lg-flex align-items-center">
+                          <a class="d-block navbar-promo-inner" href="../../es/products">
+                            <div class="position-relative d-flex align-items-center">
+                              <img class="img-fluid rounded" src="../../assets/img/theme-custom/components/card1.jpg">
+                              <div class="position-absolute text-white p-4">
+                                <p><strong>Instala tu Stack desde el Marketplace en minutos.
+</strong></p>
+                              </div>
+                            </div>
+                            
+                          </a>
+                        </div>
+                        <!-- End Card -->
+                      </div>
+                    </div>
+                  </li>
+                  <!-- End Nav Menu -->
+                
+              
+                
+                  <!-- Nav Menu -->
+                  <li class="hs-has-mega-menu navbar-nav-item"
+                  data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "position": "right",
+                      "maxWidth": "260px"
+                    }
+                  }'>
+                    <a id="megaMenu2" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Servicios</a>
+
+                    <div class="hs-mega-menu dropdown-menu mega-menu-position-right-fix" aria-labelledby="megaMenu2" style="min-width: 330px;">
+                      
+                      <!-- Item -->
+                      <div class="navbar-promo-item">
+                        <a class="navbar-promo-link " href="../../es/services/devops.html">
+                          <div class="media align-items-center">
+                            <img class="navbar-promo-icon" src="../../assets/svg/icons/icon-3.svg">
+                            <div class="media-body">
+                              <span class="navbar-promo-title">DevOps</span>
+                              <small class="navbar-promo-text">Desarrollo & Operaciones</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End Item -->
+                      
+                      <!-- Item -->
+                      <div class="navbar-promo-item">
+                        <a class="navbar-promo-link " href="../../es/services/secops.html">
+                          <div class="media align-items-center">
+                            <img class="navbar-promo-icon" src="../../assets/svg/icons/icon-20.svg">
+                            <div class="media-body">
+                              <span class="navbar-promo-title">SecOps</span>
+                              <small class="navbar-promo-text">Seguridad & Operaciones</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End Item -->
+                      
+                      <!-- Item -->
+                      <div class="navbar-promo-item">
+                        <a class="navbar-promo-link " href="../../es/services/testops.html">
+                          <div class="media align-items-center">
+                            <img class="navbar-promo-icon" src="../../assets/svg/icons/icon-1.svg">
+                            <div class="media-body">
+                              <span class="navbar-promo-title">TestOps</span>
+                              <small class="navbar-promo-text">Testing & Operaciones</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End Item -->
+                      
+                    </div>
+                  </li>
+                  <!-- End Nav Menu -->
+                
+              
+                
+                  <li class="navbar-nav-item">
+                    <a class="nav-link " href="../../es/blog"><span class="px-1">Blog</span></a>
+                  </li>
+                
+              
+                
+                  <li class="navbar-nav-item">
+                    <a class="nav-link " href="../../es/careers"><span class="px-1">Carreras</span></a>
+                  </li>
+                
+              
+            </ul>
+          </div>
+        </div>
+        <!-- End Navigation -->
+      
+      </nav>
+      <!-- End Nav -->
+    </div>
+  </div>
+</header>
+<!-- ========== END HEADER ========== -->
+
+
+
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main" class="overflow-hidden">
+    <!-- Hero Section -->
+    <div class="gradient-y-gray position-relative">
+      <div class="container space-top-3 space-bottom-2">
+        <div class="row">
+          <!-- Content -->
+          <div class="col-lg-6 d-flex flex-column justify-content-center text-center text-lg-left space-0 space-md-1 space-lg-0">
+            <h1 class="display-4">True SecOps</h1>
+            <p class="lead ml-lg-1 mb-5">Buscando un equipo ágil para la mejora en la seguridad del código en una infraestructura de nube compleja</p>
+          </div>
+          <!-- End Content -->
+
+          <!-- SVG Illustration -->
+          <div class="col-md-6 d-none d-lg-inline-block">
+            <figure class="w-100 text-center">
+              <img class="img-fluid" src="../../assets/svg/theme-custom/secops.svg">
+            </figure>
+          </div>
+          <!-- End SVG Illustration -->
+        </div>
+      </div>
+
+      <!-- SVG Bottom Shape -->
+      <figure>
+        <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 1920 100.1">
+          <path fill="#fff" d="M0,0c0,0,934.4,93.4,1920,0v100.1H0L0,0z"/>
+        </svg>
+      </figure>
+      <!-- End SVG Bottom Shape -->
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Features Section -->
+    <div class="overflow-hidden space-top-3 space-bottom-2">
+      <div class="container">
+        <div class="row justify-content-lg-between align-items-lg-center">
+          <!-- SVG Element -->
+          <div class="col-lg-6 col-xl-5 space-bottom-md-2 d-none d-lg-block">
+            <div class="position-relative min-h-500rem mx-auto" style="max-width: 28rem;">
+              <figure class="position-absolute top-0 right-0 z-index-2 mr-11">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 450 450" width="165" height="165">
+                  <g>
+                    <defs>
+                      <path id="circleImgID2" d="M225,448.7L225,448.7C101.4,448.7,1.3,348.5,1.3,225l0,0C1.2,101.4,101.4,1.3,225,1.3l0,0
+                        c123.6,0,223.7,100.2,223.7,223.7l0,0C448.7,348.6,348.5,448.7,225,448.7z"/>
+                    </defs>
+                    <clipPath id="circleImgID1">
+                      <use xlink:href="#circleImgID2"/>
+                    </clipPath>
+                    <g clip-path="url(#circleImgID1)">
+                      <image width="450" height="450" xlink:href="../../assets/img/450x450/img1.jpg" ></image>
+                    </g>
+                  </g>
+                </svg>
+              </figure>
+
+              <figure class="position-absolute top-0 left-0">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 335.2 335.2" width="120" height="120">
+                  <circle fill="none" stroke="#377DFF" stroke-width="75" cx="167.6" cy="167.6" r="130.1"/>
+                </svg>
+              </figure>
+
+              <figure class="d-none d-sm-block position-absolute top-0 left-0 mt-11">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 515 515" width="200" height="200">
+                  <g>
+                    <defs>
+                      <path id="circleImgID4" d="M260,515h-5C114.2,515,0,400.8,0,260v-5C0,114.2,114.2,0,255,0h5c140.8,0,255,114.2,255,255v5
+                        C515,400.9,400.8,515,260,515z"/>
+                    </defs>
+                    <clipPath id="circleImgID3">
+                      <use xlink:href="#circleImgID4"/>
+                    </clipPath>
+                    <g clip-path="url(#circleImgID3)">
+                      <image width="515" height="515" xlink:href="../../assets/img/515x515/img1.jpg" transform="matrix(1 0 0 1 1.639390e-02 2.880859e-02)"></image>
+                    </g>
+                  </g>
+                </svg>
+              </figure>
+
+              <figure class="position-absolute top-0 right-0" style="margin-top: 11rem; margin-right: 13rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 67 67" width="25" height="25">
+                  <circle fill="#00C9A7" cx="33.5" cy="33.5" r="33.5"/>
+                </svg>
+              </figure>
+
+              <figure class="position-absolute top-0 right-0 mr-3" style="margin-top: 8rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 141 141" width="50" height="50">
+                  <circle fill="#FFC107" cx="70.5" cy="70.5" r="70.5"/>
+                </svg>
+              </figure>
+
+              <figure class="position-absolute bottom-0 right-0">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 770.4 770.4" width="280" height="280">
+                  <g>
+                    <defs>
+                      <path id="circleImgID6" d="M385.2,770.4L385.2,770.4c212.7,0,385.2-172.5,385.2-385.2l0,0C770.4,172.5,597.9,0,385.2,0l0,0
+                        C172.5,0,0,172.5,0,385.2l0,0C0,597.9,172.4,770.4,385.2,770.4z"/>
+                    </defs>
+                    <clipPath id="circleImgID5">
+                      <use xlink:href="#circleImgID6"/>
+                    </clipPath>
+                    <g clip-path="url(#circleImgID5)">
+                      <image width="900" height="900" xlink:href="../../assets/img/900x900/img2.jpg" transform="matrix(1 0 0 1 -64.8123 -64.8055)"></image>
+                    </g>
+                  </g>
+                </svg>
+              </figure>
+            </div>
+            <!-- End SVG Element -->
+          </div>
+          <!-- End SVG Element -->
+
+          <!-- Content -->
+          <div class="col-lg-6">
+            <div class="mb-7 mb-lg-5 text-center text-lg-left">
+              <h2>Seguridad avanzada fácil de entender</h2>
+            </div>
+
+            <!-- Features -->
+            <ul class="step step-dashed mb-7">
+              
+              <!-- Feature -->
+              <li class="step-item ">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-xs step-icon-soft-primary">1</span>
+                  <div class="step-content">
+                    <h3 class="h4">Desarrollo de IaaC con líderes en la industria</h3>
+                    <p class="">
+                      <p>Utilizando Ansible, Terraform y CloudFormation, entregamos infraestructura como un código para crear, mantener y actualizar recursos inmutables.</p>
+
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <!-- End Feature -->
+              
+              <!-- Feature -->
+              <li class="step-item ">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-xs step-icon-soft-primary">2</span>
+                  <div class="step-content">
+                    <h3 class="h4">Despliegue e Integracion Continúa</h3>
+                    <p class="">
+                      <p>Con GitLab CI, GitHub Actions y Jenkins CI, integramos y desplegamos el código en su infraestructura.</p>
+
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <!-- End Feature -->
+              
+              <!-- Feature -->
+              <li class="step-item ">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-xs step-icon-soft-primary">3</span>
+                  <div class="step-content">
+                    <h3 class="h4">Haciendo cumplir la seguridad</h3>
+                    <p class="">
+                      <p>Mejore la seguridad del código utilizando marcos confiables de OWASP, como SAST o DAST, para proteger y hacer cumplir su seguridad interna.</p>
+
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <!-- End Feature -->
+              
+              <!-- Feature -->
+              <li class="step-item  mb-0 ">
+                <div class="step-content-wrapper">
+                  <span class="step-icon step-icon-xs step-icon-soft-primary">4</span>
+                  <div class="step-content">
+                    <h3 class="h4">Soporte que importa</h3>
+                    <p class=" mb-0 ">
+                      <p>Respaldados por nuestros dos equipos, Estados Unidos e India, podemos brindar realmente soporte en tiempo real las 24 horas del día. No más, lo siento pero <em>me dormí</em>.        </p>
+
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <!-- End Feature -->
+              
+            </ul>
+            <!-- Features -->
+
+            <div class="mt-2">
+              <a class="btn btn-primary transition-3d-hover px-4 d-block d-lg-inline-block" href="../../es/hire-us.html">¿Tienes un proyecto?</a>
+            </div>
+          </div>
+          <!-- End Content -->
+        </div>
+      </div>
+    </div>
+    <!-- End Features Section -->
+
+    <!-- Stats Progress Section -->
+    <div class="container space-top-3 space-bottom-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <h2>Nuestras métricas del ciclo de vida de desarrollo</h2>
+      </div>
+      <!-- End Title -->
+
+      <div class="row mb-7 justify-content-center">
+        
+        <div class="col-sm-6 col-lg-3 mb-7 mb-lg-4">
+          <div class="stats-progress position-relative d-flex align-items-center justify-content-center">
+            <!-- Pie Circle -->
+            <div class="js-circle text-center"
+                 data-hs-circles-options='{
+                   "value": 5.36,
+                   "maxValue": 7,
+                   "duration": 2000,
+                   "isViewportInit": true,
+                   "colors": ["#f8fafd", "#00c9a7"],
+                   "radius": 100,
+                   "width": 8,
+                   "fgStrokeLinecap": "round",
+                   "fgStrokeMiterlimit": "10",
+                   "textClass": "stats-progress-info",
+                   "textFontSize": 24,
+                   "textFontWeight": 500,
+                   "textColor": "#00c9a7",
+                   "secondaryText": "Tiempo medio desde que se creó el problema hasta que se cerró el problema",
+                   "secondaryTextColor": "#77838f",
+                   "secondaryTextFontSize": "13",
+                   "secondaryTextFontWeight": "400",
+                   "dividerSpace": "10"
+                 }'></div>
+            <!-- End Pie Circle -->
+          </div>
+        </div>
+        
+        <div class="col-sm-6 col-lg-3 mb-7 mb-lg-4">
+          <div class="stats-progress position-relative d-flex align-items-center justify-content-center">
+            <!-- Pie Circle -->
+            <div class="js-circle text-center"
+                 data-hs-circles-options='{
+                   "value": 4.3,
+                   "maxValue": 7,
+                   "duration": 2000,
+                   "isViewportInit": true,
+                   "colors": ["#f8fafd", "#ffc107"],
+                   "radius": 100,
+                   "width": 8,
+                   "fgStrokeLinecap": "round",
+                   "fgStrokeMiterlimit": "10",
+                   "textClass": "stats-progress-info",
+                   "textFontSize": 24,
+                   "textFontWeight": 500,
+                   "textColor": "#ffc107",
+                   "secondaryText": "Tiempo medio antes de que un problema comience a implementarse",
+                   "secondaryTextColor": "#77838f",
+                   "secondaryTextFontSize": "13",
+                   "secondaryTextFontWeight": "400",
+                   "dividerSpace": "10"
+                 }'></div>
+            <!-- End Pie Circle -->
+          </div>
+        </div>
+        
+        <div class="col-sm-6 col-lg-3 mb-7 mb-lg-4">
+          <div class="stats-progress position-relative d-flex align-items-center justify-content-center">
+            <!-- Pie Circle -->
+            <div class="js-circle text-center"
+                 data-hs-circles-options='{
+                   "value": 0.5,
+                   "maxValue": 7,
+                   "duration": 2000,
+                   "isViewportInit": true,
+                   "colors": ["#f8fafd", "#de4437"],
+                   "radius": 100,
+                   "width": 8,
+                   "fgStrokeLinecap": "round",
+                   "fgStrokeMiterlimit": "10",
+                   "textClass": "stats-progress-info",
+                   "textFontSize": 24,
+                   "textFontWeight": 500,
+                   "textColor": "#de4437",
+                   "secondaryText": "Tiempo medio hasta la primera solicitud de fusión",
+                   "secondaryTextColor": "#77838f",
+                   "secondaryTextFontSize": "13",
+                   "secondaryTextFontWeight": "400",
+                   "dividerSpace": "10"
+                 }'></div>
+            <!-- End Pie Circle -->
+          </div>
+        </div>
+        
+        <div class="col-sm-6 col-lg-3 mb-7 mb-lg-4">
+          <div class="stats-progress position-relative d-flex align-items-center justify-content-center">
+            <!-- Pie Circle -->
+            <div class="js-circle text-center"
+                 data-hs-circles-options='{
+                   "value": 0.1,
+                   "maxValue": 7,
+                   "duration": 2000,
+                   "isViewportInit": true,
+                   "colors": ["#f8fafd", "#377dff"],
+                   "radius": 100,
+                   "width": 8,
+                   "fgStrokeLinecap": "round",
+                   "fgStrokeMiterlimit": "10",
+                   "textClass": "stats-progress-info",
+                   "textFontSize": 24,
+                   "textFontWeight": 500,
+                   "textColor": "#377dff",
+                   "secondaryText": "Tiempo medio que se tarda en probar el código",
+                   "secondaryTextColor": "#77838f",
+                   "secondaryTextFontSize": "13",
+                   "secondaryTextFontWeight": "400",
+                   "dividerSpace": "10"
+                 }'></div>
+            <!-- End Pie Circle -->
+          </div>
+        </div>
+        
+        <div class="col-sm-6 col-lg-3 mb-7 mb-lg-4">
+          <div class="stats-progress position-relative d-flex align-items-center justify-content-center">
+            <!-- Pie Circle -->
+            <div class="js-circle text-center"
+                 data-hs-circles-options='{
+                   "value": 2.03,
+                   "maxValue": 7,
+                   "duration": 2000,
+                   "isViewportInit": true,
+                   "colors": ["#f8fafd", "#00c9a7"],
+                   "radius": 100,
+                   "width": 8,
+                   "fgStrokeLinecap": "round",
+                   "fgStrokeMiterlimit": "10",
+                   "textClass": "stats-progress-info",
+                   "textFontSize": 24,
+                   "textFontWeight": 500,
+                   "textColor": "#00c9a7",
+                   "secondaryText": "Tiempo medio entre la creación de la solicitud de fusión y la fusión / cierre",
+                   "secondaryTextColor": "#77838f",
+                   "secondaryTextFontSize": "13",
+                   "secondaryTextFontWeight": "400",
+                   "dividerSpace": "10"
+                 }'></div>
+            <!-- End Pie Circle -->
+          </div>
+        </div>
+        
+        <div class="col-sm-6 col-lg-3 mb-7 mb-lg-4">
+          <div class="stats-progress position-relative d-flex align-items-center justify-content-center">
+            <!-- Pie Circle -->
+            <div class="js-circle text-center"
+                 data-hs-circles-options='{
+                   "value": 3.56,
+                   "maxValue": 7,
+                   "duration": 2000,
+                   "isViewportInit": true,
+                   "colors": ["#f8fafd", "#ffc107"],
+                   "radius": 100,
+                   "width": 8,
+                   "fgStrokeLinecap": "round",
+                   "fgStrokeMiterlimit": "10",
+                   "textClass": "stats-progress-info",
+                   "textFontSize": 24,
+                   "textFontWeight": 500,
+                   "textColor": "#ffc107",
+                   "secondaryText": "Tiempo medio entre la fusión y la implementación en producción",
+                   "secondaryTextColor": "#77838f",
+                   "secondaryTextFontSize": "13",
+                   "secondaryTextFontWeight": "400",
+                   "dividerSpace": "10"
+                 }'></div>
+            <!-- End Pie Circle -->
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- End Stats Progress Section -->
+
+    <!-- Testimonials Section -->
+    <div class="container space-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-5 mb-md-9">
+        <h2>Clientes en todo el mundo confían en Moegui True SecOps</h2>
+      </div>
+      <!-- End Title -->
+      
+      <!-- Testimonials Section -->
+      <div class="row">
+        
+        <!-- Testimonial -->
+        <div class="col-md-6 col-lg-4  mb-3 mb-lg-0   mb-md-5 ">
+          <div class="card h-100">
+            <div class="card-body">
+              <ul class="list-inline text-warning">
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+              </ul>
+              <div class="mb-auto">
+                <p class="text-dark mb-0">With Moegui, we&#39;re able to easily to deploy our infrastructure. It&#39;s become an essential tool for rock-solid growing</p>
+              </div>
+            </div>
+
+            <div class="card-footer border-0 bg-transparent pt-0 px-5 pb-5">
+              <div class="media align-items-center">
+                <div class="avatar avatar-circle mr-3">
+                  <img class="avatar-img" src="https://raw.githubusercontent.com/front10/landing-page-book/master/assets/images/logo/front10.png" alt="Dariel Vila">
+                </div>
+                <div class="media-body">
+                  <h4 class="mb-0">Dariel Vila</h4>
+                  <small class="d-block text-body">
+                    <span>Co-Founder @ Front10</span>
+                    
+                      </span> | <a href="#">LinkedIn</a></span>
+                    
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Testimonial -->
+        
+        <!-- Testimonial -->
+        <div class="col-md-6 col-lg-4  mb-3 mb-lg-0  ">
+          <div class="card h-100">
+            <div class="card-body">
+              <ul class="list-inline text-warning">
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+              </ul>
+              <div class="mb-auto">
+                <p class="text-dark mb-0">Moegui provides a great all-in-one solution bringing all the skills that your DevOps needs in a single team making their service ideal for growing companies like ours.</p>
+              </div>
+            </div>
+
+            <div class="card-footer border-0 bg-transparent pt-0 px-5 pb-5">
+              <div class="media align-items-center">
+                <div class="avatar avatar-circle mr-3">
+                  <img class="avatar-img" src="https://avatars.githubusercontent.com/u/51415786" alt="Michel Dahdah">
+                </div>
+                <div class="media-body">
+                  <h4 class="mb-0">Michel Dahdah</h4>
+                  <small class="d-block text-body">
+                    <span>Co-Founder @ Rand Labs</span>
+                    
+                      </span> | <a href="#">LinkedIn</a></span>
+                    
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Testimonial -->
+        
+        <!-- Testimonial -->
+        <div class="col-md-6 col-lg-4  ">
+          <div class="card h-100">
+            <div class="card-body">
+              <ul class="list-inline text-warning">
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+                <li class="list-inline-item mx-0">
+                  <i class="fas fa-star"></i>
+                </li>
+              </ul>
+              <div class="mb-auto">
+                <p class="text-dark mb-0">Valuable cooperation to enhance our DevOps team with planning, knowledge, and reliable delivery.</p>
+              </div>
+            </div>
+
+            <div class="card-footer border-0 bg-transparent pt-0 px-5 pb-5">
+              <div class="media align-items-center">
+                <div class="avatar avatar-circle mr-3">
+                  <img class="avatar-img" src="https://yt3.ggpht.com/ytc/AAUvwngtKU0X1Wt-2D0jgTbBBVAQPClL9bzbLDz2IM8i=s68-c-k-c0x00ffffff-no-rj" alt="Jose Rafaelly">
+                </div>
+                <div class="media-body">
+                  <h4 class="mb-0">Jose Rafaelly</h4>
+                  <small class="d-block text-body">
+                    <span>CTO @ EveryMundo</span>
+                    
+                      </span> | <a href="#">LinkedIn</a></span>
+                    
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Testimonial -->
+        
+      </div>
+    </div>
+    <!-- End Testimonials Section -->
+
+    <!-- Info Section -->
+    <div class="container space-top-3 space-bottom-2">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-60 text-center mx-md-auto mb-5 mb-md-9">
+        <h2>¿Busca soluciones de consultoría?</h2>
+      </div>
+      <!-- End Title -->
+
+      <div class="row">
+        
+        <!-- Info Item -->
+        <div class="col-md-6 col-lg-4  mb-3 mb-lg-0   mb-md-5 ">
+          <a class="card card-bg-light shadow-none overflow-hidden transition-3d-hover">
+            <div class="row align-items-center">
+              <div class="col-8 col-md-0">
+                <div class="py-3 pl-4">
+                  <h2 class="h4">Codifique su infraestructura</h2>
+                  <span class="font-size-1 font-weight-bold"><ul>
+<li>Ansible<br></li>
+<li>Terraform<br></li>
+<li>CloudFormation<br></li>
+</ul>
+</span>
+                </div>
+              </div>
+              <div class="col-4 col-md-4 px-0">
+                <img class="img-fluid" src="../../assets/svg/theme-custom/infrastructure.svg" alt="SVG">
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- End Info Item -->
+        
+        <!-- Info Item -->
+        <div class="col-md-6 col-lg-4  mb-3 mb-lg-0   mb-md-5 ">
+          <a class="card card-bg-light shadow-none overflow-hidden transition-3d-hover">
+            <div class="row align-items-center">
+              <div class="col-8 col-md-0">
+                <div class="py-3 pl-4">
+                  <h2 class="h4">Asegure sus Aplicaciones</h2>
+                  <span class="font-size-1 font-weight-bold"><ul>
+<li>OWASP® ZAP<br></li>
+<li>Semgrep<br></li>
+<li>GoSec<br></li>
+</ul>
+</span>
+                </div>
+              </div>
+              <div class="col-4 col-md-4 px-0">
+                <img class="img-fluid" src="../../assets/svg/theme-custom/security.svg" alt="SVG">
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- End Info Item -->
+        
+        <!-- Info Item -->
+        <div class="col-md-6 col-lg-4  mb-3 mb-lg-0   mb-md-5 ">
+          <a class="card card-bg-light shadow-none overflow-hidden transition-3d-hover">
+            <div class="row align-items-center">
+              <div class="col-8 col-md-0">
+                <div class="py-3 pl-4">
+                  <h2 class="h4">Escale su entorno</h2>
+                  <span class="font-size-1 font-weight-bold"><ul>
+<li>Docker Swarm<br></li>
+<li>Kubernetes<br></li>
+<li>OpenShift<br> </li>
+</ul>
+</span>
+                </div>
+              </div>
+              <div class="col-4 col-md-4 px-0">
+                <img class="img-fluid" src="../../assets/svg/theme-custom/orchestration.svg" alt="SVG">
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- End Info Item -->
+        
+        <!-- Info Item -->
+        <div class="col-md-6 col-lg-4  mb-3 mb-lg-0   mb-md-5 ">
+          <a class="card card-bg-light shadow-none overflow-hidden transition-3d-hover">
+            <div class="row align-items-center">
+              <div class="col-8 col-md-0">
+                <div class="py-3 pl-4">
+                  <h2 class="h4">Automatización que funciona</h2>
+                  <span class="font-size-1 font-weight-bold"><ul>
+<li>Jenkins CI<br></li>
+<li>GitLab CI<br></li>
+<li>GitHub CI<br>   </li>
+</ul>
+</span>
+                </div>
+              </div>
+              <div class="col-4 col-md-4 px-0">
+                <img class="img-fluid" src="../../assets/svg/theme-custom/automation.svg" alt="SVG">
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- End Info Item -->
+        
+        <!-- Info Item -->
+        <div class="col-md-6 col-lg-4  mb-3 mb-lg-0  ">
+          <a class="card card-bg-light shadow-none overflow-hidden transition-3d-hover">
+            <div class="row align-items-center">
+              <div class="col-8 col-md-0">
+                <div class="py-3 pl-4">
+                  <h2 class="h4">Haciendo realidad la planificación</h2>
+                  <span class="font-size-1 font-weight-bold"><ul>
+<li>Agile Scrum<br></li>
+<li>Agile Kanban<br></li>
+<li>Agile Reporting<br></li>
+</ul>
+</span>
+                </div>
+              </div>
+              <div class="col-4 col-md-4 px-0">
+                <img class="img-fluid" src="../../assets/svg/illustrations/calendar.svg" alt="SVG">
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- End Info Item -->
+        
+        <!-- Info Item -->
+        <div class="col-md-6 col-lg-4  ">
+          <a class="card card-bg-light shadow-none overflow-hidden transition-3d-hover">
+            <div class="row align-items-center">
+              <div class="col-8 col-md-0">
+                <div class="py-3 pl-4">
+                  <h2 class="h4">Colaboración simplificada</h2>
+                  <span class="font-size-1 font-weight-bold"><ul>
+<li>Slack Connect<br></li>
+<li>Google Chat<br></li>
+<li>Email &amp; Phone Support<br></li>
+</ul>
+</span>
+                </div>
+              </div>
+              <div class="col-4 col-md-4 px-0">
+                <img class="img-fluid" src="../../assets/svg/illustrations/communication.svg" alt="SVG">
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- End Info Item -->
+        
+      </div>
+    </div>
+    <!-- End Info Section -->
+
+
+    <!-- Articles Section -->
+    <div class="overflow-hidden space-top-3 space-bottom-2">
+      <div class="container">
+        <div class="row justify-content-lg-between">
+          <div class="col-lg-5 mb-9 mb-lg-0">
+            <div class="max-w-19rem mb-4 d-none d-lg-block">
+              <img class="img-fluid" src="../../assets/svg/illustrations/medal.svg" alt="SVG">
+            </div>
+
+            <div class="mb-5">
+              <h2 class="mb-5 mb-lg-2 text-center text-lg-left">¿Busca True SecOps Stacks?</h2>
+              <p><p>Descubra nuestros True SecOps Stacks seleccionados, siguiendo las mejores prácticas y listos para ser implementados. <strong>¡Aviso! La mayoría son de uso gratuito</strong></p>
+</p>
+            </div>
+
+            <a class="btn btn-primary transition-3d-hover px-4 d-block d-lg-inline-block" href="../../es/products/">Todos los Stacks</a>
+          </div>
+
+          <div class="col-lg-6">
+            
+            <div class="row">
+              <!-- Article Item -->
+              <div class="col-sm-6 mb-5 mb-sm-0">
+                <a class="d-block" href="../../es/products/stack-for-elasticsearch.html" data-aos="fade-left" data-aos-delay="100">
+                  <img class="img-fluid w-100 rounded" src="../../assets/svg/theme-custom/elasticsearch.svg">
+                  <div class="shadow-none py-4">
+                    <h4>Moegui STK for ElasticSearch®</h4>
+                    <p class="text-body">Un AWS ElasticSearch® Stack creado bajo True SecOps Framework</p>
+                    <span class="font-size-1 font-weight-bold">Aprenda más <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+                  </div>
+                </a>
+              </div>
+              <!-- End Article Item -->
+
+              
+              <!-- Article Item -->
+              <div class="col-sm-6">
+                <a class="d-block" href="../../es/products/stack-for-rabbitmq.html" data-aos="fade-left">
+                  <img class="img-fluid w-100 rounded" src="../../assets/svg/theme-custom/rabbitmq.svg">
+                  <div class="shadow-none py-4">
+                    <h4>Moegui STK for RabbitMQ®</h4>
+                    <p class="text-body">Un AWS RabbitMQ® Stack creado bajo True SecOps Framework</p>
+                    <span class="font-size-1 font-weight-bold">Aprenda más <i class="fas fa-angle-right fa-sm ml-1"></i></span>
+                  </div>
+                </a>
+              </div>
+              <!-- End Article Item -->
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Articles Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  <!-- ========== FOOTER ========== -->
+<footer class="bg-dark">
+  <div class="container">
+    <div class="space-top-2 space-bottom-1 space-bottom-lg-2">
+      <div class="row justify-content-lg-between">
+        <div class="col-lg-3 ml-lg-auto mb-5 mb-lg-0">
+          <!-- Logo -->
+          <div class="mb-4">
+            <a href="../../es/index.html" aria-label="Moegui">
+              <img class="brand" src="../../assets/svg/theme-custom/logos/moegui_white.svg" alt="Moegui">
+            </a>
+          </div>
+          <!-- End Logo -->
+
+          <!-- Nav Link -->
+          <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+            <li class="nav-item">
+              <a class="nav-link media" href="../../es/contact.html#map">
+                <span class="media">
+                  <span class="fas fa-location-arrow mt-1 mr-2"></span>
+                  <span class="media-body">
+                    100 E 7th Street <br>
+Suite #0001 <br>
+Cheyenne, WY, USA
+
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link media" href="#">
+                <span class="media">
+                  <span class="fas fa-phone-alt mt-1 mr-2"></span>
+                  <span class="media-body">
+                    1-800-643-4500 <br>
+English / Español
+
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Nav Link -->
+        </div>
+
+        
+          <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+            <h5 class="text-white">Empresa</h5>
+
+            <!-- Nav Link -->
+            <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/about.html">Sobre</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/contact.html">Contacto</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/careers">Carreras</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/blog">Blog</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/hire-us.html">Contratenos</a>
+                </li>
+              
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+        
+          <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+            <h5 class="text-white">Servicios</h5>
+
+            <!-- Nav Link -->
+            <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/services/devops.html">DevOps</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/services/secops.html">SecOps</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/services/testops.html">TestOps</a>
+                </li>
+              
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+        
+          <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+            <h5 class="text-white">Productos</h5>
+
+            <!-- Nav Link -->
+            <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/products/stack-for-elasticsearch.html">Moegui STK for ElasticSearch</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="">Moegui STK for RabbitMQ</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="">Moegui STK for MongoDB</a>
+                </li>
+              
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+        
+          <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+            <h5 class="text-white">Recursos</h5>
+
+            <!-- Nav Link -->
+            <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../../es/help/">Ayuda</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="#">Documentacion</a>
+                </li>
+              
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+        
+      </div>
+    </div>
+
+    <hr class="opacity-xs my-0">
+
+    <div class="space-1">
+      <div class="row align-items-md-center mb-7">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <!-- Nav Link -->
+          <ul class="nav nav-sm nav-white nav-x-sm align-items-center">
+            
+              <li class="nav-item">
+                <a class="nav-link " href="../../es/privacy.html">Privacy &amp; Policy</a>
+              </li>
+               <li class="nav-item opacity mx-3">&#47;</li> 
+            
+              <li class="nav-item">
+                <a class="nav-link " href="../../es/terms.html">Terms</a>
+              </li>
+               <li class="nav-item opacity mx-3">&#47;</li> 
+            
+              <li class="nav-item">
+                <a class="nav-link " href="#">Site Map</a>
+              </li>
+              
+            
+          </ul>
+          <!-- End Nav Link -->
+        </div>
+
+        <div class="col-md-6 text-md-right">
+          <ul class="list-inline mb-0">
+            <!-- Social Networks -->
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-gitlab"></i>
+              </a>
+            </li>
+            <!-- End Social Networks -->
+
+            <!-- Language -->
+            <li class="list-inline-item">
+                <div class="hs-unfold">
+                  <a class="js-hs-unfold-invoker dropdown-toggle btn btn-xs btn-soft-light" href="javascript:;"
+                    data-hs-unfold-options='{
+                    "target": "#languageDropdown",
+                    "type": "css-animation",
+                    "animationIn": "slideInDown"
+                    }'>
+                    
+                      <span class="d-inline-block nav-link p-0">Español</span>
+                    
+                  </a>
+  
+                  <div id="languageDropdown" class="hs-unfold-content dropdown-menu dropdown-unfold dropdown-menu-bottom mb-2">
+                    
+                      <a class="dropdown-item " data-lang="en" href="/">English</a>
+                    
+                    
+                    <a class="dropdown-item  active disabled " data-lang="es" href="/es/">Español</a>
+                    
+                    
+                  </div>
+                </div>
+            </li>
+            <!-- End Language -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="w-md-75 text-lg-center mx-lg-auto">
+        <p class="text-white opacity-sm small">© 2021 Moegui. Reservados todos los derechos.</p>
+        <p class="text-white opacity-sm small">Cuando visita o interactúa con nuestros sitios, servicios o herramientas, nosotros o nuestros proveedores de servicios autorizados podemos usar cookies para almacenar información para ayudarlo a brindarle una experiencia mejor, más rápida y segura y con fines de marketing.</p>
+      </div>
+      <!-- End Copyright -->
+    </div>
+  </div>
+</footer>
+<!-- ========== END FOOTER ========== -->
+
+
+
+
+
+
+
+  <!-- Go to Top --> 
+<a class="js-go-to go-to position-fixed" href="#" style="visibility: hidden;"
+  data-hs-go-to-options='{
+    "offsetTop": 700,
+    "position": {
+      "init": {
+        "right": 15
+      },
+      "show": {
+        "bottom": 15
+      },
+      "hide": {
+        "bottom": -15
+      }
+    }
+  }'>
+  <i class="fas fa-arrow-up"></i>
+</a>
+<!-- End Go to Top -->
+
+
+
+
+
+
+
+  
+  <!-- JS Implementing Plugins -->
+  <script src="../../assets/js/vendor.min.js"></script>
+
+  <!-- JS Front -->
+  <script src="../../assets/js/theme.min.js"></script>
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF CIRCLES
+      // =======================================================
+      $('.js-circle').each(function () {
+        var circle = $.HSCore.components.HSCircles.init($(this));
+      });
+
+      // INITIALIZATION OF AOS
+      // =======================================================
+      AOS.init({
+        duration: 650,
+        once: true
+      });
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+
+  
+  
+  <script>
+    var $languageLinks = Array.from(document.querySelectorAll('#languageDropdown a'))
+
+    var pathName = window.location.pathname;
+    var pathNameWithoutLang = pathName.replace('/es/', '/').replace('/pt/', '/');
+
+    $languageLinks.map($languageLink => {
+      let pathNameWithLinkLang;
+
+      if ($languageLink.dataset.lang == 'en') pathNameWithLinkLang = '' + pathNameWithoutLang;
+      if ($languageLink.dataset.lang == 'es') pathNameWithLinkLang = '/es' + pathNameWithoutLang;
+      if ($languageLink.dataset.lang == 'pt') pathNameWithLinkLang = '/pt' + pathNameWithoutLang;
+
+      $languageLink.setAttribute('href', pathNameWithLinkLang)
+      $languageLink.addEventListener('click', () => localStorage.setItem('lang', $languageLink.dataset.lang))
+    })
+  </script>
+
+
+
+  <!-- IE Support -->
+  <script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="../../assets/vendor/babel-polyfill/dist/polyfill.js"><\/script>');
+  </script>
+</body>
+</html>

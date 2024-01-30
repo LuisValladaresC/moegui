@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Title -->
+   
+  <title>How to load and unload environment variables depending on the current directory</title>
+
+
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Custom Meta Tags -->
+   
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../favicon.ico">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../assets/css/vendor.min.css">
+
+
+  <!-- CSS Front Template -->
+  <link rel="stylesheet" href="../assets/css/theme.min.css?v=1.0">
+</head>
+<body>
+  
+  <!-- ========== HEADER ========== --> 
+<header id="header" class="header header-bg-transparent  header-abs-top header-show-hide header-change-appearance"
+  data-hs-header-options='{
+  "fixMoment": 1000,
+  "fixEffect": "slide"
+}'>
+  <div class="header-section" data-hs-header-item-options='{
+    "fixMomentClasses": "bg-dark header-white-nav-links-lg"
+  }'>
+    <div id="logoAndNav" class="container">
+      <!-- Nav -->
+      <nav class="js-mega-menu navbar navbar-expand-lg">
+        <!-- Default Logo -->
+        <a class="navbar-brand navbar-nav-wrap-brand navbar-brand-default" href="../" aria-label="Front">
+          <img src=" ../assets/svg/theme-custom/logos/moegui.svg " alt="Moegui">
+        </a>
+        <!-- End Default Logo -->
+
+        <!-- On Scroll Logo -->
+        <a class="navbar-brand navbar-brand-on-scroll mr-auto" href="../" aria-label="Front">
+          <img src="../assets/svg/theme-custom/logos/moegui_white.svg" alt="Moegui">
+        </a>
+        <!-- End On Scroll Logo -->
+
+        <!-- Secondary Content -->
+        <div class="navbar-nav-wrap-content justify-self-end">
+          <a class="btn btn-sm btn-light  text-right transition-3d-hover" href="../hire-us.html">
+            Get a Quote
+          </a>
+        </div>
+        <!-- End Secondary Content -->
+
+        <!-- Responsive Toggle Button -->
+        <button type="button" class="navbar-toggler navbar-nav-wrap-navbar-toggler btn btn-icon btn-sm text-dark rounded-circle"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navBar"
+                data-toggle="collapse"
+                data-target="#navBar">
+          <span class="navbar-toggler-default">
+            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M17.4,6.2H0.6C0.3,6.2,0,5.9,0,5.5V4.1c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,5.9,17.7,6.2,17.4,6.2z M17.4,14.1H0.6c-0.3,0-0.6-0.3-0.6-0.7V12c0-0.4,0.3-0.7,0.6-0.7h16.9c0.3,0,0.6,0.3,0.6,0.7v1.4C18,13.7,17.7,14.1,17.4,14.1z"/>
+            </svg>
+          </span>
+          <span class="navbar-toggler-toggled">
+            <svg width="14" height="14" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
+              <path fill="currentColor" d="M11.5,9.5l5-5c0.2-0.2,0.2-0.6-0.1-0.9l-1-1c-0.3-0.3-0.7-0.3-0.9-0.1l-5,5l-5-5C4.3,2.3,3.9,2.4,3.6,2.6l-1,1 C2.4,3.9,2.3,4.3,2.5,4.5l5,5l-5,5c-0.2,0.2-0.2,0.6,0.1,0.9l1,1c0.3,0.3,0.7,0.3,0.9,0.1l5-5l5,5c0.2,0.2,0.6,0.2,0.9-0.1l1-1 c0.3-0.3,0.3-0.7,0.1-0.9L11.5,9.5z"/>
+            </svg>
+          </span>
+        </button>
+        <!-- End Responsive Toggle Button -->
+
+        <!-- Navigation -->
+        <div id="navBar" class="collapse navbar-collapse navbar-nav-wrap-collapse">
+          <div class="navbar-body header-abs-top-inner mr-lg-6">
+            <ul class="navbar-nav">
+              
+                
+                  <!-- Nav Menu -->
+                  <li class="hs-has-mega-menu navbar-nav-item" data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "position": "right",
+                      "maxWidth": "900px"
+                    }
+                  }'>
+                    <a id="megaMenuWithCard1" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Products</a>
+
+                    <div class="hs-mega-menu dropdown-menu w-100" aria-labelledby="megaMenuWithCard1">
+                      <div class="row no-gutters">
+                        <!-- Items -->
+                        <div class="col-lg-8">
+                          
+                          
+                            <div class="navbar-promo-card-deck">
+                              
+                                <!-- Item -->
+                                <div class="navbar-promo-card navbar-promo-item">
+                                  <a class="navbar-promo-link " href="../products/stack-for-elasticsearch.html">
+                                    <div class="media align-items-center">
+                                      <img class="navbar-promo-icon" src="../assets/svg/icons/icon-67.svg">
+                                      <div class="media-body">
+                                        <span class="navbar-promo-title">Moegui STK for ElasticSearch</span>
+                                        <span class="navbar-promo-text"><span class="badge badge-success badge-pill">New</span>'
+</span>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <!-- End Item -->
+
+                                
+                              
+                                <!-- Item -->
+                                <div class="navbar-promo-card navbar-promo-item">
+                                  <a class="navbar-promo-link disabled" href="">
+                                    <div class="media align-items-center">
+                                      <img class="navbar-promo-icon" src="../assets/svg/icons/icon-45.svg">
+                                      <div class="media-body">
+                                        <span class="navbar-promo-title">Moegui STK for RabbitMQ</span>
+                                        <span class="navbar-promo-text">Coming soon...
+</span>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <!-- End Item -->
+
+                                
+                              
+                            </div>
+                          
+                            <div class="navbar-promo-card-deck">
+                              
+                                <!-- Item -->
+                                <div class="navbar-promo-card navbar-promo-item">
+                                  <a class="navbar-promo-link disabled" href="">
+                                    <div class="media align-items-center">
+                                      <img class="navbar-promo-icon" src="../assets/svg/icons/icon-4.svg">
+                                      <div class="media-body">
+                                        <span class="navbar-promo-title">Moegui STK for MongoDB</span>
+                                        <span class="navbar-promo-text">Coming soon...
+</span>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </div>
+                                <!-- End Item -->
+
+                                 
+                                  <div class="navbar-promo-card navbar-promo-item"></div>
+                                
+                              
+                            </div>
+                          
+                        </div>
+                        <!-- End Items -->
+
+                        <!-- Card -->
+                        <div class="col-lg-4 navbar-promo d-none d-lg-flex align-items-center">
+                          <a class="d-block navbar-promo-inner" href="../products">
+                            <div class="position-relative d-flex align-items-center">
+                              <img class="img-fluid rounded" src="../assets/img/theme-custom/components/card1.jpg">
+                              <div class="position-absolute text-white p-4">
+                                <p><strong>Deploy from our Marketplace our Stack in minutes.
+</strong></p>
+                              </div>
+                            </div>
+                            
+                          </a>
+                        </div>
+                        <!-- End Card -->
+                      </div>
+                    </div>
+                  </li>
+                  <!-- End Nav Menu -->
+                
+              
+                
+                  <!-- Nav Menu -->
+                  <li class="hs-has-mega-menu navbar-nav-item"
+                  data-hs-mega-menu-item-options='{
+                    "desktop": {
+                      "position": "right",
+                      "maxWidth": "260px"
+                    }
+                  }'>
+                    <a id="megaMenu2" class="hs-mega-menu-invoker nav-link nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Services</a>
+
+                    <div class="hs-mega-menu dropdown-menu mega-menu-position-right-fix" aria-labelledby="megaMenu2" style="min-width: 330px;">
+                      
+                      <!-- Item -->
+                      <div class="navbar-promo-item">
+                        <a class="navbar-promo-link " href="../services/devops.html">
+                          <div class="media align-items-center">
+                            <img class="navbar-promo-icon" src="../assets/svg/icons/icon-3.svg">
+                            <div class="media-body">
+                              <span class="navbar-promo-title">DevOps</span>
+                              <small class="navbar-promo-text">Developer Operations</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End Item -->
+                      
+                      <!-- Item -->
+                      <div class="navbar-promo-item">
+                        <a class="navbar-promo-link " href="../services/secops.html">
+                          <div class="media align-items-center">
+                            <img class="navbar-promo-icon" src="../assets/svg/icons/icon-20.svg">
+                            <div class="media-body">
+                              <span class="navbar-promo-title">SecOps</span>
+                              <small class="navbar-promo-text">Security Operations</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End Item -->
+                      
+                      <!-- Item -->
+                      <div class="navbar-promo-item">
+                        <a class="navbar-promo-link " href="../services/testops.html">
+                          <div class="media align-items-center">
+                            <img class="navbar-promo-icon" src="../assets/svg/icons/icon-1.svg">
+                            <div class="media-body">
+                              <span class="navbar-promo-title">TestOps</span>
+                              <small class="navbar-promo-text">Test Operations</small>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                      <!-- End Item -->
+                      
+                    </div>
+                  </li>
+                  <!-- End Nav Menu -->
+                
+              
+                
+                  <li class="navbar-nav-item">
+                    <a class="nav-link " href="../blog"><span class="px-1">Blog</span></a>
+                  </li>
+                
+              
+                
+                  <li class="navbar-nav-item">
+                    <a class="nav-link " href="../careers"><span class="px-1">Careers</span></a>
+                  </li>
+                
+              
+            </ul>
+          </div>
+        </div>
+        <!-- End Navigation -->
+      
+      </nav>
+      <!-- End Nav -->
+    </div>
+  </div>
+</header>
+<!-- ========== END HEADER ========== -->
+
+
+
+
+
+  <!-- ========== MAIN ========== -->
+  <main id="content" role="main">
+    <!-- Hero Section --> 
+    <div id="hero" class="bg-light">
+      <div class="container">
+        <div class="row justify-content-lg-between">
+          <div class="col-lg-6 space-2 space-top-lg-5 space-bottom-lg-3">
+            <div class="mb-3">
+              <h1>How can we help?</h1>
+            </div>
+
+            <!-- Form -->
+            <form id="searchForm">
+              <div class="card p-2 mb-3">
+                <div class="form-row input-group-borderless">
+                  <div class="col-sm">
+                    <input type="search" name="search" class="form-control shadow-none" placeholder="Search the knowledge base..." aria-label="Search the knowledge base...">
+                  </div>
+                  <div class="col-sm-auto">
+                    <button type="submit" class="btn btn-block btn-primary">
+                      <i class="fas fa-search"></i>
+                      <span class="d-sm-none ml-1">Search</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!-- End Form -->
+          </div>
+
+          <div class="col-lg-6 align-self-lg-end d-none d-lg-inline-block">
+            <!-- SVG Icon -->
+            <figure class="mb-n7 ml-lg-4">
+              <img class="img-fluid" src="../assets/svg/illustrations/knowledgebase-community-1.svg">
+            </figure>
+            <!-- End SVG Icon -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Article Section -->
+    <div class="container space-bottom-2">
+      <div class="w-lg-80 mx-lg-auto">
+        <!-- Breadcrumbs -->
+        <div id="breadcrumbs" class="space-top-2 space-top-lg-3 space-bottom-1">
+          <nav aria-label="breadcrumb">
+            <ol id="breadcrumbsItems" class="breadcrumb breadcrumb-no-gutter font-size-1 mb-0">
+              <li class="breadcrumb-item"><a href="./">Help Center</a></li>
+              <li class="breadcrumb-item active" aria-current="page">How to load and unload environment variables depending on the current directory</li>
+            </ol>
+          </nav>
+        </div>
+        <!-- End Breadcrumbs -->
+
+        <!-- Article -->
+        <div class="card card-bordered p-4 p-md-7">
+          <h1 class="h2">How to load and unload environment variables depending on the current directory</h1>
+          <p>Before each prompt, direnv checks for the existence of a .envrc file in the current and parent directories. If the file exists (and is authorized), it is loaded into a bash sub-shell and all exported variables are then captured by direnv and then made available to the current shell.</p>
+
+          <!-- Article Authors -->
+          <div class="media mb-5">
+            <div class="avatar avatar-xs avatar-circle mr-2">
+              <img class="avatar-img" src="../assets/img/100x100/luciano.jpg" alt="Luciano Giacchetta">
+            </div>
+
+            <div class="media-body">
+              <small class="d-block text-dark">
+                <span class="text-muted">Written by</span> Luciano Giacchetta
+              </small>
+              <small class="d-block text-dark">
+                <span class="text-muted">Updated on</span> June 12
+              </small>
+            </div>
+          </div>
+          <!-- End Article Authors -->
+
+          <h2 id="instructions">Instructions</h2>
+<p>You could apply these instructions also to Ubuntu WSL.</p>
+<ol>
+<li><p>It’s always a good idea to update your local packages </p>
+<pre><code class="language-bash">$ sudo apt update 
+$ sudo apt upgrade</code></pre>
+</li>
+<li><p>Install <strong>direnv</strong> app using your package system</p>
+<pre><code class="language-bash">$ sudo apt install direnv</code></pre>
+</li>
+<li><p>Add the following line at the end of the <code>~/.bashrc</code> file and reload your shell</p>
+<pre><code class="language-bash">$ eval $(direnv hook bash)</code></pre>
+</li>
+<li><p>Select a folder where you will place your Environment Variables and configure your .envrc</p>
+<pre><code class="language-bash"># Create a new .envrc. This file is bash code that is going to be loaded by direnv.
+$ echo export FOO=foo &gt; .envrc
+.envrc is not allowed
+# The security mechanism did not allow to load the .envrc.
+# Since we trust it, let&#39;s allow its execution.
+$ direnv allow .
+direnv: reloading
+direnv: loading .envrc
+direnv export: +FOO
+# Show that the FOO environment variable is loaded.
+$ echo ${FOO}
+foo</code></pre>
+</li>
+</ol>
+<p>Now, you can create a <code>.envrc</code> file in every folder. Every time you access a folder with a .envrc file, your environment variables will be loaded into your Shell. It only happens if you had allowed first doing <code>$ direnv allow .</code>. Once you get out from the folder, your environment variables will be unloaded. </p>
+
+
+          <div class="row border-top mt-6 pt-6">
+            <!-- Related Articles -->
+            <div class="col-md-5" id="relatedArticlesContainer">
+              <div class="mb-4">
+                <h3 class="h5">Related articles</h3>
+              </div>
+    
+              <ul class="list-unstyled list-article mb-0" id="relatedArticles">
+                
+              </ul>
+            </div>
+            <!-- End Related Articles -->
+
+            <!-- Lastest Articles -->
+            <div class="col-md-5 mt-6 mt-md-0" id="latestArticlesContainer">
+              <div class="mb-4">
+                <h3 class="h5">Latest articles</h3>
+              </div>
+    
+              <ul class="list-unstyled list-article" id="latestArticles">
+                
+              </ul>
+            </div>
+            <!-- End Related Articles -->
+          </div>
+        </div>
+        <!-- End Article -->
+      </div>
+    </div>
+    <!-- End Article Section -->
+  </main>
+  <!-- ========== END MAIN ========== -->
+
+  <!-- ========== FOOTER ========== -->
+<footer class="bg-dark">
+  <div class="container">
+    <div class="space-top-2 space-bottom-1 space-bottom-lg-2">
+      <div class="row justify-content-lg-between">
+        <div class="col-lg-3 ml-lg-auto mb-5 mb-lg-0">
+          <!-- Logo -->
+          <div class="mb-4">
+            <a href="../index.html" aria-label="Moegui">
+              <img class="brand" src="../assets/svg/theme-custom/logos/moegui_white.svg" alt="Moegui">
+            </a>
+          </div>
+          <!-- End Logo -->
+
+          <!-- Nav Link -->
+          <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+            <li class="nav-item">
+              <a class="nav-link media" href="../contact.html#map">
+                <span class="media">
+                  <span class="fas fa-location-arrow mt-1 mr-2"></span>
+                  <span class="media-body">
+                    100 E 7th Street <br>
+Suite #0001 <br>
+Cheyenne, WY, USA
+
+                  </span>
+                </span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link media" href="#">
+                <span class="media">
+                  <span class="fas fa-phone-alt mt-1 mr-2"></span>
+                  <span class="media-body">
+                    1-800-643-4500 <br>
+English / Español
+
+                  </span>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Nav Link -->
+        </div>
+
+        
+          <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+            <h5 class="text-white">Company</h5>
+
+            <!-- Nav Link -->
+            <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../about.html">About</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../contact.html">Contact</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../careers">Careers</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../blog">Blog</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../hire-us.html">Hire us</a>
+                </li>
+              
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+        
+          <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+            <h5 class="text-white">Services</h5>
+
+            <!-- Nav Link -->
+            <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../services/devops.html">DevOps</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../services/secops.html">SecOps</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../services/testops.html">TestOps</a>
+                </li>
+              
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+        
+          <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+            <h5 class="text-white">Products</h5>
+
+            <!-- Nav Link -->
+            <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../products/stack-for-elasticsearch.html">Moegui STK for ElasticSearch</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="">Moegui STK for RabbitMQ</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="">Moegui STK for MongoDB</a>
+                </li>
+              
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+        
+          <div class="col-6 col-md-3 col-lg mb-5 mb-lg-0">
+            <h5 class="text-white">Resources</h5>
+
+            <!-- Nav Link -->
+            <ul class="nav nav-sm nav-x-0 nav-white flex-column">
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="../help/">Help</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link " href="#">Documentation</a>
+                </li>
+              
+            </ul>
+            <!-- End Nav Link -->
+          </div>
+        
+      </div>
+    </div>
+
+    <hr class="opacity-xs my-0">
+
+    <div class="space-1">
+      <div class="row align-items-md-center mb-7">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <!-- Nav Link -->
+          <ul class="nav nav-sm nav-white nav-x-sm align-items-center">
+            
+              <li class="nav-item">
+                <a class="nav-link " href="#">Privacy &amp; Policy</a>
+              </li>
+               <li class="nav-item opacity mx-3">&#47;</li> 
+            
+              <li class="nav-item">
+                <a class="nav-link " href="#">Terms</a>
+              </li>
+               <li class="nav-item opacity mx-3">&#47;</li> 
+            
+              <li class="nav-item">
+                <a class="nav-link " href="#">Site Map</a>
+              </li>
+              
+            
+          </ul>
+          <!-- End Nav Link -->
+        </div>
+
+        <div class="col-md-6 text-md-right">
+          <ul class="list-inline mb-0">
+            <!-- Social Networks -->
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a class="btn btn-xs btn-icon btn-soft-light" href="#">
+                <i class="fab fa-gitlab"></i>
+              </a>
+            </li>
+            <!-- End Social Networks -->
+
+            <!-- Language -->
+            <li class="list-inline-item">
+                <div class="hs-unfold">
+                  <a class="js-hs-unfold-invoker dropdown-toggle btn btn-xs btn-soft-light" href="javascript:;"
+                    data-hs-unfold-options='{
+                    "target": "#languageDropdown",
+                    "type": "css-animation",
+                    "animationIn": "slideInDown"
+                    }'>
+                    
+                    <span class="d-inline-block nav-link p-0">English</span>
+                    
+                  </a>
+  
+                  <div id="languageDropdown" class="hs-unfold-content dropdown-menu dropdown-unfold dropdown-menu-bottom mb-2">
+                    
+                      <a class="dropdown-item  active disabled " data-lang="en" href="/">English</a>
+                    
+                    
+                    <a class="dropdown-item " data-lang="es" href="/es/">Español</a>
+                    
+                    
+                  </div>
+                </div>
+            </li>
+            <!-- End Language -->
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="w-md-75 text-lg-center mx-lg-auto">
+        <p class="text-white opacity-sm small">© 2021 Moegui. All rights reserved.</p>
+        <p class="text-white opacity-sm small">When you visit or interact with our sites, services or tools, we or our authorised service providers may use cookies for storing information to help provide you with a better, faster and safer experience and for marketing purposes.</p>
+      </div>
+      <!-- End Copyright -->
+    </div>
+  </div>
+</footer>
+<!-- ========== END FOOTER ========== -->
+
+
+
+
+
+
+
+  <!-- Go to Top --> 
+<a class="js-go-to go-to position-fixed" href="#" style="visibility: hidden;"
+  data-hs-go-to-options='{
+    "offsetTop": 700,
+    "position": {
+      "init": {
+        "right": 15
+      },
+      "show": {
+        "bottom": 15
+      },
+      "hide": {
+        "bottom": -15
+      }
+    }
+  }'>
+  <i class="fas fa-arrow-up"></i>
+</a>
+<!-- End Go to Top -->
+
+
+
+
+
+
+
+  
+   <!-- JS Implementing Plugins -->
+  <script src="../assets/js/vendor.min.js"></script>
+
+
+  <!-- JS Plugins Init. -->
+  <script>
+    $(document).on('ready', function () {
+      // INITIALIZATION OF HEADER
+      // =======================================================
+      var header = new HSHeader($('#header')).init();
+
+      // INITIALIZATION OF MEGA MENU
+      // =======================================================
+      var megaMenu = new HSMegaMenu($('.js-mega-menu')).init();
+
+      // INITIALIZATION OF UNFOLD
+      // =======================================================
+      var unfold = new HSUnfold('.js-hs-unfold-invoker').init();
+
+      // INITIALIZATION OF GO TO
+      // =======================================================
+      $('.js-go-to').each(function () {
+        var goTo = new HSGoTo($(this)).init();
+      });
+    });
+  </script>
+
+  <!-- JS Custom -->
+  <script>
+    /* ------------------------------------------------------------ */
+    /* --------------------- GLOBAL VARIABLES --------------------- */
+    /* ------------------------------------------------------------ */
+
+    const $relatedArticlesContainer = document.getElementById("relatedArticlesContainer");
+    const $relatedArticles = document.getElementById("relatedArticles");
+    const $latestArticlesContainer = document.getElementById("latestArticlesContainer");
+    const $latestArticles = document.getElementById("latestArticles");
+
+    var dataArticles;
+    var currentArticle;
+    var relatedArticles;
+    var latestArticles;
+
+    /* ------------------------------------------------------------ */
+    /* -------------- GLOBAL MANAGEMENT OF DATA LOAD -------------- */
+    /* ------------------------------------------------------------ */
+
+    (function loadData() {
+      dataArticles = getArticles();
+      currentArticle = getCurrentArticle();
+      relatedArticles = getRelatedArticles();
+      latestArticles = getLatestArticles();
+
+      if (relatedArticles.length >= 1) {
+        relatedArticlesTemplate = createTemplateHTML(relatedArticles, $relatedArticles);
+        $relatedArticles.innerHTML = relatedArticlesTemplate;
+      } else {
+        $relatedArticlesContainer.classList.add('d-none');
+      }
+
+      if (latestArticles.length >= 1) {
+        latestArticlesTemplate = createTemplateHTML(latestArticles, $latestArticles);
+        $latestArticles.innerHTML = latestArticlesTemplate;
+
+        if (relatedArticles.length >= 1) $latestArticlesContainer.classList.add('offset-md-2')
+      } else {
+        $latestArticlesContainer.classList.add('d-none');
+      }
+    })();
+
+
+    /* ------------------------------------------------------------ */
+    /* ---------- FUNCTIONS IN CHARGE OF DATA COLLECTION ---------- */
+    /* ------------------------------------------------------------ */
+
+    function getArticles(){
+      let articles = [{"page":{"file_name":"python3-virtual-environment.html","head_title":"How to Set Up Python3 Virtual Environment on Ubuntu 20.04"},"title":"How to Set Up Python3 Virtual Environment on Ubuntu 20.04","description":"This guide explains how to install and configure a python virtual environment to isolate your python modules and version for different use cases. For example, you may want to have multiple Ansible versions because you are working on different Stacks.","date":"12/6/2021","tags":["programming","python"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\nYou could apply these instructions also to Ubuntu WSL.\n\n1. It’s always a good idea to update your local packages \n```bash\n$ sudo apt update \n$ sudo apt upgrade\n```\n\n2. Install pip to manage your python packages\n```bash\n$ sudo apt install python3-pip \n```\n\n3. Install and Configure `virtualenvwrapper` to manage your Python Virtual Environment\n```bash\n# Install the wrapper (User)\n$ pip3 install --upgrade virtualenvwrapper\n# Usually /usr/local/bin/virtualenvwrapper.sh\n$ find / -name \"virtualenvwrapper.sh\" \n# Create a folder for your Virtual Environments\n$ WORKON_HOME=~/.virtualenv\n$ mkdir -p $WORKON_HOME\n```\n\n4. You may want to add these lines to your `.bashrc` to make it permanent.\n```bash\n$ export WORKON_HOME=~/.virtualenv\n$ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3\n$ source /usr/local/bin/virtualenvwrapper.sh\n```\n\n5. Refresh your console settings and variables executing\n```bash\n$ bash\n```\n\n6. Some useful commands to test your new Virtual Environment\n```bash\n# Create a new 'test' environment\n$ mkvirtualenv test\n# Install any module\n$ pip3 install elasticsearch\n# Check your installed modules\n$ pip3 list\n# Get out of your Virtual Environment\n$ deactivate\n```  \n\nRead more about **virtualenvwrapper** in the [official documentation page](https://virtualenvwrapper.readthedocs.io/en/latest/)\n"},{"page":{"file_name":"environment-variables-directory.html","head_title":"How to load and unload environment variables depending on the current directory"},"title":"How to load and unload environment variables depending on the current directory","description":"Before each prompt, direnv checks for the existence of a .envrc file in the current and parent directories. If the file exists (and is authorized), it is loaded into a bash sub-shell and all exported variables are then captured by direnv and then made available to the current shell.","date":"12/6/2021","tags":["programming","linux"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\nYou could apply these instructions also to Ubuntu WSL.\n\n1. It’s always a good idea to update your local packages \n```bash\n$ sudo apt update \n$ sudo apt upgrade\n```\n\n2. Install **direnv** app using your package system\n```bash\n$ sudo apt install direnv\n```\n\n3. Add the following line at the end of the `~/.bashrc` file and reload your shell\n```bash\n$ eval $(direnv hook bash)\n```\n\n4. Select a folder where you will place your Environment Variables and configure your .envrc\n```bash\n# Create a new .envrc. This file is bash code that is going to be loaded by direnv.\n$ echo export FOO=foo > .envrc\n  .envrc is not allowed\n# The security mechanism did not allow to load the .envrc.\n# Since we trust it, let's allow its execution.\n$ direnv allow .\n  direnv: reloading\n  direnv: loading .envrc\n  direnv export: +FOO\n# Show that the FOO environment variable is loaded.\n$ echo ${FOO}\n  foo\n```\n\nNow, you can create a `.envrc` file in every folder. Every time you access a folder with a .envrc file, your environment variables will be loaded into your Shell. It only happens if you had allowed first doing `$ direnv allow .`. Once you get out from the folder, your environment variables will be unloaded. \n"},{"page":{"file_name":"ansible-galaxy-role-template.html","head_title":"How to create an Ansible Galaxy Role from Template"},"title":"How to create an Ansible Galaxy Role from Template","description":"Templates are helpful to save time when you need to start a new project from scratch but with all best practices implemented out-of-the-box. Thus, we have an Ansible Role Template with all needed and tested.","date":"8/6/2021","tags":["infrastructure","ansible","python"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\nIn order to create a Galaxy Role from our Template, follow the instructions below:\n\n1. Define some variables \n```bash\n# NEW_ROLE define your new role name\n$ NEW_ROLE='asbrl-new_role'\n# NEW_GIT define the complete GIT path for your role.\n$ NEW_GIT='git@gitlab.com:giacchetta' # Or git@github.com:giacchetta\n```\n\n2. Clone the template and clean up git-related information\n```bash\n# Clone the template role\n$ git clone https://github.com/moegui/asbrl-template.git $NEW_ROLE\n# Access to your new role folder\n$ cd $NEW_ROLE\n# Remove all git history and configurations ( from the template )\n$ rm -rf .git\n```\n\n3. Initialize the new Git repository and configure the remote origin\n```bash\n# Initialize the new Git repository\n$ git init\n# Add a new remote ( Git server ) to push into.\n$ git remote add origin $NEW_GIT/$NEW_ROLE.git\n```\n\n4. Update meta/main.yml\n\n  - Update *galaxy_info* section.\n  - Update *platforms section*, if it is necessary.\n  - Update *galaxy_tags section*, if it is necessary.\n  - Update *dependencies section*, roles can also be dependent on other roles, and when you install a role that has dependencies, those dependencies will automatically satisfied. \n\n\n5. Update test/test.yml\n\n  - Rename *asbrl-template* for your role name.\n  - Define all mandatory (no default) vars in the Task.\n\n\n6. Once the role is working, update README.md\n\n  - Update *Pipeline Status* with the correct repo path.\n  - Update *Role Name*.\n  - Update *Requirement section*: If the role doesn’t have, write “None”.\n  - Update *Role Variable section*: follow the provided example.\n  - Update *Dependencies section*: if it is necessary.\n  - Update *Example Playbook section*, follow the provided example.\n\n\n7. Before pushing all your changes\nPlease resolve all Lint rules problems and any possible Ansible execution error before pushing your Role code otherwise, the CI will fail.\n\n  - Execute ansible lint to review Ansible Best Practices.\n  ```bash\n  $ ansible-lint .\n  ```\n  - Execute tests/test.yml\n  ```bash\n  $ ansible-playbook -i tests/inventory tests/test.yml --connection=local\n    ```\n\n8. Add, Commit and Push your changes to the origin\n```bash\n# Add your changes to Stage\n$ git add .\n# Commit your staged changes\n$ git commit -am \"Customizing Template\"\n# Push your commit to the Origin\n$ git push --set-upstream origin master\n```\n\n9. Tagging       \nWe using tags to point to a specific commit and in this way, we prevent brake any Playbook that’s using an old version of the Galaxy Role.\n\n  - Major (X): Interface changing  (vars).\n  - Minor (Y): Added new functionality. Old functionality is not affected.\n  - Patches (Z): Bug fixes.\n\nPlease don't delete Tags, It could break an existing playbook.\n"},{"page":{"file_name":"ansible-devel-modules.html","head_title":"How to use Ansible Devel Modules"},"title":"How to use Ansible Devel Modules","description":"Sometimes, we need to work or test something against unstable modules. We can get those modules directly from the Ansible git repository and test our deployment.","date":"4/6/2021","tags":["infrastructure","ansible","python"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\n\nYou may want to use a different user/environment or computer to install the development Ansible version.\n\nIn order to use \"devel\" module, you have to follow next steps:\n\n1. Clone the Ansible git repository, branch \"devel\"\n```bash\n$ git clone https://github.com/ansible/ansible.git -b devel\n```\n\n2. Configure the Ansible\n```bash\n$ source ./hacking/env-setup\n```\n\n3. Check Ansible version\n```bash\n$ ansible --version\n```\n"},{"page":{"file_name":"certificate-private-match.html","head_title":"How to check if a certificate & private key match"},"title":"How to check if a certificate & private key match","description":"Check if an SSL certificate and private key match in two simple commands. The OpenSSL commands below will require you to replace it with your files name.","date":"4/6/2021","tags":["security","certificate"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\n\nIn order to check your certificates, you have to follow next steps:\n\n1. For your SSL certificate\n```bash\n$ openssl x509 -noout -modulus -in  | md5sum\n```\n\n2. For your RSA private key\n```bash\n$ openssl rsa -noout -modulus -in  | md5sum\n```\n\nThe output of these commands **should be identical**. If it isn’t, your keys do not match.              \n"},{"page":{"file_name":"certificate-remote-chain.html","head_title":"How to Checking A Remote Certificate Chain With OpenSSL"},"title":"How to Checking A Remote Certificate Chain With OpenSSL","description":"If you deal with SSL/TLS long enough you will run into situations where you need to examine what certificates are being presented by a server to the client. The best way to examine the raw output is via (what else but) OpenSSL.","date":"4/6/2021","tags":["security","certificate"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\n\nIn order to check your certificates, you have to follow next steps:\n\n1. First lets do a standard webserver connection (-showcerts dumps the PEM encoded certificates themselves for more extensive parsing if you desire. The output below snips them for readability.):\n```bash\n$ openssl s_client -showcerts -connect www.domain.com:443\n  CONNECTED(00000003)\n  --snip--\n  ---\n  Certificate chain\n  0 s:/C=US/ST=Texas/L=Carrollton/O=Woot Inc/CN=*.woot.com\n    i:/C=US/O=SecureTrust Corporation/CN=SecureTrust CA\n  -----BEGIN CERTIFICATE-----\n  --snip--\n  -----END CERTIFICATE-----\n  1 s:/C=US/O=SecureTrust Corporation/CN=SecureTrust CA\n    i:/C=US/O=Entrust.net/OU=www.entrust.net/CPS incorp. by ref. (limits liab.)/OU=(c) 1999 Entrust.net Limited/CN=Entrust.net Secure Server Certification Authority\n  -----BEGIN CERTIFICATE-----\n  --snip--\n  -----END CERTIFICATE-----\n  ---\n  Server certificate\n  subject=/C=US/ST=Texas/L=Carrollton/O=Woot Inc/CN=*.woot.com\n  issuer=/C=US/O=SecureTrust Corporation/CN=SecureTrust CA\n  ---\n  No client certificate CA names sent\n  ---\n  SSL handshake has read 2123 bytes and written 300 bytes\n  ---\n  New, TLSv1/SSLv3, Cipher is RC4-MD5\n  Server public key is 1024 bit\n  --snip--\n```\nThere’s a lot of data here so I have truncated several sections to increase readability. Points of interest:\n  - The certificate chain consists of two certificates. At level 0 there is the server certificate with some parsed information. s: is the subject line of the certificate and i: contains information about the issuing CA.\n  - This particular server (www.woot.com) has sent an intermediate certificate as well. Subject and issuer information is provided for each certificate in the presented chain. Chains can be much longer than 2 certificates in length.\n  - The server certificate section is a duplicate of level 0 in the chain. If you’re only looking for the end-entity certificate then you can rapidly find it by looking for this section.\n  - No client certificate CAs were sent. If the server was configured to potentially accept client certs the returned data would include a list of “acceptable client CAs”.\n  - The connection was made via TLSv1/SSLv3 and the chosen cipher was RC4-MD5. Incidentally, this typically means that the server you’re connecting to is IIS.\n\n\n2. What if you want to connect to something other than a bog-standard webserver on port 443? Well, if you need to use StartTLS that is also available. As of OpenSSL 0.9.8, you can choose from SMTP, pop3, IMAP, and FTP as StartTLS options.\n```bash\n$ openssl s_client -showcerts -starttls imap -connect mail.domain.com:139\n```\nIf you need to check using a specific SSL version (perhaps to verify if that method is available) you can do that as well. -ssl2, -ssl3, -tls1, and -dtls1 are all choices here.\n```bash\n$ openssl s_client -showcerts -ssl2 -connect www.domain.com:443\n```\nYou can also present a client certificate if you are attempting to debug issues with a connection that requires one.\n```bash\n$ openssl s_client -showcerts -cert cert.cer -key cert.key -connect www.domain.com:443\n```\nAnd for those who really enjoy playing with SSL handshakes, you can even specify acceptable ciphers.\n```bash\n$ openssl s_client -showcerts -cipher DHE-RSA-AES256-SHA -connect www.domain.com:443\n```\nThe cipher used above should work for almost any Apache server but will fail on IIS since it doesn’t support 256-bit AES encryption.\n  - The s_client command we’re using opens an interactive socket and does not automatically return to the shell prompt, so remember you will have to hit control-c or type something and hit return to terminate the process. \n  - This example shows an attempted SSLv2 only connection. SSLv2 should be disabled on any web server you control. It has a variety of flaws and has been superseded by SSLv3/TLSv1 for over a decade. \n  - This example expects the certificate and private key in the PEM form. You can provide them in DER if you add -certform DER and -keyform DER (OpenSSL 0.9.8 or newer only) \n  - A list of available ciphers can be found by typing “OpenSSL ciphers”, but there are also myriad ways to sort by type and strength. See the ciphers man page for more details.   \n"},{"page":{"file_name":"generate-ssh-key.html","head_title":"How to Generate a new SSH Key"},"title":"How to Generate a new SSH Key","description":"ssh-keygen is a tool for creating new authentication key pairs for SSH. Such key pairs are used for automating logins, single sign-on, and for authenticating hosts.","date":"4/6/2021","tags":["security","openssl"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\n\n#### 1. SSH Keys and Public Key Authentication\nThe SSH protocol uses public key cryptography for authenticating hosts and users. The authentication keys, called SSH keys, are created using the keygen program.<br><br>\nSSH introduced public key authentication as a more secure alternative to the older .rhosts authentication. It improved security by avoiding the need to have password stored in files, and eliminated the possibility of a compromised server stealing the user's password.<br><br>\nHowever, SSH keys are authentication credentials just like passwords. Thus, they must be managed somewhat analogously to user names and passwords. They should have a proper termination process so that keys are removed when no longer needed.\n\n#### 2. Creating an SSH Key Pair for User Authentication<br><br>\nThe simplest way to generate a key pair is to run ssh-keygen without arguments. In this case, it will prompt for the file in which to store keys. Here's an example:\n```bash\nGenerating public/private rsa key pair.\nEnter file in which to save the key (/home/user/.ssh/id_rsa): \nEnter passphrase (empty for no passphrase): \nEnter same passphrase again: \nYour identification has been saved in /home/user/.ssh/id_rsa.\nYour public key has been saved in /home/user/.ssh/id_rsa.pub.\nThe key fingerprint is:\nSHA256:Up6KjbnEV4Hgfo75YM393QdQsK3Z0aTNBz0DoirrW+c user@computer\nThe key's randomart image is:\n+---[RSA 2048]----+\n|    .      ..oo..|\n|   . . .  . .o.X.|\n|    . . o.  ..+ B|\n|   .   o.o  .+ ..|\n|    ..o.S   o..  |\n|   . %o=      .  |\n|    @.B...     . |\n|   o.=. o. . .  .|\n|    .oo  E. . .. |\n+----[SHA256]-----+\n```\nFirst, the tool asked where to save the file. SSH keys for user authentication are usually stored in the user's .ssh directory under the home directory. However, in enterprise environments, the location is often different. The default key file name depends on the algorithm, in this case id_rsa when using the default RSA algorithm. It could also be, for example, id_dsa or id_ecdsa.<br><br>\nThen it asks to enter a passphrase. The passphrase is used for encrypting the key, so that it cannot be used even if someone obtains the private key file. The passphrase should be cryptographically strong. Our online random password generator is one possible tool for generating strong passphrases.\n\n#### 3. Choosing an Algorithm and Key Size\nSSH supports several public key algorithms for authentication keys. These include:\n  - **rsa** - an old algorithm based on the difficulty of factoring large numbers. A key size of at least 2048 bits is recommended for RSA; 4096 bits is better. RSA is getting old and significant advances are being made in factoring. Choosing a different algorithm may be advisable. It is quite possible the RSA algorithm will become practically breakable in the foreseeable future. All SSH clients support this algorithm.\n  - **dsa** - an old US government Digital Signature Algorithm. It is based on the difficulty of computing discrete logarithms. A key size of 1024 would normally be used with it. DSA in its original form is no longer recommended.\n  - **ecdsa** - a new Digital Signature Algorithm standarized by the US government, using elliptic curves. This is probably a good algorithm for current applications. Only three key sizes are supported: 256, 384, and 521 (sic!) bits. We would recommend always using it with 521 bits, since the keys are still small and probably more secure than the smaller keys (even though they should be safe as well). Most SSH clients now support this algorithm.\n  - **ed25519** - this is a new algorithm added in OpenSSH. Support for it in clients is not yet universal. Thus its use in general purpose applications may not yet be advisable.<br><br>\nThe algorithm is selected using the -t option and key size using the -b option. The following commands illustrate:\n```bash\n$ ssh-keygen -t rsa -b 4096\n$ ssh-keygen -t dsa\n$ ssh-keygen -t ecdsa -b 521\n$ ssh-keygen -t ed25519\n```\n\n#### 4. Specifying the File Name\nNormally, the tool prompts for the file in which to store the key. However, it can also be specified on the command line using the -f <filename> option.\n```bash\n$ ssh-keygen -f ~/some-ecdsa-key -t ecdsa -b 521\n```\n\n#### 5. Copying the Public Key to the Server\nTo use public key authentication, the public key must be copied to a server and installed in an authorized_keys file. This can be conveniently done using the `ssh-copy-id` tool. Like this:\n```bash\n$ ssh-copy-id -i ~/.ssh/tatu-key-ecdsa user@host\n```\nOnce the public key has been configured on the server, the server will allow any connecting user that has the private key to log in. During the login process, the client proves possession of the private key by digitally signing the key exchange.\n\n#### 6. Adding the Key to SSH Agent\n`ssh-agent` is a program that can hold a user's private key, so that the private key passphrase only needs to be supplied once. A connection to the agent can also be forwarded when logging into a server, allowing SSH commands on the server to use the agent running on the user's desktop.<br><br>\nFor more information on using and configuring the SSH agent, see the ssh-agent page.\n\n#### 7. Creating Host Keys\nThe tool is also used for creating host authentication keys. Host keys are stored in the /etc/ssh/ directory.<br><br>\nHost keys are just ordinary SSH key pairs. Each host can have one host key for each algorithm. The host keys are almost always stored in the following files:\n```bash\n/etc/ssh/ssh_host_dsa_key\n/etc/ssh/ssh_host_ecdsa_key\n/etc/ssh/ssh_host_ed25519_key\n/etc/ssh/ssh_host_rsa_key\n```\nThe host keys are usually automatically generated when an SSH server is installed. They can be regenerated at any time. However, if host keys are changed, clients may warn about changed keys. Changed keys are also reported when someone tries to perform a man-in-the-middle attack. Thus it is not advisable to train your users to blindly accept them. Changing the keys is thus either best done using an SSH key management tool that also changes them on clients, or using certificates.\n\n#### 8. Using X.509 Certificates for Host Authentication\nOpenSSH does not support X.509 certificates. Tectia SSH does support them. X.509 certificates are widely used in larger organizations for making it easy to change host keys on a period basis while avoiding unnecessary warnings from clients. They also allow using strict host key checking, which means that the clients will outright refuse a connection if the host key has changed.\n\n#### 9. Using OpenSSH's Proprietary Certificates\nOpenSSH has its own proprietary certificate format, which can be used for signing host certificates or user certificates. For user authentication, the lack of highly secure certificate authorities combined with the inability to audit who can access a server by inspecting the server makes us recommend against using OpenSSH certificates for user authentication.<br><br>\nHowever, OpenSSH certificates can be very useful for server authentication and can achieve similar benefits as the standard X.509 certificates. However, they need their own infrastructure for certificate issuance. See more information on certificate authentication.\n\n#### 10. Key Management Requires Attention\nIt is easy to create and configure new SSH keys. In the default configuration, OpenSSH allows any user to configure new keys. The keys are permanent access credentials that remain valid even after the user's account has been deleted.<br><br>\nIn organizations with more than a few dozen users, SSH keys easily accumulate on servers and service accounts over the years. We have seen enterprises with several million keys granting access to their production servers. It only takes one leaked, stolen, or misconfigured key to gain access.<br><br>\nIn any larger organization, use of SSH key management solutions is almost necessary. SSH keys should also be moved to root-owned locations with proper provisioning and termination processes. For more information, see how to manage SSH keys. A widely used SSH key management tool for OpenSSH is Universal SSH Key Manager.<br><br>\nPractically all cybersecurity regulatory frameworks require managing who can access what. SSH keys grant access, and fall under this requirement. This, organizations under compliance mandates are required to implement proper management processes for the keys. NIST IR 7966 is a good starting point.\n\n#### 11. Make Sure There Is Enough Randomness\nIt is important to ensure there is enough unpredictable entropy in the system when SSH keys are generated. There have been incidents when thousands of devices on the Internet have shared the same host key when they were improperly configured to generate the key without proper randomness.\n  - ##### General Purpose Systems\n  On general purpose computers, randomness for SSH key generation is usually not a problem. It may be something of an issue when initially installing the SSH server and generating host keys, and only people building new Linux distributions or SSH installation packages generally need to worry about it.<br><br>\n  Our recommendation is to collect randomness during the whole installation of the operating system, save that randomness in a random seed file. Then boot the system, collect some more randomness during the boot, mix in the saved randomness from the seed file, and only then generate the host keys. This maximizes the use of the available randomness. And make sure the random seed file is periodically updated, in particular make sure that it is updated after generating the SSH host keys.<br><br>\n  Many modern general-purpose CPUs also have hardware random number generators. This helps a lot with this problem. The best practice is to collect some entropy in other ways, still keep it in a random seed file, and mix in some entropy from the hardware random number generator. This way, even if one of them is compromised somehow, the other source of randomness should keep the keys secure.<br><br>\n  - ##### Embedded Devices and Internet of Things\n  Available entropy can be a real problem on small IoT devices that don't have much other activity on the system. They may just not have the mechanical randomness from disk drive mechanical movement timings, user-caused interrupts, or network traffic. Furthermore, embedded devices often run on low-end processors that may not have a hardware random number generator.<br><br>\n  The availability of entropy is also critically important when such devices generate keys for HTTPS.<br><br>\n  Our recommendation is that such devices should have a hardware random number generator. If the CPU does not have one, it should be built onto the motherboard. The cost is rather small.\n"},{"page":{"file_name":"ansible-variables-role-priority.html","head_title":"How to variables priorities work on Ansible Roles"},"title":"How to variables priorities work on Ansible Roles","description":"Roles let you automatically load related vars_files, tasks, handlers, and other Ansible artifacts based on a known file structure. Once you group your content in roles, you can easily reuse them and share them with other users.","date":"4/6/2021","tags":["infrastructure","ansible","python"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\n\nHere we are going to explain how we follow variables prioriries on our Roles.\n\n#### 1. Variables Priorities and “Moegui” approach\n\nBy default, variables set in the Default folder have a lower priority than variables set in the `vars` folder. But then, where we put our default variable? Although there are a lot of unofficial approaches to that, we have defined the following:<br><br>\nWe place all default variables dependent on the environment or any condition in the `vars` folder. Everything else, all the standard, shared variables we would need, and anything we want the user of our Role to override should go in `defaults/main.yml`.\n\n##### Example:\n`defaults\\main.yml`\n```bash\npip_packages_install:\n  - docker\n```\n`vars\\centos.yml`\n```bash\npackages_install:\n  - epel-release\n  - docker-ce\n  - python-pip\n  - python-docker\n```\n`vars\\ubuntu.yml`\n```bash\npackages_install:\n- wget\n- docker-ce\n- python-pip\n- python-docker\n```\n`main\\main.yml`\n```bash\n- name: gather os specific variables\n  include_vars: \"{{ ansible_distribution }}\"\n  \n- name: Install base packages\n  package:\n    name : \"{{ packages_install }}\"\n    state : present\n    update_cache : yes\n\n- name: Install Docker Python\n  pip:\n    name: \"{{ pip_packages_install }}\"\n    state: present\n```\nIn the example above, the `main\\main.ym` override the variable packages_install depending on the S.O. version, but the variable pip_packages_install is common (default) for both versions.\n"},{"page":{"file_name":"openshift-4-quick-start.html","head_title":"How to getting started with OpenShift 4"},"title":"How to getting started with OpenShift 4","description":"We are covering here how to getting started with OpenShift 4 on Amazon Web Services.","date":"4/6/2021","tags":["orchestation","openshift","aws"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\n\nHow to getting started with OpenShift 4 on AWS.\n\n#### 1. Prerequisites\n\n  - AWS IAM User with Administrator permissions. \n  - AWS VPC with \n    - AWS::EC2::VPC \n    - AWS::EC2::VPCEndpoint (only if we don’t use NAT Gateway for Private Subnets ) \n    - AWS::EC2::Subnet \n    - AWS::EC2::InternetGateway \n    - AWS::EC2::VPCGatewayAttachment \n    - AWS::EC2::RouteTable \n    - AWS::EC2::Route \n    - AWS::EC2::SubnetRouteTableAssociation \n    - AWS::EC2::NatGateway \n    - AWS::EC2::EIP \n  - SSH Key\n    - `$ ssh-keygen -t rsa -b 4096 -N '' -f <path>/<file_name>`\n  - OpenShift Installation Program\n    - `$ curl -L https://github.com/openshift/okd/releases/download/4.6.0-0.okd-2021-01-23-132511 /openshift-install-linux-4.6.0-0.okd-2021-01-23-132511.tar.gz -o openshift-install-linux.tar.gz`\n    - `$ tar xvf openshift-install-linux.tar.gz`\n\n#### 2. Deploy\n\nUsing this `install-config.yaml`, we need to customize our new cluster.\n\n```bash\napiVersion: v1\nbaseDomain: example.com\nmetadata:\n  name: xxx\ncompute:\n- architecture: amd64\n  hyperthreading: Enabled\n  name: worker\n  platform: {}\n  replicas: 2\ncontrolPlane:\n  architecture: amd64\n  hyperthreading: Enabled\n  name: master\n  platform: {}\n  replicas: 3\nnetworking:\n  clusterNetwork:\n  - cidr: 10.215.0.0/16\n    hostPrefix: 24\n  machineNetwork:\n  - cidr: 172.31.0.0/16\n  networkType: OpenShiftSDN\n  serviceNetwork:\n  - 10.0.215.0/24\nplatform:\n  aws:\n    region: us-east-1\n    subnets: \n    - subnet-055b659fb7c6eeb33\n    - subnet-0b144438bdc337c65\n    - subnet-034c18415320d1d15\n    - subnet-0a8a70ff486365b42\n    - subnet-0499dae6591e03ea9\n    - subnet-08f4e1f0b1ec77208\nfips: false\npublish: External\npullSecret: '{\"auths\":{\"fake\":{\"auth\": \"bar\"}}}'\nsshKey: 'ssh-rsa AAA..'\n```\n\nUse your new `install-config.yaml` with the OpenShift Installer \n\n`$ ./openshift-install create cluster --dir=<installation_directory> --log-level=info`\n\nYou will get something like this…\n\n```bash\n... \n\nINFO Install complete! \n\nINFO To access the cluster as the system:admin user when using 'oc',  run 'export KUBECONFIG=/home/myuser/install_dir/auth/kubeconfig' INFO Access the OpenShift web-console here: https://console-openshift console.apps.mycluster.example.com \n\nINFO Login to the console with user: \"kubeadmin\", and password: \"xxx\" \n\nINFO Time elapsed: 36m22s\n```\n\n#### 3. Connect\n\n  - Get OC Client<br>\n  `$ curl -LO https://mirror.openshift.com/pub/openshift-v4/clients/oc/latest/linux/oc.tar.gz`\n  - Untar OC Client to your $PATH<br>\n  `$ tar xvzf oc.tar.gz`\n  - Export your new KUBECONFIG<br>\n  `$ export KUBECONFIG=<installation_directory>/auth/kubeconfig`\n\n#### 4. Destroy\n\nFrom the deploy folder\n\n`$ ./openshift-install destroy cluster --dir=<installation_directory> --log-level=info`\n"},{"page":{"file_name":"cloudflare-origin-ca.html","head_title":"How to configure Cloudflare Origin CA"},"title":"How to configure Cloudflare Origin CA","description":"When you use CloudFlare Origin CA for a site-to-site complete encryption, you must need to install these certificates in your own environment.","date":"4/6/2021","tags":["security","cloudflare","certificates"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\n\nYou should import these PEM certificates into your Trusted Authorities. Depend on the Operating System, \n\n- in Windows you should use the Certificates Manager Snap-In and import the certificate under Trusted Root Certifications Authorities. ( User )\n- In Linux / Mac, you should import it directly in your Browser.\n  - In Chrome, go to Security / Manage Certificates / Authorities, [Import]\n  - In Firefox, go to Privacy & Security, Certificates, View Certificates, Authorities, [Import]\n\n#### RSA\n```bash\n-----BEGIN CERTIFICATE-----\nMIIEADCCAuigAwIBAgIID+rOSdTGfGcwDQYJKoZIhvcNAQELBQAwgYsxCzAJBgNV\nBAYTAlVTMRkwFwYDVQQKExBDbG91ZEZsYXJlLCBJbmMuMTQwMgYDVQQLEytDbG91\nZEZsYXJlIE9yaWdpbiBTU0wgQ2VydGlmaWNhdGUgQXV0aG9yaXR5MRYwFAYDVQQH\nEw1TYW4gRnJhbmNpc2NvMRMwEQYDVQQIEwpDYWxpZm9ybmlhMB4XDTE5MDgyMzIx\nMDgwMFoXDTI5MDgxNTE3MDAwMFowgYsxCzAJBgNVBAYTAlVTMRkwFwYDVQQKExBD\nbG91ZEZsYXJlLCBJbmMuMTQwMgYDVQQLEytDbG91ZEZsYXJlIE9yaWdpbiBTU0wg\nQ2VydGlmaWNhdGUgQXV0aG9yaXR5MRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMRMw\nEQYDVQQIEwpDYWxpZm9ybmlhMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC\nAQEAwEiVZ/UoQpHmFsHvk5isBxRehukP8DG9JhFev3WZtG76WoTthvLJFRKFCHXm\nV6Z5/66Z4S09mgsUuFwvJzMnE6Ej6yIsYNCb9r9QORa8BdhrkNn6kdTly3mdnykb\nOomnwbUfLlExVgNdlP0XoRoeMwbQ4598foiHblO2B/LKuNfJzAMfS7oZe34b+vLB\nyrP/1bgCSLdc1AxQc1AC0EsQQhgcyTJNgnG4va1c7ogPlwKyhbDyZ4e59N5lbYPJ\nSmXI/cAe3jXj1FBLJZkwnoDKe0v13xeF+nF32smSH0qB7aJX2tBMW4TWtFPmzs5I\nlwrFSySWAdwYdgxw180yKU0dvwIDAQABo2YwZDAOBgNVHQ8BAf8EBAMCAQYwEgYD\nVR0TAQH/BAgwBgEB/wIBAjAdBgNVHQ4EFgQUJOhTV118NECHqeuU27rhFnj8KaQw\nHwYDVR0jBBgwFoAUJOhTV118NECHqeuU27rhFnj8KaQwDQYJKoZIhvcNAQELBQAD\nggEBAHwOf9Ur1l0Ar5vFE6PNrZWrDfQIMyEfdgSKofCdTckbqXNTiXdgbHs+TWoQ\nwAB0pfJDAHJDXOTCWRyTeXOseeOi5Btj5CnEuw3P0oXqdqevM1/+uWp0CM35zgZ8\nVD4aITxity0djzE6Qnx3Syzz+ZkoBgTnNum7d9A66/V636x4vTeqbZFBr9erJzgz\nhhurjcoacvRNhnjtDRM0dPeiCJ50CP3wEYuvUzDHUaowOsnLCjQIkWbR7Ni6KEIk\nMOz2U0OBSif3FTkhCgZWQKOOLo1P42jHC3ssUZAtVNXrCk3fw9/E15k8NPkBazZ6\n0iykLhH1trywrKRMVw67F44IE8Y=\n-----END CERTIFICATE-----\n```\n#### ECC\n```bash\n-----BEGIN CERTIFICATE-----\nMIICiTCCAi6gAwIBAgIUXZP3MWb8MKwBE1Qbawsp1sfA/Y4wCgYIKoZIzj0EAwIw\ngY8xCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T\nYW4gRnJhbmNpc2NvMRkwFwYDVQQKExBDbG91ZEZsYXJlLCBJbmMuMTgwNgYDVQQL\nEy9DbG91ZEZsYXJlIE9yaWdpbiBTU0wgRUNDIENlcnRpZmljYXRlIEF1dGhvcml0\neTAeFw0xOTA4MjMyMTA4MDBaFw0yOTA4MTUxNzAwMDBaMIGPMQswCQYDVQQGEwJV\nUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZyYW5jaXNjbzEZ\nMBcGA1UEChMQQ2xvdWRGbGFyZSwgSW5jLjE4MDYGA1UECxMvQ2xvdWRGbGFyZSBP\ncmlnaW4gU1NMIEVDQyBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwWTATBgcqhkjOPQIB\nBggqhkjOPQMBBwNCAASR+sGALuaGshnUbcxKry+0LEXZ4NY6JUAtSeA6g87K3jaA\nxpIg9G50PokpfWkhbarLfpcZu0UAoYy2su0EhN7wo2YwZDAOBgNVHQ8BAf8EBAMC\nAQYwEgYDVR0TAQH/BAgwBgEB/wIBAjAdBgNVHQ4EFgQUhTBdOypw1O3VkmcH/es5\ntBoOOKcwHwYDVR0jBBgwFoAUhTBdOypw1O3VkmcH/es5tBoOOKcwCgYIKoZIzj0E\nAwIDSQAwRgIhAKilfntP2ILGZjwajktkBtXE1pB4Y/fjAfLkIRUzrI15AiEA5UCL\nXYZZ9m2c3fKwIenMMojL1eqydsgqj/wK4p5kagQ=\n-----END CERTIFICATE-----\n```\n"},{"page":{"file_name":"install-nodejs-with-nvm.html","head_title":"How to install NodeJS with NVM on Linux"},"title":"How to install NodeJS with NVM on Linux","description":"Sometimes applications require a specific version of Node.js to work. Nvm allows installing several versions of Node.js to the same system.","date":"28/7/2021","tags":["programming","nodejs"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\n\n#### 1. Get NVM from source\n\nUsually, you should get it from a released version `tag` but it's also ok to get from `master`\n\n```bash\n# If you don't have `curl`, you can replace it with `wget -qO-`\n$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/nvm.sh | bash\n```\n\n#### 2. Check your configuration\n\nYou will have something like this in your `~/.bashrc`, if not, repeat steap 1.\n\n```bash\nexport NVM_DIR=\"$([ -z \"${XDG_CONFIG_HOME-}\" ] && printf %s \"${HOME}/.nvm\" || printf %s \"${XDG_CONFIG_HOME}/nvm\")\"\n[ -s \"$NVM_DIR/nvm.sh\" ] && \\. \"$NVM_DIR/nvm.sh\" # This loads nvm\n```\n\n#### 3. Reload and Test\n\nNow, you have to reload your `bash` configuration and test `nvm` command is there.\n\n```bash\n$ source ~/.bashrc\n# Or\n$ logout ( and ssh again)\n\n# Test the command\n$ nvm ls\n# Here, you will see all NodeJS version installed in your computer\n```\n\n#### 4. Install your versions\n\nWith NVM working, you can install all version you want.\n\n```bash\n$ nvm install v14.17.0\n$ nvm install v16.2.0\n```\n\nMore information about usage, [here](https://github.com/nvm-sh/nvm#usage) \n"},{"page":{"file_name":"google-cloud-shell-development-environment.html","head_title":"How to use Google Cloud Shell as a Development Environment"},"title":"How to use Google Cloud Shell as a Development Environment","description":"Google offer a development environment for free!! Just follow this instruction to know how to start working on it with Visual Studio Code.","date":"30/7/2021","tags":["programming","linux"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\n\n#### 1. Get a Google Account\n\nSure, to start using this Cloud Shell environment you need a Google Account.\nYou can use your own Gmail account or your Google Workspace/Suite/Future_Names\n\nYou don't need to do anything from the Google Cloud Console, you just need to install the `gcloud` CLI in your local.\n\n[Installing Google Cloud SDK](https://cloud.google.com/sdk/docs/install)\n\nBefore jump into step 2, be sure that you have `gcloud init` and properly authenticated.\n\n#### 2. Get the Script\n\nGoogle Cloud Shell is an ephemeral virtual instance so you need to place anything on your `$HOME` folder.\n\n_Ephemeral = \"Lasting for a very short time, top 12hrs. Next time, you will get a fresh new instance\"_\n\nWe need to get the instance IP address, so this scrip will do it. Start a fresh new instance, create the SSH Keys\nand modify your `~/.ssh/config` every time you run the script.\n\nCopy this script in your local and change the permissions with `chmod +x cloudshell.sh`\n\n```bash\n#!/bin/bash\nSLEEP=30\nMY_SSH_CONFIG=\"$HOME/.ssh/config\"\n\n/usr/bin/gcloud cloud-shell ssh --authorize-session --dry-run\nsleep $SLEEP\nCLOUDSHELL_HOST=`/usr/bin/gcloud cloud-shell ssh --authorize-session \\\n  --command=\"dig TXT +short o-o.myaddr.l.google.com @ns1.google.com\"`\nsed -i \"s/HostName.*/HostName\\ $CLOUDSHELL_HOST/g\" $MY_SSH_CONFIG\n```\n\n#### 3. Configure your ssh_config\n\nBefore execute the script, we need to change the __ssh_config__ file in your local environment\n\n```\nHost cloudshell\n  HostName \"35.185.95.186\"\n  User luciano\n  Port 6000\n  DynamicForward 65065\n  ServerAliveInterval 5\n  ServerAliveCountMax 3\n  Compression yes\n  StrictHostKeyChecking no\n  UserKnownHostsFile /dev/null\n  ForwardAgent yes\n  LogLevel ERROR          \n  IdentityFile ~/.ssh/google_compute_engine\n```\n\n#### 4. Connect with SSH\n\nNow, you can connect using `ssh` directly\n\n```bash\n$ ssh cloudshell\n  Welcome to Cloud Shell! Type \"help\" to get started.\n  To set your Cloud Platform project in this session use “gcloud config set project [PROJECT_ID]”\n```\n\nEasy, right!! You can also use it with your Visual Studio Code installing just one extension.\n\n- ms-vscode-remote.remote-ssh\n\nOnce installed, you can select from the *Remote Explorer* tab your Host and connect to a folder inside. \n\nMore about [Google Cloud Shell](https://cloud.google.com/shell/docs)\n\nEnjoy!!\n"}];
+
+      // Sort the articles by date (highest to lowest)
+      articles.sort((a, b) => moment(a.date, 'DDMMYYYY') <= moment(b.date, 'DDMMYYYY') ? 1 : -1)
+
+      return articles;
+    }
+
+    function getCurrentArticle(){
+      let currentArticle = {"page":{"file_name":"environment-variables-directory.html","head_title":"How to load and unload environment variables depending on the current directory"},"title":"How to load and unload environment variables depending on the current directory","description":"Before each prompt, direnv checks for the existence of a .envrc file in the current and parent directories. If the file exists (and is authorized), it is loaded into a bash sub-shell and all exported variables are then captured by direnv and then made available to the current shell.","date":"12/6/2021","tags":["programming","linux"],"author":{"name":"Luciano Giacchetta","avatar":"../assets/img/100x100/luciano.jpg"},"content":"## Instructions\nYou could apply these instructions also to Ubuntu WSL.\n\n1. It’s always a good idea to update your local packages \n```bash\n$ sudo apt update \n$ sudo apt upgrade\n```\n\n2. Install **direnv** app using your package system\n```bash\n$ sudo apt install direnv\n```\n\n3. Add the following line at the end of the `~/.bashrc` file and reload your shell\n```bash\n$ eval $(direnv hook bash)\n```\n\n4. Select a folder where you will place your Environment Variables and configure your .envrc\n```bash\n# Create a new .envrc. This file is bash code that is going to be loaded by direnv.\n$ echo export FOO=foo > .envrc\n  .envrc is not allowed\n# The security mechanism did not allow to load the .envrc.\n# Since we trust it, let's allow its execution.\n$ direnv allow .\n  direnv: reloading\n  direnv: loading .envrc\n  direnv export: +FOO\n# Show that the FOO environment variable is loaded.\n$ echo ${FOO}\n  foo\n```\n\nNow, you can create a `.envrc` file in every folder. Every time you access a folder with a .envrc file, your environment variables will be loaded into your Shell. It only happens if you had allowed first doing `$ direnv allow .`. Once you get out from the folder, your environment variables will be unloaded. \n"};
+
+      return currentArticle;
+    }
+
+    function getRelatedArticles(){
+      let relatedArticles = [];
+
+      dataArticles.map(article => {
+        if (JSON.stringify(article) != JSON.stringify(currentArticle) && relatedArticles.length <= 5) {
+          let includeTag = article.tags.find(tag => currentArticle.tags.includes(tag))
+          if (includeTag) relatedArticles.push(article);
+        }
+      })
+
+      return relatedArticles;
+    }
+
+    function getLatestArticles(){
+      let latestArticles = [];
+
+      dataArticles.map((article, index) => {
+        if (JSON.stringify(article) != JSON.stringify(currentArticle) && latestArticles.length <= 5) {
+          latestArticles.push(article);
+        }
+      })
+
+      return latestArticles;
+    }
+
+    /* ------------------------------------------------------------ */
+    /* --------- CREATION OF THE DIFFERENT HTML TEMPLATES --------- */
+    /* ------------------------------------------------------------ */
+  
+    function createTemplateHTML(data, $container) {
+      let templateHTML = "";
+  
+      switch ($container) {
+        // Article Template
+        case $relatedArticles:
+        case $latestArticles:
+          data.map(article => {
+            templateHTML += `<li><a class="link-underline" href="./${article.page.file_name}">${article.title}</a></li>`;
+          })
+        break;
+      }
+
+      return templateHTML;
+    }
+  </script>
+
+  
+  
+  <script>
+    var $languageLinks = Array.from(document.querySelectorAll('#languageDropdown a'))
+
+    var pathName = window.location.pathname;
+    var pathNameWithoutLang = pathName.replace('/es/', '/').replace('/pt/', '/');
+
+    $languageLinks.map($languageLink => {
+      let pathNameWithLinkLang;
+
+      if ($languageLink.dataset.lang == 'en') pathNameWithLinkLang = '' + pathNameWithoutLang;
+      if ($languageLink.dataset.lang == 'es') pathNameWithLinkLang = '/es' + pathNameWithoutLang;
+      if ($languageLink.dataset.lang == 'pt') pathNameWithLinkLang = '/pt' + pathNameWithoutLang;
+
+      $languageLink.setAttribute('href', pathNameWithLinkLang)
+      $languageLink.addEventListener('click', () => localStorage.setItem('lang', $languageLink.dataset.lang))
+    })
+  </script>
+
+
+
+  <!-- IE Support -->
+  <script>
+    if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent)) document.write('<script src="../assets/vendor/babel-polyfill/dist/polyfill.js"><\/script>');
+  </script>
+</body>
+</html>
