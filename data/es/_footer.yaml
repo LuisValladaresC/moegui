@@ -64,9 +64,9 @@ nav__sections:
 # The "url" property in the links is optional, but if it is not defined it will be shown disabled
 nav__footer_items:
   - link: "Privacy & Policy"
-    url: "@@autopathwithlang/privacy.html"
+    url: "#"
   - link: "Terms"
-    url: "@@autopathwithlang/terms.html"
+    url: "#"
   - link: "Site Map"
     url: "#"
 
